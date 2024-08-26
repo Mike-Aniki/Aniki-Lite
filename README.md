@@ -1,7 +1,7 @@
 # Aniki-Lite
 _Fullscreen Theme for Playnite_
 
-<p align="Center">
+<p float="left">
   <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/thumbnail01.png?raw=true" alt="Sublime's custom image"/>
 	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/thumbnail02.png?raw=true" alt="Sublime's custom image"/>
 </p>
