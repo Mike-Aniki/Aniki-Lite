@@ -1,21 +1,21 @@
 # Aniki-Lite
 _Fullscreen Theme for Playnite_
 
-<p float="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot01.png?raw=true" alt="Sublime's custom image" width="400"/>
-	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot02.png?raw=true" alt="Sublime's custom image" width="400"/>
+<p align="Center">
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot01.png?raw=true" alt="Sublime's custom image" width="32%"/>
+	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot02.png?raw=true" alt="Sublime's custom image" width="32%"/>
 </p>
 <p align="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot03.png?raw=true" alt="Sublime's custom image" width="400"/>
-	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot04.png?raw=true" alt="Sublime's custom image" width="400"/>
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot03.png?raw=true" alt="Sublime's custom image" width="32%"/>
+	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot04.png?raw=true" alt="Sublime's custom image" width="32%"/>
 </p>
 <p align="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot05.png?raw=true" alt="Sublime's custom image" width="400"/>
-	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot06.png?raw=true" alt="Sublime's custom image" width="400"/>
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot05.png?raw=true" alt="Sublime's custom image" width="32%"/>
+	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot06.png?raw=true" alt="Sublime's custom image" width="32%"/>
 </p>
 <p align="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot07.png?raw=true" alt="Sublime's custom image" width="400"/>
-	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot08.png?raw=true" alt="Sublime's custom image" width="400"/>
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot07.png?raw=true" alt="Sublime's custom image" width="32%"/>
+	<img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot08.png?raw=true" alt="Sublime's custom image" width="32%"/>
 </p>
 
 ### **_Please follow these instructions before using a theme :_**
