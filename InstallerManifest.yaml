@@ -1,6 +1,5 @@
 AddonId: 'Aniki_Lite'
 Packages:
-  - Version: 1.0
   - Version: 1.0.1
     RequiredApiVersion: 2.6.0
     ReleaseDate: 2024-08-27
