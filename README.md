@@ -18,6 +18,8 @@ _Fullscreen Theme for Playnite_
 	<img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot08.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
 
+Trailer : https://youtu.be/FXCnfGItbqQ
+
 ### **_Please follow these instructions before using a theme :_**
 
 _First of all, make sure you've installed the following add-on for an optimal theme experience._
