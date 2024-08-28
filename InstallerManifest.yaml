@@ -6,3 +6,12 @@ Packages:
     PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v1.0.1/Aniki_Lite_1_0_1.pthm
     Changelog:
     - First public release build
+  - Version: 1.0.2
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2024-08-28
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v1.0.2/Aniki_Lite_1_0_2.pthm
+    Changelog:
+    - Corrected the problem of the time having a bit off-screen.
+    - Modification of the battery percentage location, which was too difficult to see on handheld consoles.
+    - The button for displaying the filter menu is now unusable on the source view, to avoid problems.
+    - Small adjustment of the setting view.
