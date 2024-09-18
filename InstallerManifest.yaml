@@ -29,3 +29,12 @@ Packages:
     - Fixed a problem where some buttons would not change color when hovered over with the mouse. 
     - Fixed a problem where covers in vertical view would not automatically adapt to the correct format when the row setting was less than 4. 
     - Added a border around the keyboard for better legibility.
+  - Version: 1.1.3
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2024-09-18
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v1.1.3/Aniki_Lite_1_1_3.pthm
+    Changelog:
+    - Fixed the battery icon, it now remains stationary in its intended position.
+    - Fixed an issue where the trailer would continue playing even after a game was launched. The trailer now correctly stops when a game starts.
+    - Resolved an issue where the cursor would not automatically position itself on the buttons when the details view opened.
+    - Adjusted the game launch view, improved the presentation when launching a game.
