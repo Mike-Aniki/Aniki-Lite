@@ -38,3 +38,9 @@ Packages:
     - Fixed an issue where the trailer would continue playing even after a game was launched. The trailer now correctly stops when a game starts.
     - Resolved an issue where the cursor would not automatically position itself on the buttons when the details view opened.
     - Adjusted the game launch view, improved the presentation when launching a game.
+  - Version: 1.1.4
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2024-09-19
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v1.1.4/Aniki_Lite_1_1_4.pthm
+    Changelog:
+    - Fixed a problem on the vertical view where covers did not retain their predefined format.
