@@ -44,3 +44,14 @@ Packages:
     PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v1.1.4/Aniki_Lite_1_1_4.pthm
     Changelog:
     - Fixed a problem on the vertical view where covers did not retain their predefined format.
+  - Version: 1.1.5
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2024-09-25
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v1.1.5/Aniki_Lite_1_1_5.pthm
+    Changelog:
+    - Fixed an issue with the buttons in the details view on lower resolutions where they were not displaying correctly.
+    - Fixed an issue where buttons would increase in size when the text was too long. Now the text gets truncated and the buttons keep their original size.
+    - Fixed an issue where the trailer would not stop playing after launching a game when the "Trailer plays by default" option was enabled.
+    - Source icons now fit in their allocated space, large sizes will be reduced instead of being truncated.
+    - Added compatibility with 21/9 screens (Add option in Themeoption setting) 
+    - Added compatibility with 16/10 screens (Add option in Themeoption setting)
