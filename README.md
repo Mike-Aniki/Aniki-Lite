@@ -54,7 +54,7 @@ He has done an exceptional job, and I encourage you to thank him on his GitHub p
   <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/thumbnail07.png?raw=true" alt="Sublime's custom image"/>
 </p>
 
->- Open the folder [Aniki Lite\Icons\Filter].
+>- Open the folder [Aniki Lite\Icons\Filter]. (To Access ThemeFolder : on desktop mode go to settings by clicking on the Playnite icon shaped like a controller, located at the top left. Then, select "Add-on" and go to your installed extensions, then to the Full Screen tab, on the right of the window click on "Installation folder")
 >- Choose (or add) a .png file, then rename this .png file with the name corresponding to your filters
     (for example, "My Games.png" for the filter "My Games").
 
