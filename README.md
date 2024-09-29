@@ -111,15 +111,45 @@ _I advise you to use the square format for the game covers and to use Universal 
 
 ## For logos :
 
+### Setting for Logos
+
 >Access the settings by clicking on the Playnite icon shaped like a controller, at the top left.
 >- Go to "Add-on/Generic/Extra Metadata Loader/Logo Settings."
 >- In the "logo loader" settings, set the following values:
 >Maximum Width: 600
 >Maximum Height: 320
 
+### How to download logo
+
+>- On Playnite desktop mode, select the games you want to download videos for via standard ways (Single right click, Ctrl+Click, Ctrl+A, Shift+Click), right click and select the menu item as shown in the image below.
+>- Follow the instructions and wait for the logo to download.
+<p align="Center">
+   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/HowToSetupLogo.png?raw=true" alt="Sublime's custom image" width="40%"/>
+</p>
+
 ## For Trailer :
 
->For the "Trailer" button to work, video preview must be deactivated.
+To start downloading videos you'll need to configure a few things first
+
+### Setup ExtraMetadata Loader
+
+>- On Playnite Desktop Mode, go to the extension settings page. It is located in MainMenu -> Add-ons... -> Extensions settings -> Generic -> Extra Metadata Loader.
+>- Download the required files by clicking the buttons in the screenshot. The numbers indicate which button you have to click to download the file that contains the required file.
+>- Extract the files in any location and click the "Browse..." buttons of each of the required files and select the file it asks you.
+<p align="Center">
+   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/extrametadata.png?raw=true" alt="Sublime's custom image" width="40%"/>
+</p>
+
+### How to download videos
+
+>- On Playnite desktop mode, select the games you want to download videos, right click and select the menu item as shown in the image below.
+>- Follow the instructions and wait for the videos to download.
+<p align="Center">
+   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/DownloadVideo.png?raw=true" alt="Sublime's custom image" width="40%"/>
+</p>
+
+## For Trailer button :
+
 >- Access the settings by clicking on the Playnite joystick icon in the top left-hand corner.
 >- Go to "Add-on/Generic/Extra Metadata Loader/Video settings" and uncheck the "Show video preview when video is not playing".
 
