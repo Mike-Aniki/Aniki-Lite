@@ -87,7 +87,7 @@ He has done an exceptional job, and I encourage you to thank him on his GitHub p
 
 _I advise you to use the square format for the game covers and to use Universal PSN Metadata to get the square covers as well as the screen backgrounds. If I advise you to do this, it's because playstation screen backgrounds often have the character on the right of the image and all my themes are created on this basis with the character on the right._
 
-### How to make the covers and backgrounds downloaded automatically when adding a game be those of PSN Metadata :
+### How to ensure that covers and backgrounds are automatically downloaded from PSN metadata when adding a game :
 
 >Access the settings by clicking on the Playnite icon shaped like a controller, at the top left.
 >- Select "Settings."
