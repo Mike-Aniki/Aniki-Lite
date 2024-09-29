@@ -102,7 +102,7 @@ _I advise you to use the square format for the game covers and to use Universal 
 >- Next, go to the "Appearance/Grid view" and set the "Target aspect ratio" to 1:1.
 >- Save the changes using the "Save" button at the bottom of the window.
 
-### How to update all metadata of my games
+### How to update all the metadata for my games that already have old metadata :
 
 >Clicking on the Playnite icon shaped like a controller, at the top left.
 >- Go to "Library" and click on Download Metadata, or use the CTRL+D shortcut.
