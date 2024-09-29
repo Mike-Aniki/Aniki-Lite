@@ -154,11 +154,7 @@ To start downloading videos you'll need to configure a few things first
 >- Access the settings by clicking on the Playnite joystick icon in the top left-hand corner.
 >- Go to "Add-on/Generic/Extra Metadata Loader/Video settings" and uncheck the "Show video preview when video is not playing".
 
-## Setting In Full-Screen Mode :
-
->Access the settings by clicking on the gear-shaped icon.
->- In the "Layout" section, choose "8" for the number of columns and "25" for spacing to achieve a balanced appearance.
 ___________________________________________________________________________
-Enjoy your gaming experience!
+### Enjoy your gaming experience!
 ___________________________________________________________________________
-
+### If you'd like to buy me a coffee : https://ko-fi.com/mikeaniki
