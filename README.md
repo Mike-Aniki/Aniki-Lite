@@ -74,10 +74,6 @@ He has done an exceptional job, and I encourage you to thank him on his GitHub p
 >- Go to the folder [Aniki Lite\Audio].
 >- Rename your file exactly like the one you want to replace. To disable these sounds, rename or delete the audio files.
   
-## Mute game trailers by default :  
-
->- In desktop mode, click on playnite's icone in the top left-hand corner, then on Addons (or press F9).
->- Select Extension Settings->Generic->Extra metadata loader ->Video Settings and tick 'Play videos initially without sound'.
 
 # Recommended settings
 
@@ -148,7 +144,12 @@ To start downloading videos you'll need to configure a few things first
    <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/DownloadVideo.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
 
-## For Trailer button :
+### Mute game trailers by default :  
+
+>- In desktop mode, click on playnite's icone in the top left-hand corner, then on Addons (or press F9).
+>- Select Extension Settings->Generic->Extra metadata loader ->Video Settings and tick 'Play videos initially without sound'.
+
+### For Trailer button works perfectly :
 
 >- Access the settings by clicking on the Playnite joystick icon in the top left-hand corner.
 >- Go to "Add-on/Generic/Extra Metadata Loader/Video settings" and uncheck the "Show video preview when video is not playing".
