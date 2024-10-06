@@ -1,5 +1,6 @@
-# Aniki-Lite
-_Fullscreen Theme for Playnite_
+# Aniki-Lite : _Fullscreen Theme for Playnite_ 
+
+
 
 <p align="Center">
   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot01.png?raw=true" alt="Sublime's custom image" width="40%"/>
@@ -18,7 +19,14 @@ _Fullscreen Theme for Playnite_
 	<img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot08.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
 
+<p align="Center">
 Trailer : https://youtu.be/FXCnfGItbqQ
+</p>
+
+<p align="Center">
+<a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+</p>
+
 
 ### **_Please follow these instructions before using a theme :_**
 
@@ -157,4 +165,5 @@ To start downloading videos you'll need to configure a few things first
 ___________________________________________________________________________
 ### Enjoy your gaming experience!
 ___________________________________________________________________________
-### If you'd like to buy me a coffee : https://ko-fi.com/mikeaniki
+
+<a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
