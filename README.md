@@ -28,102 +28,118 @@ Trailer : https://youtu.be/FXCnfGItbqQ
 </p>
 
 
-### **_Please follow these instructions before using a theme :_**
+## **_Please follow these instructions before using a theme:_**
 
-_First of all, make sure you've installed the following add-on for an optimal theme experience._
+First, make sure you've installed the following add-ons for an optimal theme experience. These add-ons enhance the look and feel of your Playnite setup, and some are essential for full functionality.
 
-To download them, on desktop mode go to settings by clicking on the Playnite icon shaped like a controller, located at the top left. Then, select "Add-on" and go to the "Browse" tab at the bottom to search for the extensions.
+To download them:
 
->- **Theme Options** _(For theme customization, thanks to Artem Shpynov)_
->- **ExtraMetadataLoader** _(For Game Trailer and Logo)._
->- **ExtraMetadataLoader Fullscreen Helper** _(For ExtraMetada Works in Fullscreen mode)._
->- **SuccessStory** _(To get the game's achievements)._
->- **PlayniteSound Mod** by Artem Shpynov _(To have Play different music for each game + Pause the music when a trailer is playing and during the theme intro video,
-  					 The word “Mod” in the extension name is important, not to be confused with PlayniteSound.)._
->- **BackToGame** _(Provides a button that returns focus to the game when it loses focus)._
->- **BackgroundChanger** _(To display multiple backgrounds per game)_	
+1. Open **Playnite** in desktop mode.
+2. Click on the **Playnite icon** (controller-shaped) at the top left to access the settings.
+3. Select **Add-ons**, then go to the **Browse** tab at the bottom.
+4. Search for and install the following add-ons:
 
-## To modify the theme :
+>- **Theme Options** _(Customizes the theme, thanks to Artem Shpynov)_
+>- **ExtraMetadataLoader** _(Displays game trailers and logos)._
+>- **ExtraMetadataLoader Fullscreen Helper** _(Ensures ExtraMetadata works in fullscreen mode)._
+>- **SuccessStory** _(Shows in-game achievements)._
+>- **PlayniteSound Mod** by Artem Shpynov _(Plays different music for each game and manages audio during trailers and intros. Make sure you install the "Mod" version of this extension)._
+>- **BackToGame** _(Adds a button to refocus on the game when it loses focus)._
+>- **BackgroundChanger** _(Allows you to set multiple backgrounds per game)._  
 
-**You'll need to install “Theme Options” addon by Artem Shpynov to change the theme color, avatar, username and more.**
+---
 
-_A huge thank you to him for developing this addon.
-He has done an exceptional job, and I encourage you to thank him on his GitHub page._   	
+### **To modify the theme:**
 
-**Theme Options** addon Github : https://github.com/ashpynov/ThemeOptions
-<p align="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/ThemeOptions.png?raw=true" alt="Sublime's custom image"/>
+To change aspects like the theme color, avatar, and username, you'll need the **Theme Options** add-on. This allows for easy customization without manually editing theme files. Follow these steps to get started:
+
+1. Download and install the [**Theme Options** add-on](https://github.com/ashpynov/ThemeOptions) by Artem Shpynov.
+2. Once installed, you can customize the theme through the **Theme Options** interface in the Playnite settings.
+
+_A big thanks to Artem Shpynov for his incredible work on this add-on!_
+
+<p align="center">
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/ThemeOptions.png?raw=true" alt="Theme Options Customization" />
 </p>
 
+---
 
-## Customize filter icons :
+### **Customize filter icons:**
 
-<p align="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/thumbnail07.png?raw=true" alt="Sublime's custom image"/>
+Icons allow you to visually differentiate between various filters like "My Games" or "Favorites." Here’s how you can change them:
+
+>- Open the Theme folder, and navigate to **[Icons\Filter]**.
+>- To access the theme folder: In desktop mode, click on the Playnite icon at the top left, go to **Add-ons**, and find the **Full Screen** tab under installed extensions. Click **Installation folder**.
+>- Add or replace any `.png` files with your own icons, then rename them to match your filters (e.g., "My Games.png" for the "My Games" filter).
+
+<p align="center">
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/thumbnail07.png?raw=true" alt="Filter Icons Customization" />
 </p>
 
->- Open the Theme folder and go to the [Icons\Filter] folder.
->- To Access the Theme Folder : on desktop mode go to settings by clicking on the Playnite icon shaped like a controller, located at the top left. Then, select "Add-on" and go to your installed extensions, then to the Full Screen tab, on the right of the window click on "Installation folder".
->- Choose (or add) a .png file, then rename this .png file with the name corresponding to your filters
-    (for example, "My Games.png" for the filter "My Games").
+---
 
-## Customize source icons :
+### **Customize source icons:**
 
-<p align="Center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/Source.png?raw=true" alt="Sublime's custom image"/>
-</p>
+Source icons represent platforms like Steam or Epic Games. Here's how to update them:
 
->- Open the Theme folder and go to the [Icons\Source] folder.
->- To Access the Theme Folder : on desktop mode go to settings by clicking on the Playnite icon shaped like a controller, located at the top left. Then, select "Add-on" and go to your installed extensions, then to the Full Screen tab, on the right of the window click on "Installation folder". 
->- Choose (or add) a .png file, then rename this .png file with the name corresponding to your source (e.g. “Steam.png” for the “Steam” source). 
-
-## Modify navigation audio files:
-
->- Go to the folder [Aniki Lite\Audio].
->- Rename your file exactly like the one you want to replace. To disable these sounds, rename or delete the audio files.
+>- Open the Theme folder and go to **[Icons\Source]**.
+>- Access the folder as described above.
+>- Add or replace the source icons (e.g., use "Steam.png" for Steam).
   
+<p align="center">
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/Source.png?raw=true" alt="Source Icons Customization" />
+</p>
 
-# Recommended settings
+---
 
-### In Desktop Mode:
+### **Modify navigation audio files:**
 
-## For wallpapers and covers:
+You can replace or disable the navigation sounds for a more personalized experience:
 
-_I advise you to use the square format for the game covers and to use Universal PSN Metadata to get the square covers as well as the screen backgrounds. If I advise you to do this, it's because playstation screen backgrounds often have the character on the right of the image and all my themes are created on this basis with the character on the right._
+>- Go to **[Aniki Lite\Audio]**.
+>- Replace existing audio files by renaming your files to match, or delete them to remove the sounds entirely.
 
-### How to ensure that covers and backgrounds are automatically downloaded from PSN metadata when adding a game :
+---
 
->Access the settings by clicking on the Playnite icon shaped like a controller, at the top left.
->- Select "Settings."
->- Go to the "Metadata" tab and choose "PSN Store" in the settings for "Covers" and "Background Image."
->- You can add more than one metadata source, but make sure you have PSN metadata first in the list, so it will prioritize psn metadata, but if it doesn't find any, it will search with the 2nd metadata source, and so on.
->- For other elements, choose the metadata source that suits you.
+# **Recommended Settings**
 
-### How to convert game covers to square format :
+### **In Desktop Mode:**
 
->Access the settings by clicking on the Playnite icon shaped like a controller, at the top left.
->- Select "Settings."
->- Next, go to the "Appearance/Grid view" and set the "Target aspect ratio" to 1:1.
->- Save the changes using the "Save" button at the bottom of the window.
+### **For wallpapers and covers:**
 
-### How to update all the metadata for my games that already have old metadata :
+I recommend using square covers for games, combined with PlayStation Network (PSN) metadata. PlayStation screen backgrounds often place characters on the right, and this theme is designed around that layout.
 
->Clicking on the Playnite icon shaped like a controller, at the top left.
->- Go to "Library" and click on Download Metadata, or use the CTRL+D shortcut.
->- A new window appears, check the "All Games From Database" box, uncheck the "only missing metadata" box and press next.
->- In the new window you can choose all the sources for each type of metadata, if you have already configured this correctly in the settings no need to touch or otherwise choose the source you want and press "Download".
+Here’s how to set it up:
 
-## For logos :
+>- Open **Settings** from the Playnite icon at the top left.
+>- Go to the **Metadata** tab and select **PSN Store** for both the **Cover** and **Background Image** options.
+>- If you use multiple metadata sources, ensure PSN is at the top to prioritize it.
 
-### Setting for Logos
 
->Access the settings by clicking on the Playnite icon shaped like a controller, at the top left.
->- Go to "Add-on/Generic/Extra Metadata Loader/Logo Settings."
->- In the "logo loader" settings, set the following values:
->Maximum Width: 600
->Maximum Height: 320
+### **Convert game covers to square format:**
 
-### How to download logo
+>- Go to **Settings > Appearance > Grid View**.
+>- Set the **Target Aspect Ratio** to **1:1** for square covers.
+
+
+### **Update metadata for all games:**
+
+If you want to update all existing games with new metadata:
+
+>- Open the Playnite menu and go to **Library > Download Metadata** (or use **CTRL+D**).
+>- In the window that appears, select **All Games From Database** and uncheck **Only Missing Metadata**.
+>- Click **Next**, and follow the prompts to download metadata from your chosen sources.
+
+---
+
+### **For logos:**
+
+Logos are an important part of the theme design. To set them up correctly:
+
+>- Go to **Add-ons > Generic > Extra Metadata Loader > Logo Settings**.
+>- Set the maximum width to **600** and the maximum height to **320**.
+
+### How to download logos :
 
 >- On Playnite desktop mode, select the games you want to download videos for via standard ways (Single right click, Ctrl+Click, Ctrl+A, Shift+Click), right click and select the menu item as shown in the image below.
 >- Follow the instructions and wait for the logo to download.
@@ -131,39 +147,34 @@ _I advise you to use the square format for the game covers and to use Universal 
    <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/HowToSetupLogo.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
 
-## For Trailer :
+---
 
-To start downloading videos you'll need to configure a few things first
+### **For trailers:**
 
-### Setup ExtraMetadata Loader
+To configure trailers:
 
->- On Playnite Desktop Mode, go to the extension settings page. It is located in MainMenu -> Add-ons... -> Extensions settings -> Generic -> Extra Metadata Loader.
->- Download the required files by clicking the buttons in the screenshot. The numbers indicate which button you have to click to download the file that contains the required file.
->- Extract the files in any location and click the "Browse..." buttons of each of the required files and select the file it asks you.
-<p align="Center">
-   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/extrametadata.png?raw=true" alt="Sublime's custom image" width="40%"/>
+>- Go to **Add-ons > Extensions settings > Generic > Extra Metadata Loader**.
+>- Download the required metadata files by following the prompts in the settings.
+
+<p align="center">
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/extrametadata.png?raw=true" alt="Extra Metadata Setup" width="40%" />
 </p>
 
-### How to download videos
 
->- On Playnite desktop mode, select the games you want to download videos, right click and select the menu item as shown in the image below.
->- Follow the instructions and wait for the videos to download.
-<p align="Center">
-   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/DownloadVideo.png?raw=true" alt="Sublime's custom image" width="40%"/>
-</p>
+### **Mute game trailers by default:**
 
-### Mute game trailers by default :  
+To automatically mute trailers:
 
->- In desktop mode, click on playnite's icone in the top left-hand corner, then on Addons (or press F9).
->- Select Extension Settings->Generic->Extra metadata loader ->Video Settings and tick 'Play videos initially without sound'.
+>- In desktop mode, go to **Add-ons > Extra Metadata Loader > Video Settings** and tick **Play videos initially without sound**.
 
-### For Trailer button works perfectly :
 
->- Access the settings by clicking on the Playnite joystick icon in the top left-hand corner.
->- Go to "Add-on/Generic/Extra Metadata Loader/Video settings" and uncheck the "Show video preview when video is not playing".
+### **Ensure the trailer button works smoothly:**
 
-___________________________________________________________________________
+>- In **Add-ons > Extra Metadata Loader > Video settings**, uncheck **Show video preview when video is not playing** to prevent playback issues.
+
+---
+
 ### Enjoy your gaming experience!
-___________________________________________________________________________
+
 
 <a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
