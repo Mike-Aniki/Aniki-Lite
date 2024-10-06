@@ -151,13 +151,22 @@ Logos are an important part of the theme design. To set them up correctly:
 
 ### **For trailers:**
 
-To configure trailers:
 
->- Go to **Add-ons > Extensions settings > Generic > Extra Metadata Loader**.
->- Download the required metadata files by following the prompts in the settings.
+### Setup ExtraMetadata Loader
 
-<p align="center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/extrametadata.png?raw=true" alt="Extra Metadata Setup" width="40%" />
+>- On Playnite Desktop Mode, go to the extension settings page. It is located in MainMenu -> Add-ons... -> Extensions settings -> Generic -> Extra Metadata Loader.
+>- Download the required files by clicking the buttons in the screenshot. The numbers indicate which button you have to click to download the file that contains the required file.
+>- Extract the files in any location and click the "Browse..." buttons of each of the required files and select the file it asks you.
+<p align="Center">
+   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/extrametadata.png?raw=true" alt="Sublime's custom image" width="40%"/>
+</p>
+
+### How to download trailers :
+
+>- On Playnite desktop mode, select the games you want to download videos, right click and select the menu item as shown in the image below.
+>- Follow the instructions and wait for the videos to download.
+<p align="Center">
+   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/DownloadVideo.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
 
 
