@@ -10,14 +10,7 @@
   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot03.png?raw=true" alt="Sublime's custom image" width="40%"/>
 	<img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot04.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
-<p align="Center">
-  <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot05.png?raw=true" alt="Sublime's custom image" width="40%"/>
-	<img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot06.png?raw=true" alt="Sublime's custom image" width="40%"/>
-</p>
-<p align="Center">
-  <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot07.png?raw=true" alt="Sublime's custom image" width="40%"/>
-	<img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot08.png?raw=true" alt="Sublime's custom image" width="40%"/>
-</p>
+
 
 <p align="Center">
 Trailer : https://youtu.be/FXCnfGItbqQ
