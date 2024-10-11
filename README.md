@@ -183,7 +183,19 @@ To automatically mute trailers:
 
 ---
 
-### Enjoy your gaming experience!
+### **Links to playnite user manuals :**
 
+>- [**Filters**](https://api.playnite.link/docs/manual/features/filtersAndFiltersPresets.html)
+>- [**Extensions**](https://api.playnite.link/docs/manual/features/extensionsSupport/installingExtensions.html)
+>- [**Adding games**](https://api.playnite.link/docs/manual/library/games/addingGames.html)
+>- [**Removing games**](https://api.playnite.link/docs/manual/library/games/removingGames.html)
+>- [**Metadata**](https://api.playnite.link/docs/manual/library/games/metadata.html#updating-game-metadata)
+>- [**Library manager**](https://api.playnite.link/docs/manual/library/libraryManager.html)
+>- [**Backup**](https://api.playnite.link/docs/manual/library/backup.html)
+>- [**FAQ**](https://api.playnite.link/docs/manual/library/games/faq.html)
+
+---
+### Enjoy your gaming experience!
+---
 
 <a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
