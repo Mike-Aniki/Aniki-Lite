@@ -1,4 +1,4 @@
-# Aniki-Lite : _Fullscreen Theme for Playnite_ 
+<h1 align="center">Aniki-Lite : Fullscreen Theme for Playnite</h1>
 
 
 
@@ -20,8 +20,9 @@ Trailer : https://youtu.be/FXCnfGItbqQ
 <a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 </p>
 
+---
 
-## **_Please follow these instructions before using a theme:_**
+### **_Please follow these instructions before using a theme:_**
 
 First, make sure you've installed the following add-ons for an optimal theme experience. These add-ons enhance the look and feel of your Playnite setup, and some are essential for full functionality.
 
@@ -188,7 +189,7 @@ To automatically mute trailers:
 >- [**FAQ**](https://api.playnite.link/docs/manual/library/games/faq.html)
 
 ---
-### Enjoy your gaming experience!
+### Enjoy your gaming experience !
 ---
 
 <a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
