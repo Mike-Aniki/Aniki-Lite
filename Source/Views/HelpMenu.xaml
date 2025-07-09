@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pmrk="clr-namespace:Playnite.FullscreenApp.Markup;assembly=Playnite.FullscreenApp">
+    
+    <Style x:Key="HelpMenuBorder" TargetType="Border">
+        <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Width" Value="Auto" />
+            <Setter Property="Height" Value="Auto" />
+            <Setter Property="CornerRadius" Value="5" />
+            <Setter Property="Grid.ColumnSpan" Value="4" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+
+    </Style>
+
+    <Style x:Key="HelpMenuButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
+        <Setter Property="Margin" Value="10,5,10,5" />
+        <Setter Property="Padding" Value="20,3,20,3" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <DataTemplate x:Key="HelpMenuHeaderTemplate">
+        <TextBlock Text="{DynamicResource LOCMenuHelpTitle}"
+                   FontSize="36" HorizontalAlignment="Center" Style="{DynamicResource TextBlockBaseStyle}"
+                   Margin="20,30,40,30" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="HelpMenuRestartPlayniteButtonTemplate">
+        <TextBlock Text="{DynamicResource LOCCrashRestartPlaynite}" VerticalAlignment="Center" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="HelpMenuSafeModeButtonTemplate">
+        <TextBlock Text="{DynamicResource LOCCrashRestartSafe}" VerticalAlignment="Center" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="HelpMenuFeedbackButtonTemplate">
+        <TextBlock Text="{DynamicResource LOCMenuIssues}" VerticalAlignment="Center" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="MainMenuPatreonButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource LOCMenuPatreonSupport}" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+
+    <DataTemplate x:Key="MainMenuKofiButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{DynamicResource LOCMenuKofiSupport}" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+</ResourceDictionary>

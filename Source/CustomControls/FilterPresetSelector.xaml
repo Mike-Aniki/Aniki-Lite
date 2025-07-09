@@ -1,0 +1,202 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ItemFilterQuickPreset" TargetType="CheckBoxEx">
+        <!-- Définition des propriétés par défaut -->
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Foreground" Value="Transparent" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Width" Value="450" />
+        <!-- Définition du modèle de contrôle -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBoxEx">
+                    <!-- Contenu principal du modèle -->
+                    <Grid x:Name="GridBox">
+                        <!-- Style du conteneur principal -->
+                        <Grid.Style>
+                            <Style TargetType="Grid">
+                                <Setter Property="Margin" Value="0" />
+                                <Setter Property="Height" Value="260" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Style.Triggers>
+                                </Style.Triggers>
+                            </Style>
+                        </Grid.Style>
+                        <!-- Bordure clignotante pour le menu -->
+                        <Border x:Name="FlashMenuBorder" Margin="1" BorderThickness="5" Opacity="0" CornerRadius="5"
+                                Style="{DynamicResource AnimatedBorderBrush3}" Tag="False"  Visibility="Collapsed" >
+                        </Border>
+                        <!-- Bordure principale -->
+                        <Border x:Name="Border" Margin="-3" BorderThickness="5" Opacity="1" CornerRadius="5"
+                                Background="{DynamicResource GlyphBrush}" Visibility="Visible" >
+                        </Border>
+                        <!--Bordure de selection -->
+                        <Border x:Name="MainBorder" Margin="-3" BorderThickness="5" Opacity="1" CornerRadius="5"
+                                Background="{DynamicResource ButtonBrushSetting}" Tag="False"  Visibility="Collapsed" >
+                        </Border>                       
+                      
+                        <!-- Icône de filtre -->
+                        <Image x:Name="Filter" RenderOptions.BitmapScalingMode="Fant" RenderTransformOrigin="0.5,0.5"
+                               Source="{ThemeFileBinding Name, PathFormat='Icons/Filter/{0}.png'}" Stretch="Uniform"
+                               HorizontalAlignment="Center" VerticalAlignment="Center"  >
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Margin" Value="5,5,5,5"/>
+                                    <Style.Triggers>
+                                        <!-- Déclencheurs de visibilité -->
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Source}" Value="{x:Null}">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <Image x:Name="Rien" RenderOptions.BitmapScalingMode="Fant" RenderTransformOrigin="0.5,0.5"
+                               Source="{ThemeFileBinding Name, PathFormat='Icons/Filter/Rien.png'}" Stretch="Uniform"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" >
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Margin" Value="5,5,5,5"/>
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <!-- Déclencheurs de visibilité -->
+                                        <DataTrigger Binding="{Binding ElementName=TextContent, Path=Visibility}" Value="Visible">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <!-- Texte de contenu -->
+                        <TextBlock x:Name="TextContent" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontFamily="Lato Bold" Foreground="#eaeaea" TextAlignment="Center" >
+                            <TextBlock.Style>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Margin" Value="20,10,20,10"/>
+                                    <Setter Property="FontSize" Value="38"/>
+                                    <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+                                    <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                                    <Style.Triggers>
+                                        <!-- Déclencheurs de visibilité -->
+                                        <MultiDataTrigger>
+                                            <MultiDataTrigger.Conditions>
+                                                <Condition Binding="{Binding ElementName=Filter, Path=Source}" Value="{x:Null}"/>
+                                            </MultiDataTrigger.Conditions>
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </MultiDataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBlock.Style>
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="2" Color="Black"
+                                                  RenderingBias="Quality" BlurRadius="2" Opacity="1"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <!-- Déclencheur lorsque le contrôle est sélectionné -->
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Opacity" Value="1" TargetName="GridBox" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="TextContent" />
+                            <Setter Property="Opacity" Value="1" TargetName="Filter" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Border" />
+                            <Setter Property="Opacity" Value="1" TargetName="Rien" />
+                        </Trigger>
+                        <!-- Déclencheur lorsque le contrôle perd le focus -->
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="Opacity" Value="0.5" TargetName="TextContent" />
+                            <Setter Property="Opacity" Value="0.5" TargetName="Filter" />
+                            <Setter Property="Opacity" Value="0.5" TargetName="Rien" />
+                        </Trigger>
+                        <!-- Déclencheur lorsque le contrôle est coché -->
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Tag" Value="True" TargetName="FlashMenuBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="GridBox" />
+                            <Setter Property="Opacity" Value="1" TargetName="TextContent" />
+                            <Setter Property="Opacity" Value="1" TargetName="Filter" />
+                            <Setter Property="Opacity" Value="1" TargetName="Rien" />
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Border" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="FlashMenuBorder" />
+                        </Trigger>
+                        <!-- Déclencheur lorsque la souris survole le contrôle -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1" TargetName="GridBox" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="TextContent" />
+                            <Setter Property="Opacity" Value="1" TargetName="Filter" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="Border" />
+                            <Setter Property="Opacity" Value="1" TargetName="Rien" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=FilterButton, Path=IsChecked }" Value="True">
+                <Setter Property="Focusable" Value="True" />
+            </DataTrigger>
+
+        </Style.Triggers>
+    </Style>
+
+    <!-- Définition du style pour le sélecteur de préréglages de filtre -->
+    <Style TargetType="{x:Type FilterPresetSelector}">
+        <!-- Définition des propriétés par défaut -->
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="MaxWidth" Value="{StaticResource DesignWidth}" />
+        <Setter Property="MaxHeight" Value="{StaticResource DesignHeight}" />
+        <!-- Définition du modèle de contrôle -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type FilterPresetSelector}">
+                    <!-- Contenu principal du modèle -->
+                    <ItemsControlEx x:Name="PART_ItemsFilterPresets" Focusable="False"
+                                    KeyboardNavigation.DirectionalNavigation="Once" >
+                        <ItemsControlEx.Style>
+                            <Style TargetType="ItemsControlEx">
+                                <Setter Property="HorizontalLayout" Value="True"/>
+                            </Style>
+                        </ItemsControlEx.Style>
+                        <ItemsControl.ItemsPanel>
+                            <!-- Panneau pour disposer les éléments en ligne -->
+                            <ItemsPanelTemplate>
+                                <StackPanel >
+                                    <StackPanel.Style>
+                                        <Style TargetType="StackPanel">
+                                            <Setter Property="Orientation" Value="Horizontal"/>
+                                        </Style>
+                                    </StackPanel.Style>
+                                </StackPanel>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.Template>
+                            <!-- Modèle pour afficher le contenu dans un ScrollViewer -->
+                            <ControlTemplate>
+                                <ScrollViewer Focusable="False"
+                                              HorizontalScrollBarVisibility="Disabled"
+                                              VerticalScrollBarVisibility="Disabled"
+                                              CanContentScroll="True">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                    </ItemsControlEx>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        
+    </Style>
+
+</ResourceDictionary>

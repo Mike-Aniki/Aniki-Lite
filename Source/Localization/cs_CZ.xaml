@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOCPlayTrailerByDefault">Automatické přehrávání traileru</sys:String>
+<sys:String x:Key="LOCThemeColor">Barva motivu</sys:String>
+<sys:String x:Key="LOCDark">Tmavý</sys:String>
+<sys:String x:Key="LOCLight">Světlý</sys:String>
+<sys:String x:Key="LOCUserName">Uživatelské jméno</sys:String>
+<sys:String x:Key="LOCViewTrophies">Text pro tlačítko "View Trophies"</sys:String>
+<sys:String x:Key="LOCHideTrophy">Text pro tlačítko "Hide Trophies"</sys:String>
+<sys:String x:Key="LOCViewDetails">Text pro tlačítko "View details"</sys:String>
+<sys:String x:Key="LOCHideDetails">Text pro tlačítko "Hide Details"</sys:String>
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>

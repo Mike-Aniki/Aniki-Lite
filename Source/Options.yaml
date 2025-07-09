@@ -1,0 +1,375 @@
+﻿Presets:
+
+    Interface:
+        Name: Theme Color
+        LocKey: LOCThemeColor
+        Presets:
+            Default:
+                Name: Light
+                LocKey: LOCLight
+                Preview: Themes Option\2.Theme Color\Light\Preview.png
+            Dark:
+                Name: Dark
+                LocKey: LOCDark
+                Preview: Themes Option\2.Theme Color\Dark\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Dark\Constants.xaml
+    Ratio:
+        Name: Screen Ratio
+        Presets:
+            Default:
+                Name: 16/9
+            16/10:
+                Name: 16/10
+                Files:
+                    - Themes Option\4.Ratio\16.10\Main.xaml
+                    - Themes Option\4.Ratio\16.10\SettingsMenus.xaml
+            21/9:
+                Name: 21/9
+                Files:
+                    - Themes Option\4.Ratio\21.9\Main.xaml
+                    - Themes Option\4.Ratio\21.9\SettingsMenus.xaml
+                    
+    Avatar:
+        Name: Avatar
+        LocKey: LOCAvatar
+        Presets:
+            AvatarDefault:
+                Name: Avatar Default
+                LocKey: LOCAvatarDefault
+                Preview: Themes Option/3.Avatar/Avatar (1).png
+                Constants:
+                    AvatarImageIndex: 
+                        Type: Int32
+                        Default: 1
+                        Value: 1
+            Avatar2:
+                Name: Avatar 2
+                LocKey: LOCAvatar2
+                Preview: Themes Option/3.Avatar/Avatar (2).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 2
+            Avatar3:
+                Name: Avatar 3
+                LocKey: LOCAvatar3
+                Preview: Themes Option/3.Avatar/Avatar (3).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 3
+            Avatar4:
+                Name: Avatar 4
+                LocKey: LOCAvatar4
+                Preview: Themes Option/3.Avatar/Avatar (4).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 4
+            Avatar5:
+                Name: Avatar 5
+                LocKey: LOCAvatar5
+                Preview: Themes Option/3.Avatar/Avatar (5).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 5
+            Avatar6:
+                Name: Avatar 6
+                LocKey: LOCAvatar6
+                Preview: Themes Option/3.Avatar/Avatar (6).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 6
+            Avatar7:
+                Name: Avatar 7
+                LocKey: LOCAvatar7
+                Preview: Themes Option/3.Avatar/Avatar (7).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 7
+            Avatar8:
+                Name: Avatar 8
+                LocKey: LOCAvatar8
+                Preview: Themes Option/3.Avatar/Avatar (8).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 8
+            Avatar9:
+                Name: Avatar 9
+                LocKey: LOCAvatar9
+                Preview: Themes Option/3.Avatar/Avatar (9).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 9
+            Avatar10:
+                Name: Avatar 10
+                LocKey: LOCAvatar10
+                Preview: Themes Option/3.Avatar/Avatar (10).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 10
+            Avatar11:
+                Name: Avatar 11
+                LocKey: LOCAvatar11
+                Preview: Themes Option/3.Avatar/Avatar (11).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 11
+            Avatar12:
+                Name: Avatar 12
+                LocKey: LOCAvatar12
+                Preview: Themes Option/3.Avatar/Avatar (12).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 12
+            Avatar13:
+                Name: Avatar 13
+                LocKey: LOCAvatar13
+                Preview: Themes Option/3.Avatar/Avatar (13).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 13
+            Avatar14:
+                Name: Avatar 14
+                LocKey: LOCAvatar14
+                Preview: Themes Option/3.Avatar/Avatar (14).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 14
+            Avatar15:
+                Name: Avatar 15
+                LocKey: LOCAvatar15
+                Preview: Themes Option/3.Avatar/Avatar (15).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 15
+            Avatar16:
+                Name: Avatar 16
+                LocKey: LOCAvatar16
+                Preview: Themes Option/3.Avatar/Avatar (16).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 16
+            Avatar17:
+                Name: Avatar 17
+                LocKey: LOCAvatar17
+                Preview: Themes Option/3.Avatar/Avatar (17).png
+               
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 17
+            Avatar18:
+                Name: Avatar 18
+                LocKey: LOCAvatar18
+                Preview: Themes Option/3.Avatar/Avatar (18).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 18
+            Avatar19:
+                Name: Avatar 19
+                LocKey: LOCAvatar19
+                Preview: Themes Option/3.Avatar/Avatar (19).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 19
+            Avatar20:
+                Name: Avatar 20
+                LocKey: LOCAvatar20
+                Preview: Themes Option/3.Avatar/Avatar (20).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 20
+            Avatar21:
+                Name: Avatar 21
+                LocKey: LOCAvatar21
+                Preview: Themes Option/3.Avatar/Avatar (21).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 21
+            Avatar22:
+                Name: Avatar 22
+                LocKey: LOCAvatar22
+                Preview: Themes Option/3.Avatar/Avatar (22).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 22
+            Avatar23:
+                Name: Avatar 23
+                LocKey: LOCAvatar23
+                Preview: Themes Option/3.Avatar/Avatar (23).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 23
+            Avatar24:
+                Name: Avatar 24
+                LocKey: LOCAvatar24
+                Preview: Themes Option/3.Avatar/Avatar (24).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 24
+            Avatar25:
+                Name: Avatar 25
+                LocKey: LOCAvatar25
+                Preview: Themes Option/3.Avatar/Avatar (25).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 25
+            Avatar26:
+                Name: Avatar 26
+                LocKey: LOCAvatar26
+                Preview: Themes Option/3.Avatar/Avatar (26).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 26
+            Avatar27:
+                Name: Avatar 27
+                LocKey: LOCAvatar27
+                Preview: Themes Option/3.Avatar/Avatar (27).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 27
+            Avatar28:
+                Name: Avatar 28
+                LocKey: LOCAvatar28
+                Preview: Themes Option/3.Avatar/Avatar (28).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 28
+            Avatar29:
+                Name: Avatar 29
+                LocKey: LOCAvatar29
+                Preview: Themes Option/3.Avatar/Avatar (29).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 29
+            Avatar30:
+                Name: Avatar 30
+                LocKey: LOCAvatar30
+                Preview: Themes Option/3.Avatar/Avatar (30).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 30
+            Avatar31:
+                Name: Avatar 31
+                LocKey: LOCAvatar31
+                Preview: Themes Option/3.Avatar/Avatar (31).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 31
+            Avatar32:
+                Name: Avatar 32
+                LocKey: LOCAvatar32
+                Preview: Themes Option/3.Avatar/Avatar (32).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 32
+            Avatar33:
+                Name: Avatar 33
+                LocKey: LOCAvatar33
+                Preview: Themes Option/3.Avatar/Avatar (33).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 33
+            Avatar34:
+                Name: Avatar 34
+                LocKey: LOCAvatar34
+                Preview: Themes Option/3.Avatar/Avatar (34).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 34
+            Avatar35:
+                Name: Avatar 35
+                LocKey: LOCAvatar35
+                Preview: Themes Option/3.Avatar/Avatar (35).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 35
+            Avatar36:
+                Name: Avatar 36
+                LocKey: LOCAvatar36
+                Preview: Themes Option/3.Avatar/Avatar (36).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 36
+            Avatar37:
+                Name: Avatar 37
+                LocKey: LOCAvatar37
+                Preview: Themes Option/3.Avatar/Avatar (37).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 37
+            Avatar38:
+                Name: Avatar 38
+                LocKey: LOCAvatar38
+                Preview: Themes Option/3.Avatar/Avatar (38).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 38
+
+Variables:
+
+    TrailerPlayAuto:
+        Title: Automatic trailer playback
+        LocKey: LOCPlayTrailerByDefault
+        Type: Boolean
+        Default: False
+    UserName:
+        Title: User name
+        LocKey: LOCUserName
+        Type: String
+        Default: User Name
+    Trophy:
+        Title: Text for "View Trophies" button
+        LocKey: LOCViewTrophies
+        Type: String
+        Default: View Trophies
+    HideTrophy:
+        Title: Text for "Hide Trophies" button
+        LocKey: LOCHideTrophy
+        Type: String
+        Default: Hide Trophies
+    ViewDetails:
+        Title: Text for “View details” button
+        LocKey: LOCViewDetails
+        Type: String
+        Default: View Details
+    HideDetails:
+        Title: Text for "Hide Details" button
+        LocKey: LOCHideDetails
+        Type: String
+        Default: Hide Details

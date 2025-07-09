@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOCPlayTrailerByDefault">Reproducción automática del tráiler</sys:String>
+<sys:String x:Key="LOCThemeColor">Color del tema</sys:String>
+<sys:String x:Key="LOCDark">Oscuro</sys:String>
+<sys:String x:Key="LOCLight">Claro</sys:String>
+<sys:String x:Key="LOCUserName">Nombre de usuario</sys:String>
+<sys:String x:Key="LOCViewTrophies">Texto para el botón "View Trophies"</sys:String>
+<sys:String x:Key="LOCHideTrophy">Texto para el botón "Hide Trophies"</sys:String>
+<sys:String x:Key="LOCViewDetails">Texto para el botón "View details"</sys:String>
+<sys:String x:Key="LOCHideDetails">Texto para el botón "Hide Details"</sys:String>
+
+
+
+
+
+
+
+
+</ResourceDictionary>

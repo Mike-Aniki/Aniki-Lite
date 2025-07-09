@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+<sys:String x:Key="LOCPlayTrailerByDefault">Автоматично възпроизвеждане на трейлъра</sys:String>
+<sys:String x:Key="LOCThemeColor">Цвят на темата</sys:String>
+<sys:String x:Key="LOCDark">Тъмен</sys:String>
+<sys:String x:Key="LOCLight">Светъл</sys:String>
+<sys:String x:Key="LOCUserName">Потребителско име</sys:String>
+<sys:String x:Key="LOCViewTrophies">Текст за бутона "View Trophies"</sys:String>
+<sys:String x:Key="LOCHideTrophy">Текст за бутона "Hide Trophies"</sys:String>
+<sys:String x:Key="LOCViewDetails">Текст за бутона "View details"</sys:String>
+<sys:String x:Key="LOCHideDetails">Текст за бутона "Hide Details"</sys:String>
+
+
+
+
+
+
+
+
+
+</ResourceDictionary>
