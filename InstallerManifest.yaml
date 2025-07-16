@@ -55,3 +55,15 @@ Packages:
     - Source icons now fit in their allocated space, large sizes will be reduced instead of being truncated.
     - Added compatibility with 21/9 screens (Add option in Themeoption setting) 
     - Added compatibility with 16/10 screens (Add option in Themeoption setting)
+  - Version: 2.0
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2025-07-16
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v2.0/Aniki_Lite_2_0.pthm
+    Changelog:
+    - Aniki Lite enters version 2.0 with a full code restructuring that greatly improves maintainability and overall performance.
+    - Native Playnite navigation system integration – no more lag from the old cover system
+    - MoData, CheckDLC, and NowPlaying are now fully supported, with dedicated buttons in both the Main and Details views.
+    - Expanded ThemeOptions, Theme color presets, Accent color customization, Toggle visibility for certain UI elements and more
+    - Controller support added, B to close the trophies view, X to switch views, and more
+    - Fully updated multi-language translations.
+    - and much more to discover.
