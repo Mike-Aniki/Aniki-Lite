@@ -3,22 +3,82 @@
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
 
-<sys:String x:Key="LOCPlayTrailerByDefault">Автоматическое воспроизведение трейлера</sys:String>
-<sys:String x:Key="LOCThemeColor">Цвет темы</sys:String>
-<sys:String x:Key="LOCDark">Тёмный</sys:String>
-<sys:String x:Key="LOCLight">Светлый</sys:String>
 <sys:String x:Key="LOCUserName">Имя пользователя</sys:String>
-<sys:String x:Key="LOCViewTrophies">Текст для кнопки "View Trophies"</sys:String>
-<sys:String x:Key="LOCHideTrophy">Текст для кнопки "Hide Trophies"</sys:String>
-<sys:String x:Key="LOCViewDetails">Текст для кнопки "View details"</sys:String>
-<sys:String x:Key="LOCHideDetails">Текст для кнопки "Hide Details"</sys:String>
-
-
-
-
-
-
-
-
+<sys:String x:Key="LOCViewTrophies">Трофеи</sys:String>
+<sys:String x:Key="LOCHideTrophy">Закрыть трофеи</sys:String>
+<sys:String x:Key="LOCViewDetails">Детали</sys:String>
+<sys:String x:Key="LOCHideDetails">Закрыть детали</sys:String>
+<sys:String x:Key="LOCReturnGameNP">Вернуться в игру</sys:String>
+<sys:String x:Key="LOCExitGameNP">Выйти из игры</sys:String>
+<sys:String x:Key="LOCNowPlayingNP">В игре с</sys:String>
+<sys:String x:Key="LOCStopmonitoring">Остановить отслеживание</sys:String>
+<sys:String x:Key="LOCPress">Нажмите</sys:String>
+<sys:String x:Key="LocTotalTrophiesUnlocked">Разблокировано</sys:String>
+<sys:String x:Key="LocLockedAchievements">Заблокированные достижения</sys:String>
+<sys:String x:Key="LocUnlockedAchievements">Разблокированные достижения</sys:String>
+<sys:String x:Key="LOCNoDLC">DLC НЕДОСТУПНЫ</sys:String>
+<sys:String x:Key="LOCNoCheckDLC">DLC не найдены или данные CheckDLC устарели</sys:String>
+<sys:String x:Key="LOCDLC">DLC</sys:String>
+<sys:String x:Key="LOCHideDLC">Закрыть DLC</sys:String>
+<sys:String x:Key="LOCInGameOptions">В игре</sys:String>
+<sys:String x:Key="LocFree">Свободно: </sys:String>
+<sys:String x:Key="LocTotal">Всего: </sys:String>
+<sys:String x:Key="LocClosing">Закрытие</sys:String>
+<sys:String x:Key="LOCShowPlatform">Показать платформу на обложке</sys:String>
+<sys:String x:Key="LocNetworkConnectivity">Сетевое соединение</sys:String>
+<sys:String x:Key="LocStorage">Хранилище</sys:String>
+<sys:String x:Key="LOCRatio">Формат экрана</sys:String>
+<sys:String x:Key="LOCAvatar">Аватар</sys:String>
+<sys:String x:Key="LOCLogoOnMain">Показывать логотип в главном окне</sys:String>
+<sys:String x:Key="LOCDetailsAuto">Показывать детали по умолчанию</sys:String>
+<sys:String x:Key="LOCAnimationBackground">Анимированный фон</sys:String>
+<sys:String x:Key="LOCPlayTrailerByDefault">Автовоспроизведение трейлера</sys:String>
+<sys:String x:Key="LOCTrophiesBanner">Показать баннер трофеев</sys:String>
+<sys:String x:Key="LOCPlatinumOnTop">Платиновый трофей сверху</sys:String>
+<sys:String x:Key="LOCLocalClock">Формат времени (Вкл = 24ч / Выкл = 12ч)</sys:String>
+<sys:String x:Key="LOCModePerf">Режим производительности</sys:String>
+<sys:String x:Key="LOCShowHelpMenu">Показать помощь в главном меню</sys:String>
+<sys:String x:Key="LOCShowParteonMenu">Показать Patreon в главном меню</sys:String>
+<sys:String x:Key="LOCShowKoFiMenu">Показать Ko-fi в главном меню</sys:String>
+<sys:String x:Key="LOCChangeView">Сменить вид</sys:String>
+<sys:String x:Key="LOCShowController">Показать управление внизу</sys:String>
+<sys:String x:Key="LOCWrongSetting">ОБНАРУЖЕНЫ НЕВЕРНЫЕ НАСТРОЙКИ</sys:String>
+<sys:String x:Key="LOCWrongSettingText1">Aniki обнаружил неверную конфигурацию колонок</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom2">Установите 4 колонки и отступ 75</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom">Установите 5 колонок и отступ 90</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom3">Установите 3 колонки и отступ 60</sys:String>
+<sys:String x:Key="LOCThemeColor">Цвет темы</sys:String>
+<sys:String x:Key="LOCLight">Светлая</sys:String>
+<sys:String x:Key="LOCDark">Тёмная</sys:String>
+<sys:String x:Key="LOCOledblack">Чёрная OLED</sys:String>
+<sys:String x:Key="LOCGrayStation">GrayStation</sys:String>
+<sys:String x:Key="LOCPurpleNight">Фиолетовая ночь</sys:String>
+<sys:String x:Key="LOCOceanic">Океанская</sys:String>
+<sys:String x:Key="LOCForest">Лес</sys:String>
+<sys:String x:Key="LOCAmethyst">Аметист</sys:String>
+<sys:String x:Key="LOCSunset">Закат</sys:String>
+<sys:String x:Key="LOCBloodNight">Кровавая ночь</sys:String>
+<sys:String x:Key="LOCCherryBlossom">Цветение сакуры</sys:String>
+<sys:String x:Key="LOCSahara">Сахара</sys:String>
+<sys:String x:Key="LOCMintBreeze">Мятный бриз</sys:String>
+<sys:String x:Key="LOCMagma">Магма</sys:String>
+<sys:String x:Key="LOCAccentColor">Цвет акцента</sys:String>
+<sys:String x:Key="LOCPixelBlue">Пиксельный синий</sys:String>
+<sys:String x:Key="LOCAnikiPulse">Aniki Pulse</sys:String>
+<sys:String x:Key="LOCGlacierWhite">Ледниковый белый</sys:String>
+<sys:String x:Key="LOCLunarSilver">Лунное серебро</sys:String>
+<sys:String x:Key="LOCEarthBrown">Земляной коричневый</sys:String>
+<sys:String x:Key="LOCCrimsonStrike">Багровый удар</sys:String>
+<sys:String x:Key="LOCBurntOrange">Обожжённый оранжевый</sys:String>
+<sys:String x:Key="LOCSolarGold">Солнечное золото</sys:String>
+<sys:String x:Key="LOCPeachSplash">Персиковый всплеск</sys:String>
+<sys:String x:Key="LOCSakuraPink">Розовая сакура</sys:String>
+<sys:String x:Key="LOCNeonGreen">Неоново-зелёный</sys:String>
+<sys:String x:Key="LOCSoftMint">Нежная мята</sys:String>
+<sys:String x:Key="LOCRoyalPurple">Королевский пурпур</sys:String>
+<sys:String x:Key="LOCDeepNavy">Глубокий синий</sys:String>
+<sys:String x:Key="LOCOceanicTeal">Океанская бирюза</sys:String>
+<sys:String x:Key="LOCSkyBlue">Небесно-голубой</sys:String>
+<sys:String x:Key="LOCCosmicCyan">Космический циан</sys:String>
 
 </ResourceDictionary>

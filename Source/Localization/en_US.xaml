@@ -1,0 +1,91 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+
+	<sys:String x:Key="LOCUserName">User Name</sys:String>
+	<sys:String x:Key="LOCViewTrophies">Trophies</sys:String>
+	<sys:String x:Key="LOCHideTrophy">Close trophies</sys:String>
+	<sys:String x:Key="LOCViewDetails">Details</sys:String>
+	<sys:String x:Key="LOCHideDetails">Close details</sys:String>
+	<sys:String x:Key="LOCReturnGameNP">Return to current game</sys:String>
+	<sys:String x:Key="LOCExitGameNP">Exit current game</sys:String>
+	<sys:String x:Key="LOCNowPlayingNP">In-game for</sys:String>
+	<sys:String x:Key="LOCStopmonitoring">Stop monitoring</sys:String> 
+	<sys:String x:Key="LOCPress">Press</sys:String>
+	<sys:String x:Key="LocTotalTrophiesUnlocked">Total unlocked</sys:String>
+	<sys:String x:Key="LocLockedAchievements">Locked Achievements</sys:String>
+	<sys:String x:Key="LocUnlockedAchievements">Unlocked Achievements</sys:String>
+	<sys:String x:Key="LOCNoDLC">NO DLC AVAILABLE</sys:String>
+	<sys:String x:Key="LOCNoCheckDLC">There are no DLCs for this game, or your CheckDLC data is out of date</sys:String>
+	<sys:String x:Key="LOCDLC">DLC</sys:String>
+	<sys:String x:Key="LOCHideDLC">Close DLC</sys:String>
+	<sys:String x:Key="LOCInGameOptions">In-Game</sys:String>
+	<sys:String x:Key="LocFree">Free : </sys:String>
+	<sys:String x:Key="LocTotal">Total : </sys:String>
+	<sys:String x:Key="LocClosing">Closing</sys:String>
+	
+	<sys:String x:Key="LOCShowPlatform">Show Platform on game cover</sys:String>
+	<sys:String x:Key="LocNetworkConnectivity">NetworkConnectivity</sys:String>
+	<sys:String x:Key="LocStorage">Storage</sys:String>
+	<sys:String x:Key="LOCRatio">Screen Ratio</sys:String>
+	<sys:String x:Key="LOCAvatar">Avatar</sys:String>
+	<sys:String x:Key="LOCLogoOnMain">Show logo on main view</sys:String>
+	<sys:String x:Key="LOCDetailsAuto">Show Details pannel by default</sys:String>
+	<sys:String x:Key="LOCAnimationBackground">Enable Background Animation in Details View</sys:String>
+	<sys:String x:Key="LOCPlayTrailerByDefault">Automatic trailer playback</sys:String>
+	<sys:String x:Key="LOCTrophiesBanner">Show Trophies Banner on details view</sys:String>
+	<sys:String x:Key="LOCPlatinumOnTop">Show Platinum icon on details view</sys:String>
+	<sys:String x:Key="LOCLocalClock">Clock format (On=24H Off=12H) for unlocked achievement</sys:String>
+	<sys:String x:Key="LOCModePerf">Enable Mode Perfomance</sys:String>
+	<sys:String x:Key="LOCShowHelpMenu">Show Help on main menu</sys:String>
+	<sys:String x:Key="LOCShowParteonMenu">Show Patreon on main menu</sys:String>
+	<sys:String x:Key="LOCShowKoFiMenu">Show Ko-fi on main menu</sys:String>
+	<sys:String x:Key="LOCChangeView">Change View</sys:String>
+	<sys:String x:Key="LOCShowController">Show input controller at bottom screen</sys:String>
+	<sys:String x:Key="LOCWrongSetting"> WRONG SETTINGS DETECTED </sys:String>
+	<sys:String x:Key="LOCWrongSettingText1">Aniki shows this message because your column configuration is invalid</sys:String>
+	<sys:String x:Key="LOCWrongSettingTextBottom2">Set the columns to 4 and Spacing to 75 to continue</sys:String>
+	<sys:String x:Key="LOCWrongSettingTextBottom">Set the columns to 5 and Spacing to 90 to continue</sys:String>
+	<sys:String x:Key="LOCWrongSettingTextBottom3">Set the columns to 3 and Spacing to 60 to continue</sys:String>
+
+
+
+	<sys:String x:Key="LOCThemeColor">Theme Color</sys:String>
+	<sys:String x:Key="LOCLight">Light</sys:String>
+	<sys:String x:Key="LOCDark">Dark</sys:String>
+	<sys:String x:Key="LOCOledblack">Oled Black</sys:String>
+	<sys:String x:Key="LOCGrayStation">GrayStation</sys:String>
+	<sys:String x:Key="LOCPurpleNight">Purple Night</sys:String>
+	<sys:String x:Key="LOCOceanic">Oceanic</sys:String>
+	<sys:String x:Key="LOCForest">Forest</sys:String>
+	<sys:String x:Key="LOCAmethyst">Amethyst</sys:String>
+	<sys:String x:Key="LOCSunset">Sunset</sys:String>
+	<sys:String x:Key="LOCBloodNight">BloodNight</sys:String>
+	<sys:String x:Key="LOCCherryBlossom">Cherry Blossom</sys:String>
+	<sys:String x:Key="LOCSahara">Sahara</sys:String>
+	<sys:String x:Key="LOCMintBreeze">Mint Breeze</sys:String>
+	<sys:String x:Key="LOCMagma">Magma</sys:String>
+
+	<sys:String x:Key="LOCAccentColor">Accent Color</sys:String>
+	<sys:String x:Key="LOCPixelBlue">Pixel Blue</sys:String>
+	<sys:String x:Key="LOCAnikiPulse">Aniki Pulse</sys:String>
+	<sys:String x:Key="LOCGlacierWhite">Glacier White</sys:String>
+	<sys:String x:Key="LOCLunarSilver">Lunar Silver</sys:String>
+	<sys:String x:Key="LOCEarthBrown">Earth Brown</sys:String>
+	<sys:String x:Key="LOCCrimsonStrike">Crimson Strike</sys:String>
+	<sys:String x:Key="LOCBurntOrange">Burnt Orange</sys:String>
+	<sys:String x:Key="LOCSolarGold">Solar Gold</sys:String>
+	<sys:String x:Key="LOCPeachSplash">Peach Splash</sys:String>
+	<sys:String x:Key="LOCSakuraPink">Sakura Pink</sys:String>
+	<sys:String x:Key="LOCNeonGreen">Neon Green</sys:String>
+	<sys:String x:Key="LOCSoftMint">Soft Mint</sys:String>
+	<sys:String x:Key="LOCRoyalPurple">Royal Purple</sys:String>
+	<sys:String x:Key="LOCDeepNavy">Deep Navy</sys:String>
+	<sys:String x:Key="LOCOceanicTeal">Oceanic Teal</sys:String>
+	<sys:String x:Key="LOCSkyBlue">Sky Blue</sys:String>
+	<sys:String x:Key="LOCCosmicCyan">Cosmic Cyan</sys:String>
+
+	
+
+</ResourceDictionary>

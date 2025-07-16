@@ -14,22 +14,391 @@
                 Preview: Themes Option\2.Theme Color\Dark\Preview.png
                 Files:
                     - Themes Option\2.Theme Color\Dark\Constants.xaml
-    Ratio:
-        Name: Screen Ratio
+            OledBlack:
+                Name: Oled Black
+                LocKey: LOCOledblack
+                Preview: Themes Option\2.Theme Color\Oled Black\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Oled Black\Constants.xaml
+            GrayStation:
+                Name: GrayStation
+                LocKey: LOCGrayStation
+                Preview: Themes Option\2.Theme Color\GrayStation\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\GrayStation\Constants.xaml
+            PurpleNight:
+                Name: Purple Night
+                LocKey: LOCPurpleNight
+                Preview: Themes Option\2.Theme Color\Purple Night\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Purple Night\Constants.xaml
+            Oceanic:
+                Name: Oceanic
+                LocKey: LOCOceanic
+                Preview: Themes Option\2.Theme Color\Oceanic\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Oceanic\Constants.xaml
+            Forest:
+                Name: Forest
+                LocKey: LOCForest
+                Preview: Themes Option\2.Theme Color\Forest\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Forest\Constants.xaml
+            Amethyst:
+                Name: Amethyst
+                LocKey: LOCAmethyst
+                Preview: Themes Option\2.Theme Color\Amethyst\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Amethyst\Constants.xaml
+            Sunset:
+                Name: Sunset
+                LocKey: LOCSunset
+                Preview: Themes Option\2.Theme Color\Sunset\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Sunset\Constants.xaml
+            BloodNight:
+                Name: BloodNight
+                LocKey: LOCBloodNight
+                Preview: Themes Option\2.Theme Color\BloodNight\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\BloodNight\Constants.xaml
+            Cherry Blossom:
+                Name: Cherry Blossom
+                LocKey: LOCCherryBlossom
+                Preview: Themes Option\2.Theme Color\Cherry Blossom\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Cherry Blossom\Constants.xaml
+            Sahara:
+                Name: Sahara
+                LocKey: LOCSahara
+                Preview: Themes Option\2.Theme Color\Sahara\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Sahara\Constants.xaml
+            Mint Breeze:
+                Name: MintBreeze
+                LocKey: LOCMintBreeze
+                Preview: Themes Option\2.Theme Color\Mint Breeze\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Mint Breeze\Constants.xaml
+            Magma:
+                Name: Magma
+                LocKey: LOCMagma
+                Preview: Themes Option\2.Theme Color\Magma\Preview.png
+                Files:
+                    - Themes Option\2.Theme Color\Magma\Constants.xaml
+    AccentColorOption:
+        Name: Accent Color
+        LocKey: LOCAccentColor
         Presets:
             Default:
-                Name: 16/9
-            16/10:
-                Name: 16/10
-                Files:
-                    - Themes Option\4.Ratio\16.10\Main.xaml
-                    - Themes Option\4.Ratio\16.10\SettingsMenus.xaml
-            21/9:
-                Name: 21/9
-                Files:
-                    - Themes Option\4.Ratio\21.9\Main.xaml
-                    - Themes Option\4.Ratio\21.9\SettingsMenus.xaml
-                    
+                Name: Pixel Blue
+                LocKey: LOCPixelBlue
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Default: "#2B6FDB"
+                        Value: "#2B6FDB"
+                    TextFocusColor:
+                        Type: Color
+                        Default: "#2B6FDB"
+                        Value: "#2B6FDB"
+                    ColorBorder:
+                        Type: Color
+                        Default: "#3B9EFF"
+                        Value: "#3B9EFF"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Default: "#3B9EFF"
+                        Value: "#3B9EFF"
+            DarkOption:
+                Name: Dark
+                LocKey: LOCDark
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#2c2c2c"
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#2c2c2c"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#2c2c2c"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#2c2c2c"
+            LightOption:
+                  Name: Light
+                  LocKey: LOCLight
+                  Constants:
+                    TextFocusColor:
+                      Type: Color
+                      Value: "#eaeaea"  
+                    TextFocusColorBrush:
+                      Type: SolidColorBrush
+                      Value: "#eaeaea"
+                    ColorBorder:
+                      Type: Color
+                      Value: "#eaeaea"  
+                    ColorBorderBrush:
+                      Type: SolidColorBrush
+                      Value: "#eaeaea"    
+            AnikiPreset:
+                 Name: Aniki Pulse
+                 LocKey: LOCAnikiPulse
+                 Constants:
+                    TextFocusColorBrush:
+                      Type: SolidColorBrush
+                      Value: "#E94F37"
+                    TextFocusColor:
+                      Type: Color
+                      Value: "#E94F37"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#3D155F"       
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#3D155F"
+            WhiteOption:
+                Name: Glacier White
+                LocKey: LOCGlacierWhite
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#D6D6D6"       
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#D6D6D6"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#D6D6D6"       
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#D6D6D6"
+            PlatinumSilverOption:
+                Name: Lunar Silver
+                LocKey: LOCLunarSilver
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#B4C2D0"       
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#B4C2D0"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#B0B0B0"       
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#B0B0B0"
+            BrownOption:
+                  Name: Earth Brown
+                  LocKey: LOCEarthBrown
+                  Constants:
+                    TextFocusColorBrush:
+                      Type: SolidColorBrush
+                      Value: "#8B4513"
+                    TextFocusColor:
+                      Type: Color
+                      Value: "#8B4513"
+                    ColorBorder:
+                      Type: Color
+                      Value: "#A0522D"
+                    ColorBorderBrush:
+                      Type: SolidColorBrush
+                      Value: "#A0522D"
+            RedOption:
+                Name: Crimson Strike
+                LocKey: LOCCrimsonStrike
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#8B0000"
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#8B0000"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#B22222"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#B22222"
+            OrangeOption:
+                  Name: Burnt Orange
+                  LocKey: LOCBurntOrange
+                  Constants:
+                    TextFocusColorBrush:
+                      Type: SolidColorBrush
+                      Value: "#CC5500"
+                    TextFocusColor:
+                      Type: Color
+                      Value: "#CC5500"
+                    ColorBorder:
+                      Type: Color
+                      Value: "#FF8C00"
+                    ColorBorderBrush:
+                      Type: SolidColorBrush
+                      Value: "#FF8C00"
+            GoldPrestigeOption:
+                Name: Solar Gold
+                LocKey: LOCSolarGold
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#FFC56D"       
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#FFC56D"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#FFA500"       
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#FFA500"
+            PeachOption:
+                Name: Peach Splash
+                LocKey: LOCPeachSplash
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#FFB07C"
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#FFB07C"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#FFD1A4"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#FFD1A4"
+            PinkOption:
+                Name: Sakura Pink
+                LocKey: LOCSakuraPink
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#DAA5B3"      
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#DAA5B3"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#FF99CC"       
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#FF99CC"
+            GreenOption:
+                Name: Neon Green
+                LocKey: LOCNeonGreen
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#228B22"
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#228B22"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#32CD32"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#32CD32"
+            SoftMintOption:
+              Name: Soft Mint
+              LocKey: LOCSoftMint
+              Constants:
+                TextFocusColorBrush:
+                  Type: SolidColorBrush
+                  Value: "#98FF98"
+                TextFocusColor:
+                  Type: Color
+                  Value: "#98FF98"
+                ColorBorder:
+                  Type: Color
+                  Value: "#C1FFC1"
+                ColorBorderBrush:
+                  Type: SolidColorBrush
+                  Value: "#C1FFC1"
+            PurpleOption:
+                Name: Royal Purple
+                LocKey: LOCRoyalPurple
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#6A0DAD"
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#6A0DAD"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#9B30FF"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#9B30FF"
+            DeepNavyOption:
+              Name: Deep Navy
+              LocKey: LOCDeepNavy
+              Constants:
+                TextFocusColorBrush:
+                  Type: SolidColorBrush
+                  Value: "#191970"
+                TextFocusColor:
+                  Type: Color
+                  Value: "#191970"
+                ColorBorder:
+                  Type: Color
+                  Value: "#000080"
+                ColorBorderBrush:
+                  Type: SolidColorBrush
+                  Value: "#000080"
+            TealOption:
+                  Name: Oceanic Teal
+                  LocKey: LOCOceanicTeal
+                  Constants:
+                    TextFocusColorBrush:
+                      Type: SolidColorBrush
+                      Value: "#008080"
+                    TextFocusColor:
+                      Type: Color
+                      Value: "#008080"
+                    ColorBorder:
+                      Type: Color
+                      Value: "#20B2AA"
+                    ColorBorderBrush:
+                      Type: SolidColorBrush
+                      Value: "#20B2AA"
+            SkyBlueOption:
+                  Name: Sky Blue
+                  LocKey: LOCSkyBlue
+                  Constants:
+                    TextFocusColorBrush:
+                      Type: SolidColorBrush
+                      Value: "#87CEEB"
+                    TextFocusColor:
+                      Type: Color
+                      Value: "#87CEEB"
+                    ColorBorder:
+                      Type: Color
+                      Value: "#B0E2FF"
+                    ColorBorderBrush:
+                      Type: SolidColorBrush
+                      Value: "#B0E2FF"
+            CosmicCyanOption:
+                Name: Cosmic Cyan
+                LocKey: LOCCosmicCyan
+                Constants:
+                    TextFocusColorBrush:
+                        Type: SolidColorBrush
+                        Value: "#00FFF7"
+                    TextFocusColor:
+                        Type: Color
+                        Value: "#00FFF7"
+                    ColorBorder:
+                        Type: Color
+                        Value: "#00CCFF"
+                    ColorBorderBrush:
+                        Type: SolidColorBrush
+                        Value: "#00CCFF"
+
     Avatar:
         Name: Avatar
         LocKey: LOCAvatar
@@ -343,33 +712,113 @@
 
 Variables:
 
-    TrailerPlayAuto:
-        Title: Automatic trailer playback
-        LocKey: LOCPlayTrailerByDefault
-        Type: Boolean
-        Default: False
+    GeneralSettings:
+        Title: General Settings
+        LocKey: LOCGeneralSettings
+        Type: Header
+        TitleStyle: TextThemeOptionStyle
+        Style: HeaderDockPanelStyle
     UserName:
         Title: User name
         LocKey: LOCUserName
         Type: String
         Default: User Name
-    Trophy:
-        Title: Text for "View Trophies" button
-        LocKey: LOCViewTrophies
-        Type: String
-        Default: View Trophies
-    HideTrophy:
-        Title: Text for "Hide Trophies" button
-        LocKey: LOCHideTrophy
-        Type: String
-        Default: Hide Trophies
-    ViewDetails:
-        Title: Text for “View details” button
-        LocKey: LOCViewDetails
-        Type: String
-        Default: View Details
-    HideDetails:
-        Title: Text for "Hide Details" button
-        LocKey: LOCHideDetails
-        Type: String
-        Default: Hide Details
+        NeedRestart: False
+    ModePerf:
+        Title: ModePerf
+        LocKey: LOCModePerf
+        Type: Boolean
+        Default: False
+        NeedRestart: True
+    MainViewSettings:
+        Title: Main View Settings
+        LocKey: LOCMainViewSettings
+        Type: Header
+        TitleStyle: TextThemeOptionStyle
+        Style: HeaderDockPanelStyle
+    LogoOnMain:
+        Title: Show logo on main view
+        LocKey: LOCLogoOnMain
+        Type: Boolean
+        Default: False
+    ShowPlatform:
+        Title: Show Platform on game cover
+        LocKey: LOCShowPlatform
+        Type: Boolean
+        Default: True
+        NeedRestart: False
+    ShowController:
+        Title: Show input controller at bottom screen
+        LocKey: LOCShowController
+        Type: Boolean
+        Default: True
+        NeedRestart: False
+    DetailsViewSettings:
+        Title: Details View Settings
+        LocKey: LOCDetailsViewSettings
+        Type: Header
+        TitleStyle: TextThemeOptionStyle
+        Style: HeaderDockPanelStyle
+    DetailsAuto:
+        Title: Show Details pannel by default
+        LocKey: LOCDetailsAuto
+        Type: Boolean
+        Default: True
+        NeedRestart: True
+    TrailerPlayAuto:
+        Title: Automatic trailer playback
+        LocKey: LOCPlayTrailerByDefault
+        Type: Boolean
+        Default: False
+        NeedRestart: True
+    AnimationBackground:
+        Title: Enable Background Animation in Details View
+        LocKey: LOCAnimationBackground
+        Type: Boolean
+        Default: False
+        NeedRestart: True
+    TrophiesBanner:
+        Title: Show trophies banner on top
+        LocKey: LOCTrophiesBanner
+        Type: Boolean
+        Default: False
+        NeedRestart: False
+    PlatinumOnTop:
+        Title: Show Platinum icon on top right
+        LocKey: LOCPlatinumOnTop
+        Type: Boolean
+        Default: True
+        NeedRestart: False
+    LocalClock:
+        Title: Clock format (24h/12h) for unlocked trophies
+        LocKey: LOCLocalClock
+        Type: Boolean
+        Default: True
+        NeedRestart: False
+    ExtraSettings:
+        Title: Extra Settings
+        LocKey: LOCExtraSettings
+        Type: Header
+        TitleStyle: TextThemeOptionStyle
+        Style: HeaderDockPanelStyle
+    ShowHelpMenu:
+        Title: Show Help on main menu
+        LocKey: LOCShowHelpMenu
+        Type: Visibility
+        Default: Collapsed
+        Style: SettingsSectionOffsetDockPanelStyle
+        NeedRestart: False
+    ShowParteonMenu:
+        Title: Show Patreon on main menu
+        LocKey: LOCShowParteonMenu
+        Type: Visibility
+        Default: Collapsed
+        Style: SettingsSectionOffsetDockPanelStyle
+        NeedRestart: False
+    ShowKoFiMenu:
+        Title: Show Ko-fi on main menu
+        LocKey: LOCShowKoFiMenu
+        Type: Visibility
+        Default: Collapsed
+        Style: SettingsSectionOffsetDockPanelStyle
+        NeedRestart: False

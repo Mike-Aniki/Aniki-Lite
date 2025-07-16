@@ -325,13 +325,13 @@
     <ImageBrush x:Key="Avatar37" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (37).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar38" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (38).png'}" Stretch="UniformToFill"/>
 
-    <Style x:Key="IntroVideo" TargetType="ContentControl">
+      <Style x:Key="IntroVideo" TargetType="ContentControl">
         <Setter Property="Focusable" Value="False" />
         <Setter Property="Tag" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentControl">
-                    <MediaElement x:Name="IntroVideoElement" Source="{ThemeFile 'Startup Video/Intro Light.mp4'}" SnapsToDevicePixels="True">
+                    <MediaElement x:Name="IntroVideoElement" Source="{ThemeFile 'Startup Video/IntroVideo.mp4'}" SnapsToDevicePixels="True">
                         <MediaElement.Style>
                             <Style TargetType="MediaElement">
                                 <Setter Property="Opacity" Value="1"/>

@@ -3,43 +3,97 @@
                     xmlns:pmrk="clr-namespace:Playnite.FullscreenApp.Markup;assembly=Playnite.FullscreenApp">
 
     <Style x:Key="MainMenuBorder" TargetType="Border">
-        <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource OverlayMenu}" />
         <Setter Property="Width" Value="Auto" />
         <Setter Property="Height" Value="Auto" />
-        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="CornerRadius" Value="5" />
         <Setter Property="Grid.ColumnSpan" Value="4" />
-        <Setter Property="Margin" Value="0,0,0,0" />
-        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="-360,40,0,40" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="BorderThickness" Value="3" />
+        <Setter Property="BorderBrush" Value="{DynamicResource BorderWindowBrush}" />
         <Style.Resources>
             <Style TargetType="StackPanel">
                 <Setter Property="HorizontalAlignment" Value="Center" />
                 <Setter Property="VerticalAlignment" Value="Stretch" />
                 <Setter Property="Width" Value="Auto" />
                 <Setter Property="Height" Value="2160" />
-                <Setter Property="Margin" Value="40,30,0,0" />
+                <Setter Property="Margin" Value="0,30,0,0" />
             </Style>
         </Style.Resources>
         <Style.Triggers>
-            <EventTrigger RoutedEvent="Window.Loaded">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <Int32Animation Storyboard.TargetProperty="(Grid.Column)" Duration="0:0:0" To="0"/>
-                        <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
+            <Trigger Property="IsKeyboardFocusWithin" Value="False">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.3" To="-380,40,0,40">
+                                <ThicknessAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </ThicknessAnimation.EasingFunction>
+                            </ThicknessAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <Int32Animation Storyboard.TargetProperty="(Grid.Column)" Duration="0:0:0" To="0"/>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.3" To="-10,40,0,40">
+                                <ThicknessAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut" />
+                                </ThicknessAnimation.EasingFunction>
+                            </ThicknessAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
         </Style.Triggers>
     </Style>
 
+
+
     <Style x:Key="MainMenuButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
-        <Setter Property="Margin" Value="0,5,0,5" />
+        <Setter Property="Margin" Value="10,10,20,10" />
         <Setter Property="Padding" Value="20,3,20,3" />
         <Setter Property="HorizontalAlignment" Value="Stretch" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="Background" Value="Transparent" />
+
+        <Style.Triggers>
+            <!-- Masque le bouton Ko-fi -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Name, RelativeSource={RelativeSource Self}}" Value="PART_ButtonKofi"/>
+                    <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ShowKoFiMenu]}" Value="Collapsed"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </MultiDataTrigger>
+
+            <!-- Masque le bouton Patreon -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Name, RelativeSource={RelativeSource Self}}" Value="PART_ButtonPatreon"/>
+                    <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ShowParteonMenu]}" Value="Collapsed"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </MultiDataTrigger>
+
+            <!-- Masque le bouton Aide -->
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Name, RelativeSource={RelativeSource Self}}" Value="PART_ButtonFeedback"/>
+                    <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ShowHelpMenu]}" Value="Collapsed"/>
+                </MultiDataTrigger.Conditions>
+                <Setter Property="Visibility" Value="Collapsed"/>
+            </MultiDataTrigger>
+        </Style.Triggers>
     </Style>
 
+
     <DataTemplate x:Key="MainMenuHeaderTemplate">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,30,0,30">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,10,0,20">
             <Image Source="{DynamicResource ThemeLogo}" Height="58"
                    RenderOptions.BitmapScalingMode="Fant" />
             <!-- <TextBlock Text="ANIKI LITE" FontSize="36" Style="{DynamicResource TextBlockBaseStyle}"
@@ -51,7 +105,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef3a;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCSettingsLabel}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCSettingsLabel}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -59,7 +113,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xefd1;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuReloadLibrary}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuReloadLibrary}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -67,7 +121,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xecb1;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuCancelLibraryUpdate}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuCancelLibraryUpdate}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
     
@@ -75,7 +129,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef99;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMinimize}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMinimize}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -83,7 +137,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef16;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCExitPlaynite}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCExitPlaynite}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -91,7 +145,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef1d;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCBackToDesktopMode}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCBackToDesktopMode}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -99,7 +153,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xefcf;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuSelectRandomGame}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuSelectRandomGame}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -107,7 +161,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xefc4;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuShutdownSystem}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuShutdownSystem}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -115,7 +169,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef9e;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuSuspendSystem}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuSuspendSystem}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -123,7 +177,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xefc4;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuHibernateSystem}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuHibernateSystem}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -131,28 +185,27 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef80;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuRestartSystem}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuRestartSystem}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="MainMenuHelpButtonTemplate">
-
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xefca;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuHelpTitle}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuHelpTitle}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="MainMenuPatreonButtonTemplate">
         <StackPanel Orientation="Horizontal" >
-            <TextBlock Text="{DynamicResource LOCMenuPatreonSupport}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuPatreonSupport}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
     <DataTemplate x:Key="MainMenuKofiButtonTemplate">
         <StackPanel Orientation="Horizontal">
-            <TextBlock Text="{DynamicResource LOCMenuKofiSupport}" FontSize="38" VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuKofiSupport}" FontSize="32" VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -162,7 +215,7 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xef7a;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuLockSystem}" FontSize="38"  VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuLockSystem}" FontSize="32"  VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
 
@@ -170,7 +223,37 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock Text="&#xefe9;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32" 
                        VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBlock Text="{DynamicResource LOCMenuLogoutUser}" FontSize="38"  VerticalAlignment="Center" />
+            <TextBlock Text="{DynamicResource LOCMenuLogoutUser}" FontSize="32"  VerticalAlignment="Center" />
         </StackPanel>
     </DataTemplate>
+
+    <!-- Modèle de bouton pour les Clients Externe -->
+    <DataTemplate x:Key="MainMenuClientsButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="&#xec84;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
+		       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock Text="{DynamicResource LOCMenuOpenClient}"  FontSize="32" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+
+    <!-- Modèle de bouton pour les Outils -->
+    <DataTemplate x:Key="MainMenuToolsButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="&#xf013;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
+		       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock Text="{DynamicResource LOCMenuTools}"  FontSize="32" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+
+    <!-- Modèle de bouton pour les extensions -->
+    <DataTemplate x:Key="MainMenuExtensionsButtonTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="&#xefc7;" FontFamily="{DynamicResource FontIcoFont}" FontSize="32"
+		       VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock Text="{DynamicResource LOCExtensions}"  FontSize="32" VerticalAlignment="Center" />
+        </StackPanel>
+    </DataTemplate>
+
+  
+
 </ResourceDictionary>

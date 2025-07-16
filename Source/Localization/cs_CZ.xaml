@@ -3,22 +3,82 @@
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
 
-<sys:String x:Key="LOCPlayTrailerByDefault">Automatické přehrávání traileru</sys:String>
-<sys:String x:Key="LOCThemeColor">Barva motivu</sys:String>
-<sys:String x:Key="LOCDark">Tmavý</sys:String>
-<sys:String x:Key="LOCLight">Světlý</sys:String>
 <sys:String x:Key="LOCUserName">Uživatelské jméno</sys:String>
-<sys:String x:Key="LOCViewTrophies">Text pro tlačítko "View Trophies"</sys:String>
-<sys:String x:Key="LOCHideTrophy">Text pro tlačítko "Hide Trophies"</sys:String>
-<sys:String x:Key="LOCViewDetails">Text pro tlačítko "View details"</sys:String>
-<sys:String x:Key="LOCHideDetails">Text pro tlačítko "Hide Details"</sys:String>
-
-
-
-
-
-
-
-
+<sys:String x:Key="LOCViewTrophies">Trofeje</sys:String>
+<sys:String x:Key="LOCHideTrophy">Zavřít trofeje</sys:String>
+<sys:String x:Key="LOCViewDetails">Detaily</sys:String>
+<sys:String x:Key="LOCHideDetails">Zavřít detaily</sys:String>
+<sys:String x:Key="LOCReturnGameNP">Zpět do hry</sys:String>
+<sys:String x:Key="LOCExitGameNP">Ukončit hru</sys:String>
+<sys:String x:Key="LOCNowPlayingNP">Ve hře od</sys:String>
+<sys:String x:Key="LOCStopmonitoring">Zastavit sledování</sys:String>
+<sys:String x:Key="LOCPress">Stiskni</sys:String>
+<sys:String x:Key="LocTotalTrophiesUnlocked">Odemčeno</sys:String>
+<sys:String x:Key="LocLockedAchievements">Zamčené úspěchy</sys:String>
+<sys:String x:Key="LocUnlockedAchievements">Odemčené úspěchy</sys:String>
+<sys:String x:Key="LOCNoDLC">ŽÁDNÉ DLC K DISPOZICI</sys:String>
+<sys:String x:Key="LOCNoCheckDLC">Žádné DLC nebo zastaralá data CheckDLC</sys:String>
+<sys:String x:Key="LOCDLC">DLC</sys:String>
+<sys:String x:Key="LOCHideDLC">Zavřít DLC</sys:String>
+<sys:String x:Key="LOCInGameOptions">Ve hře</sys:String>
+<sys:String x:Key="LocFree">Volné : </sys:String>
+<sys:String x:Key="LocTotal">Celkem : </sys:String>
+<sys:String x:Key="LocClosing">Zavírání</sys:String>
+<sys:String x:Key="LOCShowPlatform">Zobrazit platformu na obalu</sys:String>
+<sys:String x:Key="LocNetworkConnectivity">Síťové připojení</sys:String>
+<sys:String x:Key="LocStorage">Úložiště</sys:String>
+<sys:String x:Key="LOCRatio">Poměr stran</sys:String>
+<sys:String x:Key="LOCAvatar">Avatar</sys:String>
+<sys:String x:Key="LOCLogoOnMain">Zobrazit logo v hlavním zobrazení</sys:String>
+<sys:String x:Key="LOCDetailsAuto">Zobrazit detaily automaticky</sys:String>
+<sys:String x:Key="LOCAnimationBackground">Animované pozadí</sys:String>
+<sys:String x:Key="LOCPlayTrailerByDefault">Automaticky přehrát trailer</sys:String>
+<sys:String x:Key="LOCTrophiesBanner">Zobrazit banner trofejí</sys:String>
+<sys:String x:Key="LOCPlatinumOnTop">Platinová trofej nahoře</sys:String>
+<sys:String x:Key="LOCLocalClock">Formát hodin (Zap=24H Vyp=12H)</sys:String>
+<sys:String x:Key="LOCModePerf">Výkonnostní režim</sys:String>
+<sys:String x:Key="LOCShowHelpMenu">Zobrazit nápovědu v menu</sys:String>
+<sys:String x:Key="LOCShowParteonMenu">Zobrazit Patreon v menu</sys:String>
+<sys:String x:Key="LOCShowKoFiMenu">Zobrazit Ko-fi v menu</sys:String>
+<sys:String x:Key="LOCChangeView">Změnit zobrazení</sys:String>
+<sys:String x:Key="LOCShowController">Zobrazit ovládání dole</sys:String>
+<sys:String x:Key="LOCWrongSetting">ZJIŠTĚNO ŠPATNÉ NASTAVENÍ</sys:String>
+<sys:String x:Key="LOCWrongSettingText1">Aniki zjistil neplatnou konfiguraci sloupců</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom2">Nastavte 4 sloupce a mezeru 75</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom">Nastavte 5 sloupců a mezeru 90</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom3">Nastavte 3 sloupce a mezeru 60</sys:String>
+<sys:String x:Key="LOCThemeColor">Barva tématu</sys:String>
+<sys:String x:Key="LOCLight">Světlý</sys:String>
+<sys:String x:Key="LOCDark">Tmavý</sys:String>
+<sys:String x:Key="LOCOledblack">OLED černá</sys:String>
+<sys:String x:Key="LOCGrayStation">GrayStation</sys:String>
+<sys:String x:Key="LOCPurpleNight">Fialová noc</sys:String>
+<sys:String x:Key="LOCOceanic">Oceánský</sys:String>
+<sys:String x:Key="LOCForest">Les</sys:String>
+<sys:String x:Key="LOCAmethyst">Ametyst</sys:String>
+<sys:String x:Key="LOCSunset">Západ slunce</sys:String>
+<sys:String x:Key="LOCBloodNight">Krvavá noc</sys:String>
+<sys:String x:Key="LOCCherryBlossom">Třešňový květ</sys:String>
+<sys:String x:Key="LOCSahara">Sahara</sys:String>
+<sys:String x:Key="LOCMintBreeze">Mátový vánek</sys:String>
+<sys:String x:Key="LOCMagma">Magma</sys:String>
+<sys:String x:Key="LOCAccentColor">Barva akcentu</sys:String>
+<sys:String x:Key="LOCPixelBlue">Pixelová modrá</sys:String>
+<sys:String x:Key="LOCAnikiPulse">Aniki Pulse</sys:String>
+<sys:String x:Key="LOCGlacierWhite">Ledovcová bílá</sys:String>
+<sys:String x:Key="LOCLunarSilver">Měsíční stříbrná</sys:String>
+<sys:String x:Key="LOCEarthBrown">Země hnědá</sys:String>
+<sys:String x:Key="LOCCrimsonStrike">Purpurový úder</sys:String>
+<sys:String x:Key="LOCBurntOrange">Spálená oranžová</sys:String>
+<sys:String x:Key="LOCSolarGold">Sluneční zlatá</sys:String>
+<sys:String x:Key="LOCPeachSplash">Broskvový výbuch</sys:String>
+<sys:String x:Key="LOCSakuraPink">Sakura růžová</sys:String>
+<sys:String x:Key="LOCNeonGreen">Neonová zelená</sys:String>
+<sys:String x:Key="LOCSoftMint">Jemná máta</sys:String>
+<sys:String x:Key="LOCRoyalPurple">Královská fialová</sys:String>
+<sys:String x:Key="LOCDeepNavy">Hluboká námořnická</sys:String>
+<sys:String x:Key="LOCOceanicTeal">Oceánská modrozelená</sys:String>
+<sys:String x:Key="LOCSkyBlue">Nebeská modrá</sys:String>
+<sys:String x:Key="LOCCosmicCyan">Kosmická tyrkysová</sys:String>
 
 </ResourceDictionary>

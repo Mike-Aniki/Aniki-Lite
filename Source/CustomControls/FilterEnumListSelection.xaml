@@ -7,7 +7,7 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type FilterEnumListSelection}">
                     <DockPanel Width="{DynamicResource FilterPanelWidth}"
-                               Background="{DynamicResource OverlayMenuBackgroundBrush}"
+                               Background="{DynamicResource OverlayMenu}"
                                x:Name="PART_MenuHost" HorizontalAlignment="Left">
                         <ButtonEx DockPanel.Dock="Top" Margin="15,5,15,5" BorderThickness="2"                                                             
                                   x:Name="PART_ButtonBack">

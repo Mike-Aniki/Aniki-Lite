@@ -64,7 +64,36 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
-	
-    
+
+    <Style x:Key="IntroVideo" TargetType="ContentControl">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <MediaElement x:Name="IntroVideoElement" Source="{ThemeFile '/Startup Video/IntroVideo.mp4'}" SnapsToDevicePixels="True" Stretch="UniformToFill" HorizontalAlignment="Center"
+                        UnloadedBehavior="Close">
+                        <MediaElement.Style>
+                            <Style TargetType="MediaElement">
+                                <Setter Property="Opacity" Value="1" />
+                                <Style.Triggers>
+                                    <EventTrigger RoutedEvent="MediaElement.MediaEnded">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation Storyboard.TargetProperty="Opacity" FillBehavior="HoldEnd" Duration="0:0:0.5" From="1" To="0" />
+                                                <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)">
+                                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Collapsed}" />
+                                                </ObjectAnimationUsingKeyFrames>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </MediaElement.Style>
+                    </MediaElement>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
 </ResourceDictionary>

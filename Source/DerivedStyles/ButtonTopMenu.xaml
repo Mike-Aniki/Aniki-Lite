@@ -12,11 +12,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <Border Background="{DynamicResource ButtonBrushBackground}"
+                        <Border Background="{DynamicResource ButtonFocusBrushBackground}"
                             x:Name="MainBorder" CornerRadius="5" Visibility="Collapsed"/>
                         <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <ContentPresenter />
                     </Grid>
@@ -49,11 +49,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <Border Background="{DynamicResource ButtonBrushBackground}"
+                        <Border Background="{DynamicResource ButtonFocusBrushBackground}"
                             x:Name="MainBorder" CornerRadius="5" Visibility="Collapsed"/>
                         <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <TextBlock x:Name="WrongFilter" Text="&#xeead;" FontFamily="{StaticResource FontIcoFont}"
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
@@ -61,6 +61,56 @@
                         <TextBlock x:Name="WrongFilter2" Text="&#xef76;" FontFamily="{StaticResource FontIcoFont}" Visibility="Visible"
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
                                                    Foreground="{DynamicResource TextBrush}" Height="65" FontSize="60" />
+                        <ContentPresenter />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="WrongFilter" />
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="WrongFilter2" />
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="WrongFilter" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=FilterButton, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FakeStorageButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border Background="{DynamicResource ButtonFocusBrushBackground}"
+                            x:Name="MainBorder" CornerRadius="5" Visibility="Collapsed"/>
+                        <Border x:Name="BorderFocus" Margin="-3"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
+                        <TextBlock x:Name="WrongFilter" Text="&#xeead;" FontFamily="{StaticResource FontIcoFont}"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
+                                                   Foreground="{DynamicResource TextBrush}" Height="80" FontSize="75" Visibility="Collapsed" />
+                        <StackPanel x:Name="WrongFilter2" Orientation="Horizontal" Margin="0,5,0,15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Image RenderOptions.BitmapScalingMode="Fant" Height="120" Margin="2,12,2,2"
+									   Source="{DynamicResource MoDataIcon}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                        </StackPanel>
                         <ContentPresenter />
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -98,11 +148,11 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <Border Background="{DynamicResource ButtonBrushBackground}"
+                        <Border Background="{DynamicResource ButtonFocusBrushBackground}"
                             x:Name="MainBorder" CornerRadius="5" Visibility="Collapsed"/>
                         <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <ContentPresenter />
                     </Grid>
@@ -133,16 +183,17 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="Width" Value="80"/>
         <Setter Property="Height" Value="80"/>
+        <Setter Property="Visibility" Value="Visible"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <Border Background="Transparent"
+                        <Border Background="{DynamicResource ButtonFocusBrushBackground}"
                             x:Name="MainBorder" CornerRadius="5" Visibility="Collapsed"/>
-                        <Border x:Name="BorderFocus" Margin="0"
+                        <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
-                                BorderThickness="4" Visibility="Collapsed"/>
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
                         <ContentPresenter />
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -156,6 +207,9 @@
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
 
                         </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=FilterButton, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -199,7 +253,7 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="Background" Value="White" TargetName="MainBorder" />
-                            <Setter Property="Foreground" Value="{DynamicResource OverlayMenuBackgroundBrush}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource OverlayMenu}"/>
                             <!--Setter Property="Visibility" TargetName="WhiteImage" Value="Collapsed"/-->
                             <Setter Property="Visibility" TargetName="DarkImage" Value="Visible"/>
                             <Setter Property="Visibility" TargetName="Text" Value="Visible"/>

@@ -10,34 +10,36 @@
         <Setter Property="VerticalAlignment" Value="Center" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Focusable" Value="False" />
-        <Setter Property="Width" Value="450" />
+        <Setter Property="Width" Value="600" />
         <!-- Définition du modèle de contrôle -->
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="CheckBoxEx">
                     <!-- Contenu principal du modèle -->
-                    <Grid x:Name="GridBox">
-                        <!-- Style du conteneur principal -->
+                    <Grid x:Name="GridBox" RenderTransformOrigin="0.5,0.5">
+                        <Grid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform x:Name="ScaleTransform" ScaleX="1" ScaleY="1" />
+                                <TranslateTransform x:Name="FocusTransform" X="0" Y="0" />
+                            </TransformGroup>
+                        </Grid.RenderTransform>
                         <Grid.Style>
                             <Style TargetType="Grid">
-                                <Setter Property="Margin" Value="0" />
-                                <Setter Property="Height" Value="260" />
+                                <Setter Property="Margin" Value="10,0,10,0" />
                                 <Setter Property="Background" Value="Transparent" />
                                 <Style.Triggers>
                                 </Style.Triggers>
                             </Style>
                         </Grid.Style>
-                        <!-- Bordure clignotante pour le menu -->
-                        <Border x:Name="FlashMenuBorder" Margin="1" BorderThickness="5" Opacity="0" CornerRadius="5"
-                                Style="{DynamicResource AnimatedBorderBrush3}" Tag="False"  Visibility="Collapsed" >
-                        </Border>
+                       
+                       
                         <!-- Bordure principale -->
                         <Border x:Name="Border" Margin="-3" BorderThickness="5" Opacity="1" CornerRadius="5"
-                                Background="{DynamicResource GlyphBrush}" Visibility="Visible" >
+                                Background="{DynamicResource BorderGameBrush}" Visibility="Visible" >
                         </Border>
                         <!--Bordure de selection -->
                         <Border x:Name="MainBorder" Margin="-3" BorderThickness="5" Opacity="1" CornerRadius="5"
-                                Background="{DynamicResource ButtonBrushSetting}" Tag="False"  Visibility="Collapsed" >
+                                Background="{DynamicResource ColorBorderBrush}" Tag="False"  Visibility="Collapsed" >
                         </Border>                       
                       
                         <!-- Icône de filtre -->
@@ -76,7 +78,7 @@
                         </Image>
                         <!-- Texte de contenu -->
                         <TextBlock x:Name="TextContent" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center"
-                                   FontFamily="Lato Bold" Foreground="#eaeaea" TextAlignment="Center" >
+                                   FontFamily="Segoe Ui SemiBold" Foreground="#eaeaea" TextAlignment="Center" >
                             <TextBlock.Style>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -111,6 +113,38 @@
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Collapsed" TargetName="Border" />
                             <Setter Property="Opacity" Value="1" TargetName="Rien" />
+                            <Trigger.EnterActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" To="1.04" Duration="0:0:0.35">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" To="1.04" Duration="0:0:0.35">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleX" To="1" Duration="0:0:0.25">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation Storyboard.TargetName="ScaleTransform" Storyboard.TargetProperty="ScaleY" To="1" Duration="0:0:0.25">
+                                            <DoubleAnimation.EasingFunction>
+                                                <QuadraticEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
                         </Trigger>
                         <!-- Déclencheur lorsque le contrôle perd le focus -->
                         <Trigger Property="IsFocused" Value="False">
@@ -120,13 +154,11 @@
                         </Trigger>
                         <!-- Déclencheur lorsque le contrôle est coché -->
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Tag" Value="True" TargetName="FlashMenuBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="GridBox" />
                             <Setter Property="Opacity" Value="1" TargetName="TextContent" />
                             <Setter Property="Opacity" Value="1" TargetName="Filter" />
                             <Setter Property="Opacity" Value="1" TargetName="Rien" />
                             <Setter Property="Visibility" Value="Collapsed" TargetName="Border" />
-                            <Setter Property="Visibility" Value="Visible" TargetName="FlashMenuBorder" />
                         </Trigger>
                         <!-- Déclencheur lorsque la souris survole le contrôle -->
                         <Trigger Property="IsMouseOver" Value="True">
@@ -181,12 +213,13 @@
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.Template>
-                            <!-- Modèle pour afficher le contenu dans un ScrollViewer -->
                             <ControlTemplate>
-                                <ScrollViewer Focusable="False"
-                                              HorizontalScrollBarVisibility="Disabled"
-                                              VerticalScrollBarVisibility="Disabled"
-                                              CanContentScroll="True">
+                                <ScrollViewer x:Name="PART_ScrollViewer"
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Disabled"
+                      Focusable="False"
+                      CanContentScroll="False"
+                      Padding="0,0,0,10">
                                     <ItemsPresenter />
                                 </ScrollViewer>
                             </ControlTemplate>

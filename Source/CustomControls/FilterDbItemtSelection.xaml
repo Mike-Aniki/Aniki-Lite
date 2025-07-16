@@ -3,36 +3,73 @@
 
     <Style TargetType="{x:Type FilterDbItemtSelection}">
         <Setter Property="Focusable" Value="False" />
+        <Setter Property="Margin" Value="-380,0,0,0" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type FilterDbItemtSelection}">
-                    <DockPanel Width="{DynamicResource FilterPanelWidth}"
-                               Background="{DynamicResource OverlayMenuBackgroundBrush}"
-                               x:Name="PART_MenuHost">
-                        <ButtonEx DockPanel.Dock="Top" Margin="15,5,15,5" BorderThickness="2"
+                    <Border Background="{DynamicResource OverlayMenu}" Margin="-10,40,0,40"  CornerRadius="5" Grid.ColumnSpan="4" Height="Auto"  BorderBrush="{DynamicResource BorderWindowBrush}" BorderThickness="3" HorizontalAlignment="Left"  MinWidth="400">
+
+                        <DockPanel Background="Transparent" x:Name="PART_MenuHost">
+                            <StackPanel Orientation="Vertical">
+
+                                <Border Background="{DynamicResource ButtonFocusBrushBackground}" >
+                                    <StackPanel Orientation="Vertical" >
+                                        <ButtonEx DockPanel.Dock="Top" Margin="15,5,15,5"  Background="Transparent"
                                   x:Name="PART_ButtonBack">
-                            <Button.Content>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="&#xeab5;" FontFamily="{StaticResource FontIcoFont}"
+                                            <Button.Content>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="&#xeab5;" FontFamily="{StaticResource FontIcoFont}"
                                                FontSize="28" VerticalAlignment="Center"
                                                Margin="0,0,10,0" />
-                                    <TextBlock Text="{Binding Title}"
+                                                    <TextBlock Text="{Binding Title}"
                                                VerticalAlignment="Center"
                                                Style="{StaticResource TextBlockBaseStyle}"/>
-                                </StackPanel>
-                            </Button.Content>
-                        </ButtonEx>
+                                                </StackPanel>
+                                            </Button.Content>
+                                        </ButtonEx>
 
-                        <ButtonEx Content="{DynamicResource LOCClearLabel}" DockPanel.Dock="Top"
-                                  Margin="15,5,15,5" BorderThickness="2"
+                                        <ButtonEx Content="{DynamicResource LOCClearLabel}" DockPanel.Dock="Top" Background="Transparent"
+                                  Margin="15,5,15,5" 
                                   x:Name="PART_ButtonClear"/>
+                                    </StackPanel>
+                            </Border>
 
-                        <ItemsControlEx x:Name="PART_ItemsHost"
+                            <ItemsControlEx x:Name="PART_ItemsHost"
                                         DockPanel.Dock="Top" Focusable="False"
                                         KeyboardNavigation.DirectionalNavigation="Once" />
-                    </DockPanel>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="False">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.3" To="-380,0,0,0">
+                                <ThicknessAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </ThicknessAnimation.EasingFunction>
+                            </ThicknessAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.3" To="0,0,0,0">
+                                <ThicknessAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut" />
+                                </ThicknessAnimation.EasingFunction>
+                            </ThicknessAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 </ResourceDictionary>

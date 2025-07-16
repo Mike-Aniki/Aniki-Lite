@@ -3,14 +3,15 @@
 
     <Style x:Key="GameMenuButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
         <Setter Property="Margin" Value="10" />
+        <Setter Property="Background" Value="Transparent" />
     </Style>
 
     <Style x:Key="GameMenuBorder" TargetType="Border">
         <Setter Property="CornerRadius" Value="5" />
         <Setter Property="Width" Value="400" />
-        <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
+        <Setter Property="Background" Value="{DynamicResource OverlayMenu}" />
         <Setter Property="BorderBrush"  Value="{DynamicResource TextBrush}" />
-        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="BorderThickness" Value="3" />
     </Style>
 
     <Style x:Key="GameMenuHeaderText" BasedOn="{StaticResource TextBlockBaseStyle}" TargetType="TextBlock" >
@@ -18,7 +19,7 @@
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Padding" Value="15,15,15,15" />
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBrushBackground}" />
     </Style>
 
     <DataTemplate x:Key="GameMenuHeaderTemplate">

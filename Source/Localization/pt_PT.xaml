@@ -3,15 +3,84 @@
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
 
-<sys:String x:Key="LOCPlayTrailerByDefault">Reprodução automática do trailer</sys:String>
-<sys:String x:Key="LOCThemeColor">Cor do tema</sys:String>
-<sys:String x:Key="LOCDark">Escuro</sys:String>
-<sys:String x:Key="LOCLight">Claro</sys:String>
 <sys:String x:Key="LOCUserName">Nome de utilizador</sys:String>
-<sys:String x:Key="LOCViewTrophies">Texto para o botão "View Trophies"</sys:String>
-<sys:String x:Key="LOCHideTrophy">Texto para o botão "Hide Trophies"</sys:String>
-<sys:String x:Key="LOCViewDetails">Texto para o botão "View details"</sys:String>
-<sys:String x:Key="LOCHideDetails">Texto para o botão "Hide Details"</sys:String>
+<sys:String x:Key="LOCViewTrophies">Troféus</sys:String>
+<sys:String x:Key="LOCHideTrophy">Fechar troféus</sys:String>
+<sys:String x:Key="LOCViewDetails">Detalhes</sys:String>
+<sys:String x:Key="LOCHideDetails">Fechar detalhes</sys:String>
+<sys:String x:Key="LOCReturnGameNP">Voltar ao jogo</sys:String>
+<sys:String x:Key="LOCExitGameNP">Sair do jogo</sys:String>
+<sys:String x:Key="LOCNowPlayingNP">Em jogo desde</sys:String>
+<sys:String x:Key="LOCStopmonitoring">Parar monitorização</sys:String>
+<sys:String x:Key="LOCPress">Pressionar</sys:String>
+<sys:String x:Key="LocTotalTrophiesUnlocked">Desbloqueados</sys:String>
+<sys:String x:Key="LocLockedAchievements">Conquistas bloqueadas</sys:String>
+<sys:String x:Key="LocUnlockedAchievements">Conquistas desbloqueadas</sys:String>
+<sys:String x:Key="LOCNoDLC">NENHUM DLC DISPONÍVEL</sys:String>
+<sys:String x:Key="LOCNoCheckDLC">Sem DLC ou dados desatualizados do CheckDLC</sys:String>
+<sys:String x:Key="LOCDLC">DLC</sys:String>
+<sys:String x:Key="LOCHideDLC">Fechar DLC</sys:String>
+<sys:String x:Key="LOCInGameOptions">Em jogo</sys:String>
+<sys:String x:Key="LocFree">Livre: </sys:String>
+<sys:String x:Key="LocTotal">Total: </sys:String>
+<sys:String x:Key="LocClosing">A encerrar</sys:String>
+<sys:String x:Key="LOCShowPlatform">Mostrar plataforma na capa</sys:String>
+<sys:String x:Key="LocNetworkConnectivity">Conectividade de rede</sys:String>
+<sys:String x:Key="LocStorage">Armazenamento</sys:String>
+<sys:String x:Key="LOCRatio">Proporção do ecrã</sys:String>
+<sys:String x:Key="LOCAvatar">Avatar</sys:String>
+<sys:String x:Key="LOCLogoOnMain">Mostrar logótipo na vista principal</sys:String>
+<sys:String x:Key="LOCDetailsAuto">Mostrar detalhes por defeito</sys:String>
+<sys:String x:Key="LOCAnimationBackground">Animação de fundo</sys:String>
+<sys:String x:Key="LOCPlayTrailerByDefault">Reprodução automática de trailer</sys:String>
+<sys:String x:Key="LOCTrophiesBanner">Mostrar faixa de troféus</sys:String>
+<sys:String x:Key="LOCPlatinumOnTop">Troféu de platina no topo</sys:String>
+<sys:String x:Key="LOCLocalClock">Formato do relógio (Ligado = 24H / Desligado = 12H)</sys:String>
+<sys:String x:Key="LOCModePerf">Modo de desempenho</sys:String>
+<sys:String x:Key="LOCShowHelpMenu">Mostrar ajuda no menu principal</sys:String>
+<sys:String x:Key="LOCShowParteonMenu">Mostrar Patreon no menu principal</sys:String>
+<sys:String x:Key="LOCShowKoFiMenu">Mostrar Ko-fi no menu principal</sys:String>
+<sys:String x:Key="LOCChangeView">Mudar vista</sys:String>
+<sys:String x:Key="LOCShowController">Mostrar comandos na parte inferior</sys:String>
+<sys:String x:Key="LOCWrongSetting">CONFIGURAÇÕES INVÁLIDAS DETETADAS</sys:String>
+<sys:String x:Key="LOCWrongSettingText1">O Aniki detetou uma configuração de colunas inválida</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom2">Definir 4 colunas e espaçamento de 75</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom">Definir 5 colunas e espaçamento de 90</sys:String>
+<sys:String x:Key="LOCWrongSettingTextBottom3">Definir 3 colunas e espaçamento de 60</sys:String>
+<sys:String x:Key="LOCThemeColor">Cor do tema</sys:String>
+<sys:String x:Key="LOCLight">Claro</sys:String>
+<sys:String x:Key="LOCDark">Escuro</sys:String>
+<sys:String x:Key="LOCOledblack">Preto OLED</sys:String>
+<sys:String x:Key="LOCGrayStation">GrayStation</sys:String>
+<sys:String x:Key="LOCPurpleNight">Noite Púrpura</sys:String>
+<sys:String x:Key="LOCOceanic">Oceânico</sys:String>
+<sys:String x:Key="LOCForest">Floresta</sys:String>
+<sys:String x:Key="LOCAmethyst">Ametista</sys:String>
+<sys:String x:Key="LOCSunset">Pôr do sol</sys:String>
+<sys:String x:Key="LOCBloodNight">Noite Sangrenta</sys:String>
+<sys:String x:Key="LOCCherryBlossom">Flor de cerejeira</sys:String>
+<sys:String x:Key="LOCSahara">Saara</sys:String>
+<sys:String x:Key="LOCMintBreeze">Brisa de menta</sys:String>
+<sys:String x:Key="LOCMagma">Magma</sys:String>
+<sys:String x:Key="LOCAccentColor">Cor de destaque</sys:String>
+<sys:String x:Key="LOCPixelBlue">Azul Pixel</sys:String>
+<sys:String x:Key="LOCAnikiPulse">Aniki Pulse</sys:String>
+<sys:String x:Key="LOCGlacierWhite">Branco Glaciar</sys:String>
+<sys:String x:Key="LOCLunarSilver">Prata Lunar</sys:String>
+<sys:String x:Key="LOCEarthBrown">Castanho Terra</sys:String>
+<sys:String x:Key="LOCCrimsonStrike">Golpe Carmesim</sys:String>
+<sys:String x:Key="LOCBurntOrange">Laranja Queimado</sys:String>
+<sys:String x:Key="LOCSolarGold">Ouro Solar</sys:String>
+<sys:String x:Key="LOCPeachSplash">Toque de Pêssego</sys:String>
+<sys:String x:Key="LOCSakuraPink">Rosa Sakura</sys:String>
+<sys:String x:Key="LOCNeonGreen">Verde Néon</sys:String>
+<sys:String x:Key="LOCSoftMint">Menta Suave</sys:String>
+<sys:String x:Key="LOCRoyalPurple">Roxo Real</sys:String>
+<sys:String x:Key="LOCDeepNavy">Azul Marinho</sys:String>
+<sys:String x:Key="LOCOceanicTeal">Verde Oceânico</sys:String>
+<sys:String x:Key="LOCSkyBlue">Azul Céu</sys:String>
+<sys:String x:Key="LOCCosmicCyan">Ciano Cósmico</sys:String>
+
 
 
 

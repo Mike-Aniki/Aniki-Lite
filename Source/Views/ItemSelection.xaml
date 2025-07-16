@@ -4,40 +4,132 @@
 
     <Style x:Key="ItemSelectionButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
         <Setter Property="Margin" Value="10" />
-        <Setter Property="ContentTemplate">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Template">
             <Setter.Value>
-                <DataTemplate>
-                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}" TextTrimming="CharacterEllipsis"
-                               Text="{Binding}" FontSize="28" />
-                </DataTemplate>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">
+                        <TextBlock x:Name="Text" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   Margin="{TemplateBinding Padding}"
+                                   FontSize="28">                            
+                                <ContentPresenter />
+                        </TextBlock>
+
+                        <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                x:Name="BorderStandard" />
+
+                        <Border x:Name="BorderFocus" Margin="-3"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Text" />
+
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
     <Style x:Key="ItemSelectionCheckBox" BasedOn="{StaticResource {x:Type CheckBoxEx}}" TargetType="CheckBoxEx">
         <Setter Property="Margin" Value="5" />
-        <Setter Property="ContentTemplate">
+         <Setter Property="Template">
             <Setter.Value>
-                <DataTemplate>
-                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}" TextTrimming="CharacterEllipsis"
-                               Text="{Binding}" FontSize="28" />
-                </DataTemplate>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Border x:Name="Box" Background="{DynamicResource SelectionBrush}"
+                                    VerticalAlignment="Center" CornerRadius="5"
+                                    BorderThickness="2" BorderBrush="{DynamicResource TextBrush}"
+                                    Grid.Column="0" Margin="0,0,10,0" Width="24" Height="24">
+                                <TextBlock x:Name="CheckIcon"
+                                   Text="&#xec4b;"
+                                   FontFamily="{DynamicResource FontIcoFont}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Visibility="Collapsed"/>
+                            </Border>
+                            <TextBlock x:Name="Text" Style="{DynamicResource TextBlockBaseStyle}"
+                                        FontSize="28"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1" TextTrimming="WordEllipsis">
+                                <ContentPresenter RecognizesAccessKey="True" />
+                            </TextBlock>
+                        </Grid>
+                        <Border x:Name="BorderFocus" Margin="-3" CornerRadius="5"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
+                                BorderThickness="3" Visibility="Hidden" />
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter TargetName="Box" Property="Background" Value="{DynamicResource TextFocusColorBrush}"/>
+                            <Setter TargetName="CheckIcon" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="Box" Property="BorderBrush" Value="{DynamicResource TextFocusColorBrush}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Text"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Text"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
 
     <Style x:Key="ItemSelectionBorder" TargetType="Border">
         <Setter Property="CornerRadius" Value="5" />
-        <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
-        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Background" Value="{DynamicResource OverlayMenu}" />
+        <Setter Property="BorderThickness" Value="3" />
+        <Setter Property="CornerRadius" Value="5" />
         <Setter Property="BorderBrush" Value="{DynamicResource TextBrush}" />
     </Style>
 
     <Style x:Key="ItemSelectionFooterBorder" TargetType="Border">
-        <Setter Property="Background" Value="{DynamicResource OverlayMenuBackgroundBrush}" />
-        <Setter Property="Padding" Value="0,10,0,10" />
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-
+        <Setter Property="Background" Value="{DynamicResource OverlayMenu}" />
+        <Setter Property="Padding" Value="0,3,0,0" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBrushBackground}" />
     </Style>
 
     <Style x:Key="ItemSelectionFooterButton" BasedOn="{StaticResource {x:Type ButtonEx}}" TargetType="ButtonEx">
@@ -50,6 +142,6 @@
         <Setter Property="HorizontalAlignment" Value="Stretch" />
         <Setter Property="TextWrapping" Value="Wrap" />
         <Setter Property="Padding" Value="15,15,15,15" />
-        <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Background" Value="{DynamicResource ButtonBrushBackground}" />
     </Style>
 </ResourceDictionary>

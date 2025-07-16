@@ -19,16 +19,27 @@
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
-                            <Border Background="{DynamicResource SelectionBrush}"
-                                    VerticalAlignment="Center"
-                                    BorderThickness="2" BorderBrush="{DynamicResource TextBrush}"
-                                    Grid.Column="0" Margin="0,0,10,0" Width="24" Height="24">
-                                <Viewbox x:Name="CheckIcon" Visibility="Collapsed">
-                                    <TextBlock Text="b" FontFamily="Marlett" Foreground="{DynamicResource TextBrush}"
-                                               HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                </Viewbox>
+                            <Border x:Name="Box"
+                            Grid.Column="1"
+                            Width="34" Height="34"
+                            CornerRadius="5"
+                            Background="Transparent"
+                            BorderBrush="{DynamicResource TextBrush}"
+                            BorderThickness="3"
+                            Margin="12,0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Right">
+                                <TextBlock x:Name="CheckIcon"
+                                   Text="&#xec4b;"
+                                   FontFamily="{DynamicResource FontIcoFont}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   Visibility="Collapsed"/>
                             </Border>
-                            <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                            <TextBlock x:Name="Text" Style="{DynamicResource TextBlockBaseStyle}"
                                         FontSize="28"
                                         Foreground="{TemplateBinding Foreground}"
                                         HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
@@ -39,7 +50,7 @@
                         </Grid>
                         <Border x:Name="BorderFocus" Margin="-3" CornerRadius="5"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
                                 BorderThickness="3" Visibility="Hidden" />
 
                     </Grid>
@@ -48,14 +59,19 @@
                             <Setter Property="Opacity" Value="0.5" />
                         </Trigger>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="CheckIcon"  />
+                            <Setter TargetName="Box" Property="Background" Value="{DynamicResource TextFocusColorBrush}"/>
+                            <Setter TargetName="CheckIcon" Property="Visibility" Value="Visible"/>
+                            <Setter TargetName="Box" Property="BorderBrush" Value="{DynamicResource TextFocusColorBrush}"/>
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource ResourceKey=TextFocusColorBrush}" TargetName="Text" />
+                            
+
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                         </Trigger>
                     </ControlTemplate.Triggers>
@@ -64,7 +80,136 @@
         </Setter>
     </Style>
 
-   
+
+    <Style x:Key="MoDataButtonBack" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="5,5,12,5" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border CornerRadius="5" Opacity="0.8" Background="{DynamicResource OverlayMenu}" x:Name="MainBackground"/>
+                            <Border x:Name="BorderFocus" Margin="-1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="Text1"   TextAlignment="Center" Text="3" FontFamily="Marlett" FontSize="28" Margin="0,5,0,0" Foreground="{TemplateBinding Foreground}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1" />
+                                <TextBlock  x:Name="Text2" Margin="0,5,10,5" Style="{DynamicResource TextBlockBaseStyle}" TextAlignment="Center"
+
+                                        FontSize="28"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1" TextTrimming="WordEllipsis" Text="{DynamicResource LOCBackLabel}">
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+                       
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SuccessButtonBack" TargetType="CheckBox">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="5,5,12,5" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid Margin="{TemplateBinding Padding}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Border CornerRadius="5" Opacity="0.8" Background="Transparent" x:Name="MainBackground"/>
+                            <Border x:Name="BorderFocus" Margin="-1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock x:Name="Text1"   TextAlignment="Center" Text="3" FontFamily="Marlett" FontSize="28" Margin="0,5,0,0" Foreground="{TemplateBinding Foreground}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1" />
+                                <TextBlock  x:Name="Text2" Margin="0,5,10,5" Style="{DynamicResource TextBlockBaseStyle}" TextAlignment="Center" 
+                                        FontSize="28"
+                                        Foreground="{TemplateBinding Foreground}"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                        Grid.Column="1" TextTrimming="WordEllipsis" Text="{DynamicResource LOCBackLabel}">
+                                </TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 
 
     <Style TargetType="CheckBoxEx" BasedOn="{StaticResource {x:Type CheckBox}}">

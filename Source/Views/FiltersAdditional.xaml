@@ -6,28 +6,32 @@
             <Setter.Value>
                
                 <ControlTemplate TargetType="{x:Type FiltersAdditional}">
-                    <Border CornerRadius="5" Background="{DynamicResource OverlayMenuBackgroundBrush}" BorderThickness="12" HorizontalAlignment="Left">
+                    <Border Background="{DynamicResource OverlayMenu}" Margin="-10,40,0,40"  CornerRadius="5" Grid.ColumnSpan="4" Height="Auto"  BorderBrush="{DynamicResource BorderWindowBrush}" BorderThickness="3" HorizontalAlignment="Left"  MinWidth="400">
 
-                        <DockPanel Background="{DynamicResource OverlayMenuBackgroundBrush}"
+                        <DockPanel Background="{DynamicResource OverlayMenu}"
                                 MinWidth="400"
                                 x:Name="PART_MenuHost" HorizontalAlignment="Left">
-                            <ButtonEx BorderThickness="2" DockPanel.Dock="Top"
-                                  Margin="15,5,15,5"
+                            <StackPanel Orientation="Vertical">
+                                <Border Background="{DynamicResource ButtonFocusBrushBackground}">
+                                    <ButtonEx DockPanel.Dock="Top"
+                                  Margin="15,5,15,5" Background="Transparent"
                                   x:Name="PART_ButtonBack">
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="&#xeab5;" FontFamily="{StaticResource FontIcoFont}"
+                                        <Button.Content>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="&#xeab5;" FontFamily="{StaticResource FontIcoFont}"
                                             FontSize="20" VerticalAlignment="Center"
                                             Margin="0,0,10,0" />
-                                        <TextBlock Text="{DynamicResource LOCBackLabel}"
+                                                <TextBlock Text="{DynamicResource LOCBackLabel}"
                                             VerticalAlignment="Center"
                                             Style="{DynamicResource TextBlockBaseStyle}"/>
-                                    </StackPanel>
-                                </Button.Content>
-                            </ButtonEx>
-                            <ItemsControlEx x:Name="PART_ItemsHost"
+                                            </StackPanel>
+                                        </Button.Content>
+                                    </ButtonEx>
+                                </Border>
+                                <ItemsControlEx x:Name="PART_ItemsHost"
                                         DockPanel.Dock="Top" Focusable="False"
                                         KeyboardNavigation.DirectionalNavigation="Once" />
+                            </StackPanel>
                         </DockPanel>
                     </Border>
                 </ControlTemplate>

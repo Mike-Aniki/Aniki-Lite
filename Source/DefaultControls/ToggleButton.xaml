@@ -70,36 +70,24 @@
                 <ControlTemplate TargetType="ToggleButton">
                     <Grid x:Name="MainGrid" Background="Transparent" >
                         <Border CornerRadius="5" Opacity="0.8" Background="{DynamicResource OverlayMenu}" x:Name="MainBackground"/>
-                        <Border x:Name="MainBorder" Margin="-1"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                Tag="False" BorderBrush="{DynamicResource ButtonBrushSetting}"
-                                BorderThickness="3" CornerRadius="5" Visibility="Collapsed" />
+                        
 
                         <Border x:Name="BorderFocus" Margin="-1"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="{DynamicResource Trophy}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center" MaxWidth="210" 
-                                                   Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" Height="48" FontSize="28" />
-                                </StackPanel>
+                         
                                 <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock Text="{DynamicResource Trophy}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center" MaxWidth="210" 
-                                                   Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis"  Height="47" FontSize="28" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock  Text="{DynamicResource Trophy}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text1"  Text="{DynamicResource LOCViewTrophies}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center" MaxWidth="210" 
                                                    Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis"  Height="46" FontSize="28" />
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="{DynamicResource HideTrophy}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text2" Text="{DynamicResource LOCHideTrophy}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
                                                    Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" MaxWidth="210" Height="45.72" FontSize="28" />
                                 </StackPanel>
@@ -115,23 +103,22 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
-                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
-                            <Setter Property="Background" Value="Transparent" TargetName="MainBackground" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
@@ -173,29 +160,19 @@
 
                         <Border x:Name="BorderFocus" Margin="-1"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="DLC" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
-                                                   Foreground="{DynamicResource TextBrush}" Height="48" FontSize="28" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock Text="DLC" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
-                                                   Foreground="{DynamicResource TextBrush}" Height="47" FontSize="28" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock  Text="DLC" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text1" Text="{DynamicResource LOCDLC}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
                                                    Foreground="{DynamicResource TextBrush}" Height="46" FontSize="28" />
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="HIDE DLC" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text2"  Text="{DynamicResource LOCHideDLC}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
                                                    Foreground="{DynamicResource TextBrush}" Height="45.72" FontSize="28" />
                                 </StackPanel>
@@ -215,10 +192,12 @@
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
@@ -228,6 +207,8 @@
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
@@ -269,29 +250,21 @@
 
                         <Border x:Name="BorderFocus" Margin="-1"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="{DynamicResource ViewDetails}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
-                                                   Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" MaxWidth="210" Height="48" FontSize="28" />
-                                </StackPanel>
+                               
+                               
                                 <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock Text="{DynamicResource ViewDetails}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
-                                                   Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" MaxWidth="210" Height="47" FontSize="28" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock  Text="{DynamicResource ViewDetails}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text1" Text="{DynamicResource LOCViewDetails}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
                                                    Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" MaxWidth="210" Height="46" FontSize="28" />
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="{DynamicResource HideDetails}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text2" Text="{DynamicResource LOCHideDetails}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
                                                    Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" MaxWidth="210" Height="45.72" FontSize="28" />
                                 </StackPanel>
@@ -307,23 +280,129 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
-                            <Setter Property="Background" Value="Transparent" TargetName="MainBackground" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
-                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" TargetName="ON" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Visibility" TargetName="OFF" Value="Collapsed"/>
+                        </Trigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed" />
+                                <Condition Binding="{Binding DetailsAuto}" Value="False" />
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="IsChecked" Value="True" />
+                        </MultiDataTrigger>
+             
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SuccessChangeButton" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Padding" Value="5,5,12,5" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="IsChecked" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid x:Name="MainGrid" Background="Transparent" Margin="{TemplateBinding Padding}">
+                        <Border CornerRadius="5" Opacity="0.8" Background="Transparent" x:Name="MainBackground"/>
+
+
+                        <Border x:Name="BorderFocus" Margin="-1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="Text1" 
+                                               Text="{DynamicResource LocLockedAchievements}"
+                                               Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"                                               
+                                               TextAlignment="Center"
+                                               Foreground="{DynamicResource TextBrush}"
+                                               Margin="20,5,20,5"
+                                               FontSize="28" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="Text2" 
+                                               Text="{DynamicResource LocUnlockedAchievements}"
+                                               Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                               HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                               VerticalAlignment="{TemplateBinding VerticalContentAlignment}"                                               
+                                               TextAlignment="Center"
+                                               Foreground="{DynamicResource TextBrush}"
+                                               Margin="20,5,20,5"
+                                               FontSize="28" />
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Style.Triggers>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Opacity" Value="1" TargetName="OFF" />
+                            <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Opacity" Value="1" TargetName="OFF" />
+                            <Setter Property="Opacity" Value="1" TargetName="ON" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text1"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"  TargetName="Text2"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
@@ -343,82 +422,53 @@
         </Setter>
     </Style>
 
-
-    <Style x:Key="SuccessChangeButton" TargetType="ToggleButton">
+    <Style x:Key="SuccessSortButton" TargetType="ToggleButton">
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-        <Setter Property="Foreground" Value="Transparent" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="Height" Value="60" />
-        <Setter Property="Width" Value="60" />
-        <Setter Property="Margin" Value="0" />
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5,5,12,5" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="IsChecked" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ToggleButton">
-                    <Grid x:Name="MainGrid" Background="Transparent" >
-                        <Border CornerRadius="5" Opacity="0.8" Background="{DynamicResource OverlayMenu}" x:Name="MainBackground"/>
-                        <Border x:Name="MainBorder" Margin="-1"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                Tag="False" BorderBrush="{DynamicResource ButtonBrushSetting}"
-                                BorderThickness="3" CornerRadius="5" Visibility="Collapsed" />
+                    <Grid x:Name="MainGrid" Background="Transparent" Margin="{TemplateBinding Padding}">
+                        <Border CornerRadius="5" Opacity="0.8" Background="Transparent" x:Name="MainBackground"/>
+
 
                         <Border x:Name="BorderFocus" Margin="-1"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                            <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
+                            <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="Locked Trophies" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,2,2,14"
-                                                   Foreground="{DynamicResource TextBrush}" Height="48" FontSize="39" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock Text="Locked Trophies" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,2,2,14"
-                                                   Foreground="{DynamicResource TextBrush}" Height="48" FontSize="39" />
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,2,0,0">
-                                    <TextBlock Text="Locked Trophies" Style="{DynamicResource TextBlockBaseStyle}"                                                  
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,2,2,14"
-                                                   Foreground="{DynamicResource TextBrush}" Height="48" FontSize="39" />
+                                    <Image RenderOptions.BitmapScalingMode="Fant" Height="40" Margin="0,0,0,0"
+									   Source="{DynamicResource SortLogo}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </StackPanel>
                             </StackPanel>
-                            <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
+                            <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock Text="Unlocked Trophies" Style="{DynamicResource TextBlockBaseStyle}"                                                   
-                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2,2,2,14"
-                                                   Foreground="{DynamicResource TextBrush}" Height="48" FontSize="39" />
+                                    <Image RenderOptions.BitmapScalingMode="Fant" Height="40" Margin="0,0,0,0"
+									   Source="{DynamicResource SortLogo2}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </StackPanel>
                             </StackPanel>
-                            <StackPanel.Style>
-                                <Style TargetType="StackPanel">
-                                    <Style.Triggers>
-
-                                    </Style.Triggers>
-                                </Style>
-                            </StackPanel.Style>
                         </StackPanel>
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
-                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
-                            <Setter Property="Background" Value="Transparent" TargetName="MainBackground" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
                         </Trigger>
@@ -431,23 +481,9 @@
                         <Trigger Property="IsChecked" Value="False">
                             <Setter Property="Visibility" TargetName="OFF" Value="Collapsed"/>
                         </Trigger>
-                        <Trigger Property="Visibility" Value="Collapsed">
-                            <Setter Property="Focusable" Value="False"/>
-                        </Trigger>
-                        <Trigger Property="Visibility" Value="Hidden">
-                            <Setter Property="Focusable" Value="False"/>
-                        </Trigger>
-                        <Trigger Property="Visibility" Value="Visible">
-                            <Setter Property="Focusable" Value="True"/>
-                        </Trigger>
-                        <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="True">
-                            <Setter Property="Visibility" Value="Collapsed" />
-                        </DataTrigger>
                         <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
-                            <Setter Property="IsChecked" Value="False" />
+                            <Setter Property="IsChecked" Value="True" />
                         </DataTrigger>
-
-
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -475,7 +511,7 @@
 											BorderThickness="3" CornerRadius="5" Visibility="Collapsed" />
                         <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
@@ -513,7 +549,7 @@
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
@@ -523,7 +559,7 @@
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
@@ -564,7 +600,7 @@
 											BorderThickness="3" CornerRadius="5" Visibility="Collapsed" />
                         <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Collapsed"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                             <StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
@@ -603,7 +639,7 @@
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
@@ -613,7 +649,7 @@
                             <Setter Property="Tag" Value="True" TargetName="MainBorder" />
                             <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
                             <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
-                            <Setter Property="Background" Value="{DynamicResource TopBarBackgroundBrush}" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Opacity" Value="1" TargetName="OFF" />
                             <Setter Property="Opacity" Value="1" TargetName="ON" />
@@ -633,6 +669,84 @@
         </Setter>
     </Style>
 
+    <Style x:Key="MoDataButton" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Foreground" Value="Transparent" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="Width" Value="60" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid x:Name="MainGrid" Background="Transparent" >
+                        <Border CornerRadius="5" Opacity="0.4" Background="Transparent" x:Name="MainBackground"/>
+                        <Border x:Name="MainBorder" Opacity="0" Margin="-6"
+										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+											Tag="False"
+											BorderThickness="3" CornerRadius="5" Visibility="Collapsed" />
+                        <Border x:Name="BorderFocus" Margin="-3"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
+                                BorderThickness="3" Visibility="Collapsed"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel x:Name="OFF" Margin="0,5,0,15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image RenderOptions.BitmapScalingMode="Fant" Height="120" Margin="2,12,2,2"
+									   Source="{DynamicResource MoDataIcon}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel x:Name="ON" Orientation="Horizontal" Margin="0,5,0,15" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image RenderOptions.BitmapScalingMode="Fant" Height="120" Margin="2,12,2,2"
+									   Source="{DynamicResource MoDataIcon}"  HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <StackPanel.Style>
+                                <Style TargetType="StackPanel">
+                                    <Style.Triggers>
+
+                                    </Style.Triggers>
+                                </Style>
+                            </StackPanel.Style>
+                        </StackPanel>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Opacity" Value="1" TargetName="OFF" />
+                            <Setter Property="Opacity" Value="1" TargetName="ON" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Opacity" Value="1" TargetName="OFF" />
+                            <Setter Property="Opacity" Value="1" TargetName="ON" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" TargetName="ON" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="False">
+                            <Setter Property="Visibility" TargetName="OFF" Value="Collapsed"/>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
     <Style x:Key="TrailerButtonDetails" TargetType="ToggleButton">
         <Setter Property="IsChecked" Value="{Binding ElementName=ExtraMetadataLoader_VideoLoaderControl_NoControls_Sound, Path=Content.SettingsModel.Settings.IsVideoPlaying, Mode=OneWay, FallbackValue={StaticResource False}}"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}" />
@@ -645,18 +759,7 @@
         <Setter Property="IsChecked" Value="False"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="ToggleButton">
-                    <ControlTemplate.Resources>
-                        <Storyboard x:Key="BorderAnim">
-                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BorderFocus" From="0" To="1" Duration="0:0:0.15" FillBehavior="Stop"/>
-                        </Storyboard>
-                        <Storyboard x:Key="PlayAnimOn">
-                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PlayButton" From="1" To="0" Duration="0:0:0.2" FillBehavior="HoldEnd"/>
-                        </Storyboard>
-                        <Storyboard x:Key="PlayAnimOff">
-                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Storyboard.TargetName="PlayButton" From="0" To="1" Duration="0:0:0.2" FillBehavior="HoldEnd"/>
-                        </Storyboard>
-                    </ControlTemplate.Resources>
+                <ControlTemplate TargetType="ToggleButton">                   
                     <Border BorderBrush="Transparent" CornerRadius="8">
                         <Grid >
                             <Border Name="mask" Background="{TemplateBinding Background}" CornerRadius="8"/>
@@ -665,14 +768,12 @@
                                     <VisualBrush Visual="{Binding ElementName=mask}"/>
                                 </Grid.OpacityMask>
                             </Grid>
-                            <Image x:Name="PlayButton" Opacity="1" RenderOptions.BitmapScalingMode="Fant" Height="95" Source="{ThemeFile 'Images/PlayTrailer.png' }" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Image.Effect>
-                                    <DropShadowEffect BlurRadius="50" ShadowDepth="0"/>
-                                </Image.Effect>
+                            <Image x:Name="PlayButton" Opacity="1" RenderOptions.BitmapScalingMode="Fant" Height="195" Source="{ThemeFile 'Images/PlayTrailer.png' }" HorizontalAlignment="Center" VerticalAlignment="Center">
+                               
                             </Image>
 
                             <Border x:Name="BorderFocus" Margin="0" CornerRadius="5"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
                                 BorderThickness="3" Visibility="Hidden">
                                 <Border.Effect>
                                     <DropShadowEffect ShadowDepth="0" Opacity="1" 
@@ -684,24 +785,16 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Trigger.ExitActions>
-                                <BeginStoryboard Storyboard="{StaticResource PlayAnimOff}"/>
-                            </Trigger.ExitActions>
-                            <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource PlayAnimOn}"/>
-                            </Trigger.EnterActions>
+                            <Setter Property="Visibility" Value="Collapsed" TargetName="PlayButton" />
+
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
-                            <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
-                            </Trigger.EnterActions>
+                            
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
-                            <Trigger.EnterActions>
-                                <BeginStoryboard Storyboard="{StaticResource BorderAnim}"/>
-                            </Trigger.EnterActions>
+                           
                         </Trigger>
                         <DataTrigger Binding="{Binding ElementName=FocusLogic, Path=MinHeight}" Value="1">
                             <Setter Property="Focusable" Value="True"/>
@@ -718,6 +811,79 @@
             
         </Style.Triggers>
     </Style>
+
+    <Style x:Key="WrongChangeToggle" TargetType="ToggleButton">
+		<Setter Property="FocusVisualStyle" Value="{x:Null}" />
+		<Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Height" Value="50" />
+		<Setter Property="Margin" Value="0" />
+		<Setter Property="SnapsToDevicePixels" Value="True" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ToggleButton">
+					<Grid x:Name="MainGrid" Background="{TemplateBinding Background}" >
+						<Border CornerRadius="30" Opacity="0.8" Background="White" x:Name="MainBackground"/>
+						<Border x:Name="MainBorder" Opacity="0" Margin="-5"
+										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+											BorderBrush="Red" Tag="False"
+											BorderThickness="3" CornerRadius="35" Visibility="Collapsed" />
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+							<StackPanel x:Name="OFF" VerticalAlignment="Center" HorizontalAlignment="Center" >
+								<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+									<TextBlock Style="{DynamicResource TextBlockBoldBaseStyle}" Text="{DynamicResource LOCBackToDesktopMode}" FontSize="32" Foreground="Black"/>
+								</StackPanel>
+							</StackPanel>
+							<StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" >
+								<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+									<TextBlock Style="{DynamicResource TextBlockBoldBaseStyle}" FontSize="32" Text="{DynamicResource LOCBackToDesktopMode}" Foreground="Black"/>
+								</StackPanel>
+
+
+							</StackPanel>
+						</StackPanel>
+					</Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+							<Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
+                            <Setter Property="Background" Value="Red" TargetName="MainBackground" />
+							<Setter Property="Opacity" Value="1" TargetName="OFF" />
+							<Setter Property="Opacity" Value="1" TargetName="ON" />
+						</Trigger>
+						<Trigger Property="IsFocused" Value="False">
+							<Setter Property="Opacity" Value="1" TargetName="OFF" />
+							<Setter Property="Opacity" Value="1" TargetName="ON" />
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+							<Setter Property="Foreground" Value="{DynamicResource TextBrushDark}" />
+							<Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+							<Setter Property="Tag" Value="True" TargetName="MainBorder" />
+							<Setter Property="Opacity" Value="1" TargetName="OFF" />
+							<Setter Property="Opacity" Value="1" TargetName="ON" />
+						</Trigger>
+						<Trigger Property="IsChecked" Value="True">
+							<Setter Property="Visibility" TargetName="ON" Value="Collapsed"/>
+						</Trigger>
+						<Trigger Property="IsChecked" Value="False">
+							<Setter Property="Visibility" TargetName="OFF" Value="Collapsed"/>
+						</Trigger>
+						<Trigger Property="IsPressed" Value="True">
+							<Setter Property="IsChecked" Value="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+						</Trigger>
+                        <Trigger Property="IsPressed" Value="False">
+                            <Setter Property="IsChecked" Value="{Binding IsPressed, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
 
     <Style TargetType="ToggleButtonEx" BasedOn="{StaticResource {x:Type ToggleButton}}">
     </Style>

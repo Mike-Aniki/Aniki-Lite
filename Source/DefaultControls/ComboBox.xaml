@@ -13,25 +13,10 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ComboBox">
                     <Grid Background="{TemplateBinding Background}">
-                        <ToggleButton x:Name="ToggleButton" Focusable="False" ClickMode="Press"
-                                      VerticalAlignment="Center" Margin="0,0,12,0"
-                                      IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
-                            <ToggleButton.Template>
-                                <ControlTemplate TargetType="{x:Type ToggleButton}">
-                                    <DockPanel LastChildFill="False" Background="Transparent">
-                                        <Viewbox DockPanel.Dock="Right" Height="20">
-                                            <TextBlock Text="&#xeab2;" FontFamily="{StaticResource FontIcoFont}"
-                                                       Foreground="{DynamicResource TextBrush}"
-                                                       FontSize="28"
-                                                       VerticalAlignment="Center"/>
-                                        </Viewbox>
-                                    </DockPanel>
-                                </ControlTemplate>
-                            </ToggleButton.Template>
-                        </ToggleButton>
+                        
 
                         <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
-                                   FontSize="28"
+                                   FontSize="30"
                                    IsHitTestVisible="False"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -47,8 +32,8 @@
                             <Grid MaxHeight="{TemplateBinding MaxDropDownHeight}"
                                   MinWidth="{TemplateBinding ActualWidth}"
                                   SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
-                                <Border BorderBrush="{DynamicResource ButtonBrushSetting}"                                        
-                                        Background="{DynamicResource SelectionBrush}"
+                                <Border BorderBrush="{DynamicResource ColorBorderBrush}"                                        
+                                        Background="{DynamicResource OverlayMenu}"
                                         BorderThickness="2" CornerRadius="5">
                                     <ScrollViewer HorizontalScrollBarVisibility="Disabled"
                                                   VerticalScrollBarVisibility="Auto">
@@ -63,7 +48,7 @@
                                 BorderThickness="2" Margin="-2" CornerRadius="5" />
 
                         <Border x:Name="BorderFocus" Margin="-3" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
                                 BorderThickness="3" Visibility="Hidden" CornerRadius="5" />
                     </Grid>
                     <ControlTemplate.Triggers>
@@ -71,14 +56,16 @@
                             <Setter Property="Opacity" Value="0.5" />
                         </Trigger>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="TextContent" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="TextContent" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
                         </Trigger>
@@ -109,19 +96,21 @@
 
                         <Border x:Name="BorderFocus" CornerRadius="5"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}"
+                                BorderBrush="{DynamicResource ColorBorderBrush}"
                                 BorderThickness="3" Visibility="Hidden" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="TextContent" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
-                            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="TextContent" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

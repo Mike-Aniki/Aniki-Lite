@@ -17,12 +17,12 @@
                 <ControlTemplate TargetType="Button">
                     <Grid Background="{TemplateBinding Background}">
                         <DockPanel Margin="{TemplateBinding Padding}">
-                            <TextBlock Text="&#xeab8;" FontFamily="{StaticResource FontIcoFont}"
+                            <TextBlock x:Name="Fleche"  Text="&#xeab8;" FontFamily="{StaticResource FontIcoFont}"
                                        DockPanel.Dock="Right"
                                        Foreground="{TemplateBinding Foreground}"
                                        FontSize="28"
                                        VerticalAlignment="Center"/>
-                            <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                            <TextBlock x:Name="Text" Style="{DynamicResource TextBlockBaseStyle}"
                                        DockPanel.Dock="Left"
                                        FontSize="28"
                                        Foreground="{TemplateBinding Foreground}"
@@ -38,17 +38,19 @@
 
                         <Border x:Name="BorderFocus" Margin="-3"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource ButtonBrushSetting}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Hidden" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
+                            <Setter TargetName="Text" Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"/>
+                            <Setter TargetName="Fleche" Property="Foreground" Value="{DynamicResource TextFocusColorBrush}"/>
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="{DynamicResource GlyphBrush}" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
                             <Setter Property="Visibility" Value="Hidden" TargetName="BorderStandard" />
                         </Trigger>
@@ -68,22 +70,20 @@
     <Style x:Key="FilterItemtSelectionStyle" TargetType="CheckBoxEx" BasedOn="{StaticResource {x:Type CheckBoxEx}}">
         <Setter Property="Margin" Value="15,5,15,5" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="HorizontalAlignment" Value="Left" />
-        <Setter Property="KeyboardNavigation.DirectionalNavigation" Value="Cycle" />
-        <Setter Property="FontSize" Value="28" />
     </Style>
 
     <Style x:Key="FilterPanelCheckBoxEx" TargetType="CheckBoxEx" BasedOn="{StaticResource {x:Type CheckBoxEx}}">
         <Setter Property="Margin" Value="15,5,15,5" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+
     </Style>
 
     <Style x:Key="FilterPanelButtonEx" TargetType="ButtonEx" BasedOn="{StaticResource {x:Type ButtonEx}}">
         <Setter Property="Margin" Value="15,5,15,5" />
-        <Setter Property="BorderThickness" Value="2" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
         <Style.Triggers>
             <Trigger Property="Tag" Value="{StaticResource True}">
-                <Setter Property="Foreground" Value="{DynamicResource GlyphLightBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
             </Trigger>
         </Style.Triggers>
     </Style>
@@ -126,8 +126,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Filters}">
-                    <Border Background="{DynamicResource OverlayMenuBackgroundBrush}"
-                            MinWidth="{DynamicResource FilterPanelWidth}">
+                    <Border Background="{DynamicResource OverlayMenu}" Margin="-10,40,0,40"  CornerRadius="5" Grid.ColumnSpan="4" Height="Auto"  BorderBrush="{DynamicResource BorderWindowBrush}" BorderThickness="3" HorizontalAlignment="Left"  MinWidth="400">
                         <ItemsControlEx x:Name="PART_ItemsHost" Focusable="False"
                                         KeyboardNavigation.DirectionalNavigation="Cycle">
                             <ItemsControl.ItemsPanel>
@@ -150,6 +149,34 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="False">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.3" To="-380,0,0,0">
+                                <ThicknessAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseIn" />
+                                </ThicknessAnimation.EasingFunction>
+                            </ThicknessAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin" Duration="0:0:0.3" To="0,0,0,0">
+                                <ThicknessAnimation.EasingFunction>
+                                    <CubicEase EasingMode="EaseOut" />
+                                </ThicknessAnimation.EasingFunction>
+                            </ThicknessAnimation>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.2" From="0" To="1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="DockPanel" x:Key="DockPanelStyle">

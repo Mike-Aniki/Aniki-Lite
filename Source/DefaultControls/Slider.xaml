@@ -39,8 +39,8 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Slider">
                     <Grid Background="{TemplateBinding Background}">
-                        <Border Height="6" Background="{DynamicResource ControlBackgroundBrush}" />
-                        <Border Height="6" VerticalAlignment="Center" HorizontalAlignment="Left"
+                        <Border Height="6" Background="{DynamicResource TextBrush}" />
+                        <Border x:Name="Ligne" Height="6" VerticalAlignment="Center" HorizontalAlignment="Left"
                                 Background="{DynamicResource TextBrush}" 
                                 Width="{Binding ActualWidth, ElementName=ButtonDecrease}" />
                         <Track Grid.Row="1" x:Name="PART_Track" Margin="0,3,0,3" >
@@ -60,13 +60,15 @@
                             </Track.IncreaseRepeatButton>
                         </Track>
                         <Border x:Name="BorderFocus" Margin="-5" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                BorderBrush="{DynamicResource TextBrush}" CornerRadius="5"
+                                BorderBrush="{DynamicResource ColorBorderBrush}" CornerRadius="5"
                                 BorderThickness="3" Visibility="Hidden" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsFocused" Value="True">
-                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" />
                             <Setter Property="Visibility" Value="Visible" TargetName="BorderFocus" />
+                            <Setter Property="Background" TargetName="Ligne" Value="{DynamicResource TextFocusColorBrush}" />
+
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
