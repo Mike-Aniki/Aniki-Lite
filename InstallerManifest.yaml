@@ -67,3 +67,15 @@ Packages:
     - Controller support added, B to close the trophies view, X to switch views, and more
     - Fully updated multi-language translations.
     - and much more to discover.
+  - Version: 2.1
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2025-07-18
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v2.1/Aniki_Lite_2_1.pthm
+    Changelog:
+    - Fixed initial focus in the Details panel, now correctly targets the "Options" button instead of the description text.
+    - Corrected the behavior of the Show details by default option (was inverted).
+    - Fixed focus issue in GameStatus view, background elements stayed interactive, causing unwanted clicks.
+    - Colors for GameStatus buttons are now consistent with other UI buttons in the theme.
+    - Removed the user avatar and name from the Details view to improve visual clarity and reduce clutter.
+    - Added a notice in the Details view to inform users about installing the MoData extension.
+    - Changed the view switch button from X to Y to avoid conflict with users who use X to open the Details view.
