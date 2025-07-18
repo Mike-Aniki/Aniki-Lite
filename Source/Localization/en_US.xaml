@@ -21,9 +21,11 @@
 	<sys:String x:Key="LOCDLC">DLC</sys:String>
 	<sys:String x:Key="LOCHideDLC">Close DLC</sys:String>
 	<sys:String x:Key="LOCInGameOptions">In-Game</sys:String>
-	<sys:String x:Key="LocFree">Free : </sys:String>
-	<sys:String x:Key="LocTotal">Total : </sys:String>
+	<sys:String x:Key="LocFree">available</sys:String>
+	<sys:String x:Key="LocTotal">total</sys:String>
 	<sys:String x:Key="LocClosing">Closing</sys:String>
+	<sys:String x:Key="LOCInstallMoData">Install MoData plugin to view disk usage</sys:String>
+
 	
 	<sys:String x:Key="LOCShowPlatform">Show Platform on game cover</sys:String>
 	<sys:String x:Key="LocNetworkConnectivity">NetworkConnectivity</sys:String>

@@ -44,6 +44,11 @@
         <Setter Property="InputHint" Value="{DynamicResource ButtonPromptX}" />
     </Style>
 
+    <!-- Style pour le bouton Y -->
+    <Style x:Key="IconYButton" TargetType="ButtonEx" BasedOn="{StaticResource ButtonBottomMenu}">
+        <Setter Property="InputHint" Value="{DynamicResource ButtonPromptY}" />
+    </Style>
+
     <!-- Style pour le bouton Left Bumper (LB) -->
     <Style x:Key="IconLeftBumperButton" TargetType="ButtonEx" BasedOn="{StaticResource ButtonBottomMenu}">
         <Setter Property="InputHint" Value="{DynamicResource ButtonPromptLB}" />

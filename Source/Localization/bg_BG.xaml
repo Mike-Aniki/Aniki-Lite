@@ -2,7 +2,7 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-
+<sys:String x:Key="LOCInstallMoData">Инсталирай плъгина MoData, за да видиш използването на диска</sys:String>
 <sys:String x:Key="LOCUserName">Потребителско име</sys:String>
 <sys:String x:Key="LOCViewTrophies">Трофеи</sys:String>
 <sys:String x:Key="LOCHideTrophy">Затвори трофеите</sys:String>
@@ -21,8 +21,8 @@
 <sys:String x:Key="LOCDLC">DLC</sys:String>
 <sys:String x:Key="LOCHideDLC">Затвори DLC</sys:String>
 <sys:String x:Key="LOCInGameOptions">В игра</sys:String>
-<sys:String x:Key="LocFree">Свободно : </sys:String>
-<sys:String x:Key="LocTotal">Общо : </sys:String>
+<sys:String x:Key="LocFree">Свободно</sys:String>
+<sys:String x:Key="LocTotal">Общо</sys:String>
 <sys:String x:Key="LocClosing">Затваряне</sys:String>
 <sys:String x:Key="LOCShowPlatform">Покажи платформата върху обложката</sys:String>
 <sys:String x:Key="LocNetworkConnectivity">Мрежова връзка</sys:String>

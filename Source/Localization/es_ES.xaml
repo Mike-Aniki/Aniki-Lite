@@ -2,7 +2,7 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
-
+<sys:String x:Key="LOCInstallMoData">Instala el plugin MoData para ver el uso del disco</sys:String>
 <sys:String x:Key="LOCUserName">Nombre de usuario</sys:String>
 <sys:String x:Key="LOCViewTrophies">Trofeos</sys:String>
 <sys:String x:Key="LOCHideTrophy">Cerrar trofeos</sys:String>
@@ -21,8 +21,8 @@
 <sys:String x:Key="LOCDLC">DLC</sys:String>
 <sys:String x:Key="LOCHideDLC">Cerrar DLC</sys:String>
 <sys:String x:Key="LOCInGameOptions">En juego</sys:String>
-<sys:String x:Key="LocFree">Libre: </sys:String>
-<sys:String x:Key="LocTotal">Total: </sys:String>
+<sys:String x:Key="LocFree">disponibles</sys:String>
+<sys:String x:Key="LocTotal">en total</sys:String>
 <sys:String x:Key="LocClosing">Cerrando</sys:String>
 <sys:String x:Key="LOCShowPlatform">Mostrar plataforma en la carátula</sys:String>
 <sys:String x:Key="LocNetworkConnectivity">Conectividad de red</sys:String>

@@ -763,7 +763,7 @@ Variables:
         Title: Show Details pannel by default
         LocKey: LOCDetailsAuto
         Type: Boolean
-        Default: True
+        Default: False
         NeedRestart: True
     TrailerPlayAuto:
         Title: Automatic trailer playback

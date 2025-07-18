@@ -20,12 +20,11 @@
     <Style x:Key="ProgressBarCustom" BasedOn="{StaticResource {x:Type ProgressBar}}"
         TargetType="ProgressBar">
         <Setter Property="SnapsToDevicePixels" Value="True" />
-        <Setter Property="Background" Value="{DynamicResource ControlBackgroundDarkBrush}" />
-        <Setter Property="Foreground" Value="{DynamicResource GlyphBrush}" />
+        <Setter Property="Background" Value="#1A1A1A80" />
+        <Setter Property="Foreground" Value="#1FBFFF" />
         <Setter Property="FontSize" Value="28" />
         <Setter Property="FontFamily" Value="{DynamicResource FontFamily}" />
-        <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="BorderBrush" Value="{DynamicResource SelectionLightBrush}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBrush}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ProgressBar">
@@ -39,11 +38,10 @@
                         SnapsToDevicePixels="True">
                         <Grid x:Name="PART_Track">
                             <!-- on profite du CornerRadius du Border -->
-                            <Border
-        x:Name="PART_Indicator"
-        Background="{TemplateBinding Foreground}"
-        HorizontalAlignment="Left"
-        CornerRadius="8" />
+                            <Border x:Name="PART_Indicator"
+                                    Background="{TemplateBinding Foreground}"
+                                    HorizontalAlignment="Left"
+                                    CornerRadius="8" />
                         </Grid>
                     </Border>
                 </ControlTemplate>
