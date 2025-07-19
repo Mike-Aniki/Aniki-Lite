@@ -1,6 +1,14 @@
 <h1 align="center">Aniki-Lite : Fullscreen Theme for Playnite</h1>
 
+Aniki Lite is a fullscreen minimalist theme for Playnite, inspired by the clean design of the Nintendo Switch.
 
+Lightweight, smooth, and easy to read, it’s built to run effortlessly on compact PCs and handheld gaming devices, with automatic layout adaptation for both 16:9 and 16:10 screens.
+
+While minimalist in appearance, Aniki Lite remains feature-rich supporting extensions such as NowPlaying, MoData, ThemeModifier, CheckDLC, and SuccessStory.
+
+A perfect fit for users seeking a fast, clean, and functional console-style interface.
+
+---
 
 <p align="Center">
   <img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot01.png?raw=true" alt="Sublime's custom image" width="40%"/>
