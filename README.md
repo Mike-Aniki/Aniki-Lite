@@ -67,7 +67,7 @@ Icons allow you to visually differentiate between various filters like "My Games
 >- Add or replace any `.png` files with your own icons, then rename them to match your filters (e.g., "My Games.png" for the "My Games" filter).
 
 <p align="center">
-  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/thumbnail07.png?raw=true" alt="Filter Icons Customization" />
+  <img src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/Filter.png?raw=true" alt="Filter Icons Customization" />
 </p>
 
 ---
