@@ -85,6 +85,6 @@ Packages:
     PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v2.2/Aniki_Lite_2_2.pthm
     Changelog:
     - Improved trailer opacity during playback for better visibility.
-    - Added support for SuccessHelperFullscreen.
+    - Added support for SuccessHelperFullscreen (gives the total number of trophies and a user score).
     - Fixed button focus and navigation issues.
     - Changed storage bar colors to blue (like Windows).
