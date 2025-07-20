@@ -79,3 +79,12 @@ Packages:
     - Removed the user avatar and name from the Details view to improve visual clarity and reduce clutter.
     - Added a notice in the Details view to inform users about installing the MoData extension.
     - Changed the view switch button from X to Y to avoid conflict with users who use X to open the Details view.
+  - Version: 2.2
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2025-07-20
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v2.2/Aniki_Lite_2_2.pthm
+    Changelog:
+    - Improved trailer opacity during playback for better visibility.
+    - Added support for SuccessHelperFullscreen.
+    - Fixed button focus and navigation issues.
+    - Changed storage bar colors to blue (like Windows).
