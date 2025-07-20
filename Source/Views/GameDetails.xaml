@@ -481,7 +481,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type GameDetails}">
-                    <Grid Background="{DynamicResource OverlayMenu}"
+                    <Grid 
                           x:Name="PART_ViewHost"
                           d:DesignWidth="{StaticResource DesignWidth}"
                           d:DesignHeight="{StaticResource DesignHeight}"
@@ -506,7 +506,7 @@
                             <Style TargetType="Grid">
                                 <Setter Property="Opacity" Value="0" />
                                 <Setter Property="Focusable" Value="True" />
-                                <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=PART_ButtonOptions}" />
+                                <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=PART_ButtonContext}" />
                                 <Style.Triggers>
                                     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
                                         <DataTrigger.EnterActions>
@@ -531,8 +531,9 @@
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding ElementName=PART_ElemGameStatus, Path=Visibility}" Value="Collapsed">
                                         <Setter Property="Focusable" Value="True"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=PART_ButtonContext, Path=Visibility}" Value="Collapsed">
                                         <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=PART_ButtonOptions}" />
-                                        <Setter Property="Visibility" Value="Visible"/>
                                     </DataTrigger>
                                 </Style.Triggers>
                             </Style>
@@ -540,54 +541,7 @@
 
                         <!--Wallpaper-->
 
-                        <Grid x:Name="BackgroundImageGrid" FocusVisualStyle="{x:Null}" Panel.ZIndex="-2" >
-                            <Grid.Style>
-                                <Style TargetType="Grid">
-                                    <Setter Property="Background" Value="{DynamicResource MainBackgourndBrush}"/>
-                                    <Setter Property="Opacity" Value="1"/>
-                                    <Setter Property="VerticalAlignment" Value="Top"/>
-                                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="Grid.Column" Value="0"/>
-                                    <Setter Property="Grid.Row" Value="0"/>
-                                    <Setter Property="Grid.ColumnSpan" Value="3"/>
-                                    <Setter Property="Grid.RowSpan" Value="3"/>
-                                    <Style.Triggers>
-                                      
-
-                                    </Style.Triggers>
-                                </Style>
-                            </Grid.Style>
-                            <FadeImage x:Name="PART_ImageBackground" Opacity="1" Grid.RowSpan="3" Grid.ColumnSpan="3"
-                                       HorizontalAlignment="Center" VerticalAlignment="Top">
-                                <FadeImage.Style>
-                                    <Style TargetType="FadeImage" >
-                                        <Setter Property="Visibility" Value="Visible"/>
-                                        <Setter Property="Stretch" Value="UniformToFill"/>
-                                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                                        <Setter Property="VerticalAlignment" Value="Top"/>
-                                        <Setter Property="RenderTransform">
-                                            <Setter.Value>
-                                                <ScaleTransform ScaleX="1" ScaleY="1" />
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-
-                                            <DataTrigger Binding="{Binding Source={StaticResource AnimationBackground}}" Value="True">
-                                                <DataTrigger.EnterActions>
-                                                    <BeginStoryboard>
-                                                        <Storyboard RepeatBehavior="Forever" AutoReverse="True">
-                                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="1.0" To="1.11" Duration="0:0:35"  AccelerationRatio="0.2" DecelerationRatio="0.3"/>
-                                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="1.0" To="1.11" Duration="0:0:35"  AccelerationRatio="0.2" DecelerationRatio="0.3"/>
-                                                        </Storyboard>
-                                                    </BeginStoryboard>
-                                                </DataTrigger.EnterActions>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </FadeImage.Style>
-                            </FadeImage>
-                        </Grid>
-
+                  
                      <!--   <Grid x:Name="BackgroundChanger" FocusVisualStyle="{x:Null}" Panel.ZIndex="-2">
                             <Grid.Style>
                                 <Style TargetType="Grid">
@@ -1466,10 +1420,10 @@
                                 </Style>
                             </Border.Style>
                             <Grid>
-                                <Border Background="{DynamicResource TrailerBackgroundBrush}" Opacity="0.8" CornerRadius="5" Name="mask2">
+                                <Border Background="Black" CornerRadius="5" Name="mask2">
                                     <Border.Style>
                                         <Style TargetType="Border">
-                                            <Setter Property="Opacity" Value="0.8"/>
+                                            <Setter Property="Opacity" Value="0.3"/>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding ElementName=PlayTrailer, Path=IsChecked}" Value="True">
                                                     <Setter Property="Opacity" Value="1"/>

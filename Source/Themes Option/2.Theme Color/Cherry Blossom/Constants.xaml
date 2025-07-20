@@ -141,6 +141,8 @@
     <BitmapImage x:Key="MoDataIcon" UriSource="{ThemeFile 'Images/For Dark Version/MoData.png'}" />
 	<BitmapImage x:Key="SortLogo" UriSource="{ThemeFile 'Images/For Dark Version/SortDesc.png'}" />
 	<BitmapImage x:Key="SortLogo2" UriSource="{ThemeFile 'Images/For Dark Version/SortAsc.png'}" />
+    <BitmapImage x:Key="ButtonSuccessLogo" UriSource="{ThemeFile 'Images/For Dark Version/Trophy.png'}" />
+
 
     <ImageBrush x:Key="Avatar1" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (1).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar2" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (2).png'}" Stretch="UniformToFill"/>

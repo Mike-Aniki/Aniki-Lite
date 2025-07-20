@@ -2,6 +2,10 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+<sys:String x:Key="LOCTotal">Total</sys:String>
+<sys:String x:Key="LOCLevel">Nível</sys:String>
+<sys:String x:Key="LOCTrophiesEarned">Troféus obtidos</sys:String>
+<sys:String x:Key="LOCNextLevel">Próximo nível</sys:String>
 <sys:String x:Key="LOCInstallMoData">Instala o plugin MoData para ver a utilização do disco</sys:String>
 <sys:String x:Key="LOCUserName">Nome de utilizador</sys:String>
 <sys:String x:Key="LOCViewTrophies">Troféus</sys:String>

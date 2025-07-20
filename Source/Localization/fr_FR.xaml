@@ -25,6 +25,10 @@
 	<sys:String x:Key="LocTotal">au total</sys:String>
 	<sys:String x:Key="LocClosing">Fermeture</sys:String>
 	<sys:String x:Key="LOCInstallMoData">Installez le plugin MoData pour afficher l’espace disque</sys:String>
+	<sys:String x:Key="LOCTrophiesEarned">Trophées obtenus</sys:String>
+	<sys:String x:Key="LOCNextLevel">Prochain niveau</sys:String>
+	<sys:String x:Key="LOCTotal">Total</sys:String>
+	<sys:String x:Key="LOCLevel">Niveau</sys:String>
 	
 	<sys:String x:Key="LOCShowPlatform">Afficher la plateforme sur la jaquette</sys:String>
 	<sys:String x:Key="LocNetworkConnectivity">Connexion réseau</sys:String>

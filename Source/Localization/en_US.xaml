@@ -25,6 +25,11 @@
 	<sys:String x:Key="LocTotal">total</sys:String>
 	<sys:String x:Key="LocClosing">Closing</sys:String>
 	<sys:String x:Key="LOCInstallMoData">Install MoData plugin to view disk usage</sys:String>
+	<sys:String x:Key="LOCTrophiesEarned">Trophies You Earned</sys:String>
+	<sys:String x:Key="LOCNextLevel">Next Level</sys:String>
+	<sys:String x:Key="LOCTotal">Total</sys:String>
+	<sys:String x:Key="LOCLevel">Level</sys:String>
+
 
 	
 	<sys:String x:Key="LOCShowPlatform">Show Platform on game cover</sys:String>
