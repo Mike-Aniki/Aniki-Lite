@@ -88,3 +88,14 @@ Packages:
     - Added support for SuccessHelperFullscreen (gives the total number of trophies and a user score).
     - Fixed button focus and navigation issues.
     - Changed storage bar colors to blue (like Windows).
+  - Version: 2.3
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2025-07-29
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v2.3/Aniki_Lite_2_3.pthm
+    Changelog:
+    - Added unlocked platinum trophies to the Trophy window
+    - Added support for avatars from Extra Metadata. if a custom avatar is detected, it will be used; otherwise, the avatar of AnikiLite will be displayed
+    - Updated the NowPlaying window
+    - Fixed the notification window appearing white regardless of the selected theme color
+    - Fixed the game background not showing in the Details view when the game list was in vertical mode
+    - Fixed the filter name remaining visible in the Details view when the game list was in vertical mode
