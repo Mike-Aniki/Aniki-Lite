@@ -99,3 +99,5 @@ Packages:
     - Fixed the notification window appearing white regardless of the selected theme color
     - Fixed the game background not showing in the Details view when the game list was in vertical mode
     - Fixed the filter name remaining visible in the Details view when the game list was in vertical mode
+    - Fixed an issue where quickly opening and closing the Trophies panel would block navigation
+    - Added HowLongToBeat integration to the Details panel
