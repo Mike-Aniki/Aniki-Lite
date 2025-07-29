@@ -709,6 +709,30 @@
                     AvatarImageIndex:
                         Type: Int32
                         Value: 38
+            Avatar39:
+                Name: Avatar 39
+                LocKey: LOCAvatar39
+                Preview: Themes Option/3.Avatar/Avatar (39).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 39
+            Avatar40:
+                Name: Avatar 40
+                LocKey: LOCAvatar40
+                Preview: Themes Option/3.Avatar/Avatar (40).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 40
+            Avatar41:
+                Name: Avatar 41
+                LocKey: LOCAvatar41
+                Preview: Themes Option/3.Avatar/Avatar (41).png
+                Constants:
+                    AvatarImageIndex:
+                        Type: Int32
+                        Value: 41
 
 Variables:
 

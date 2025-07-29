@@ -500,14 +500,12 @@
                             <RowDefinition Height="*" />
                         </Grid.RowDefinitions>
 
-
-
                         <Grid.Style>
                             <Style TargetType="Grid">
                                 <Setter Property="Opacity" Value="0" />
                                 <Setter Property="Focusable" Value="True" />
                                 <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=PART_ButtonContext}" />
-                                <Style.Triggers>
+                                <Style.Triggers>                                   
                                     <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
                                         <DataTrigger.EnterActions>
                                             <BeginStoryboard>
@@ -526,8 +524,7 @@
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding ElementName=PART_ElemGameStatus, Path=Visibility}" Value="Visible">
                                         <Setter Property="Focusable" Value="False"/>
-                                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=PART_ElemGameStatus}" />
-                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=OpenPlayniteButton}" />
                                     </DataTrigger>
                                     <DataTrigger Binding="{Binding ElementName=PART_ElemGameStatus, Path=Visibility}" Value="Collapsed">
                                         <Setter Property="Focusable" Value="True"/>
@@ -539,10 +536,22 @@
                             </Style>
                         </Grid.Style>
 
+                        <Border x:Name="BagroundGamestatus" Background="Black" Opacity="0.7" Grid.RowSpan="3" Grid.ColumnSpan="3" Panel.ZIndex="1">
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameStatus, Path=Visibility}" Value="Visible">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                        </Border>
+
                         <!--Wallpaper-->
 
-                  
-                     <!--   <Grid x:Name="BackgroundChanger" FocusVisualStyle="{x:Null}" Panel.ZIndex="-2">
+                        <!-- <Grid x:Name="BackgroundChanger" FocusVisualStyle="{x:Null}" Panel.ZIndex="-2">
                             <Grid.Style>
                                 <Style TargetType="Grid">
                                     <Setter Property="Background" Value="{DynamicResource MainBackgourndBrush}"/>
@@ -713,104 +722,93 @@
 
                         <!--Trophée Banniere-->
 
-                        <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1" Height="40" CornerRadius="0,0,5,5" Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
+                        <Border Grid.Row="1"
+                                Grid.Column="1"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center"
+                                Margin="0,10,0,0"
+                                Height="40"
+                                Opacity="0.8"
+                                Panel.ZIndex="1"
+                                CornerRadius="10"
+                                Background="{DynamicResource OverlayMenu}"
+                                Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
+
                             <Border.Style>
                                 <Style TargetType="Border">
-                                    <Setter Property="Visibility" Value="Collapsed" />
-                                    <Setter Property="Background" Value="{DynamicResource OverlayMenu}"/>
-                                    <Setter Property="Margin" Value="0,0,0,0" />
-                                    <Style.Triggers>                                        
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
                                         <MultiDataTrigger>
                                             <MultiDataTrigger.Conditions>
                                                 <Condition Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True"/>
                                                 <Condition Binding="{PluginStatus Plugin=playnite-successstory-plugin, Status=Installed}" Value="True"/>
                                                 <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[TrophiesBanner]}" Value="True"/>
-                                                <Condition Binding="{Binding ElementName=NPlayingBanner, Path=Visibility}" Value="Collapsed"/>
                                             </MultiDataTrigger.Conditions>
-                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Setter Property="Visibility" Value="Visible"/>
                                         </MultiDataTrigger>
-                                        <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="1728">
-                                        </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
-                            <StackPanel x:Name="Trophée" Orientation="Horizontal"
-										VerticalAlignment="Center" HorizontalAlignment="Center"
-										Margin="10,-15,10,0"
-										
-										Tag="{PluginSettings Plugin=SuccessStory, Path=HasData}">
-                                <StackPanel.Style>
-                                    <Style TargetType="StackPanel">
-                                        <Setter Property="Visibility" Value="Collapsed" />
-                                        <Setter Property="Opacity" Value="0"/>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ElementName=Id, Path=Opacity}" Value="1">
-                                                <Setter Property="Opacity" Value="1"/>
-                                            </DataTrigger>
-                                            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
-                                                <Setter Property="Visibility" Value="Visible" />
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                    </Style>
-                                </StackPanel.Style>
 
-                                <!-- Image trophée -->
+                            <StackPanel Orientation="Horizontal"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        Margin="10,0,10,0">
 
-								<StackPanel Orientation="Horizontal" >
-									<Border Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" ClipToBounds="True">
-										<Image Source="{ThemeFile 'Images/Saphir.png'}"
-											   RenderOptions.BitmapScalingMode="Fant"/>
-									</Border>
-									<TextBlock x:Name="TrophCount" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource TextBrush}"
-											   Text="{PluginSettings Plugin=SuccessStory, Path=UltraRare.UnLocked, StringFormat={}{0}}" FontFamily="Segoe UI SemiBold" FontSize="20">
-									</TextBlock>
-									<StackPanel.Style>
-										<Style TargetType="StackPanel">
-											<Style.Triggers>
-												<DataTrigger Binding="{Binding ElementName=TrophCount, Path=Text}" Value="0">
-													<Setter Property="Visibility" Value="Collapsed" />
-												</DataTrigger>
-											</Style.Triggers>
-										</Style>
-									</StackPanel.Style>
-								</StackPanel>
+                                <!-- Saphir -->
+                                <StackPanel Orientation="Horizontal" Margin="4,0">
+                                    <StackPanel.Style>
+                                        <Style TargetType="StackPanel">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=UltraRare.Total}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </StackPanel.Style>
+                                    <Border Height="30" Width="30" ClipToBounds="True" Margin="4,0">
+                                        <Image Source="{ThemeFile 'Images/Saphir.png'}" RenderOptions.BitmapScalingMode="Fant"/>
+                                    </Border>
+                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=UltraRare.UnLocked, StringFormat={}{0}}"
+                                           FontFamily="Segoe UI SemiBold"
+                                           FontSize="18"
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource TextBrush}"/>
+                                </StackPanel>
 
-
-                                <Border Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" ClipToBounds="True">
-                                    <Image Source="{ThemeFile 'Images/Or.png'}"
-										   RenderOptions.BitmapScalingMode="Fant"/>
+                                <!-- Or -->
+                                <Border Height="30" Width="30" ClipToBounds="True" Margin="4,0">
+                                    <Image Source="{ThemeFile 'Images/Or.png'}" RenderOptions.BitmapScalingMode="Fant"/>
                                 </Border>
-                                <TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource TextBrush}"
-										   Text="{PluginSettings Plugin=SuccessStory, Path=Rare.UnLocked, StringFormat={}{0}}" FontFamily="Segoe UI SemiBold" FontSize="20">
-                                </TextBlock>
+                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Rare.UnLocked, StringFormat={}{0}}"
+                                           FontFamily="Segoe UI SemiBold"
+                                           FontSize="18"
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource TextBrush}"/>
 
-
-
-                                <Border Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" ClipToBounds="True">
-
-                                    <Image Height="55" Source="{ThemeFile 'Images/Argent.png'}"
-										   RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <!-- Argent -->
+                                <Border Height="30" Width="30" ClipToBounds="True" Margin="4,0">
+                                    <Image Source="{ThemeFile 'Images/Argent.png'}" RenderOptions.BitmapScalingMode="Fant"/>
                                 </Border>
-                                <TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource TextBrush}"
-										   Text="{PluginSettings Plugin=SuccessStory, Path=NoCommon.UnLocked, StringFormat={}{0}}" FontFamily="Segoe UI SemiBold" FontSize="20">
-                                </TextBlock>
+                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=NoCommon.UnLocked, StringFormat={}{0}}"
+                                           FontFamily="Segoe UI SemiBold"
+                                           FontSize="18"
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource TextBrush}"/>
 
-                                <Border Height="30" Width="30" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,10,0,0" ClipToBounds="True">
-
-                                    <Image Source="{ThemeFile 'Images/Bronze.png'}"
-										   RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <!-- Bronze -->
+                                <Border Height="30" Width="30" ClipToBounds="True" Margin="4,0">
+                                    <Image Source="{ThemeFile 'Images/Bronze.png'}" RenderOptions.BitmapScalingMode="Fant"/>
                                 </Border>
-                                <TextBlock Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Foreground="{DynamicResource TextBrush}"
-										   Text="{PluginSettings Plugin=SuccessStory, Path=Common.UnLocked, StringFormat={}{0}}" FontFamily="Segoe UI SemiBold" FontSize="20">
-                                </TextBlock>
-
-                                <StackPanel.Effect>
-                                    <DropShadowEffect ShadowDepth="0" BlurRadius="2" Color="Black" RenderingBias="Performance"  Opacity="0.6" />
-                                </StackPanel.Effect>
-
+                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Common.UnLocked, StringFormat={}{0}}"
+                                           FontFamily="Segoe UI SemiBold"
+                                           FontSize="18"
+                                           VerticalAlignment="Center"
+                                           Foreground="{DynamicResource TextBrush}"/>
                             </StackPanel>
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="1" BlurRadius="2" Color="Black" RenderingBias="Performance" Direction="270"  Opacity="0.6" />
+                                <DropShadowEffect ShadowDepth="0" BlurRadius="3" Color="Black" Opacity="0.4"/>
                             </Border.Effect>
                         </Border>
 
@@ -843,7 +841,7 @@
                                 </Style>
                             </Grid.Style>
 
-                            
+
 
                             <Grid Panel.ZIndex="50" Name="NoDLCPlugin" VerticalAlignment="Center"  Tag="{PluginSettings Plugin=CheckDlc, Path=HasData}">
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
@@ -1023,7 +1021,7 @@
                                 </ListView>
                             </Grid>
 
-                        </Grid> 
+                        </Grid>
 
                         <!-- Details -->
                         <Grid>
@@ -1071,25 +1069,25 @@
 										   Margin="0,58,0,0"/>
                             <Separator Height="2" VerticalAlignment="Center"
 										   Background="{DynamicResource TextBrush}"
-										   Margin="0,0,0,0"/>
+										   Margin="0,0,0,200"/>
                             <Separator Height="2" VerticalAlignment="Bottom"
 										   Background="{DynamicResource TextBrush}"
 										   Margin="0,0,0,200"/>
 
-                            <Grid Margin="20,60,20,0" VerticalAlignment="Top" Height="360" Focusable="False">
+                            <Grid Margin="20,60,20,0" VerticalAlignment="Top" Height="260" Focusable="False">
                                 <Border CornerRadius="5">
                                     <ScrollViewerEx x:Name="PART_ScrollHtmlDescription"
-                        Focusable="False"
-                        FocusVisualStyle="{x:Null}"
-                        VerticalScrollBarVisibility="Visible">
+                                                    Focusable="False"
+                                                    FocusVisualStyle="{x:Null}"
+                                                    VerticalScrollBarVisibility="Visible">
                                         <HtmlTextView x:Name="PART_HtmlDescription"
-                          HtmlForeground="{DynamicResource TextColor}"
-                          HtmlFontSize="22"
-                          HtmlFontFamily="Segoe UI"
-                          Margin="5,0,5,0"
-                          LinkForeground="{DynamicResource TextColor}"
-                          Focusable="False"
-                          FocusVisualStyle="{x:Null}" />
+                                                      HtmlForeground="{DynamicResource TextColor}"
+                                                      HtmlFontSize="22"
+                                                      HtmlFontFamily="Segoe UI"
+                                                      Margin="5,0,5,0"
+                                                      LinkForeground="{DynamicResource TextColor}"
+                                                      Focusable="False"
+                                                      FocusVisualStyle="{x:Null}" />
                                     </ScrollViewerEx>
                                 </Border>
                             </Grid>
@@ -1204,9 +1202,63 @@
                                             <TextBlock Text="{DynamicResource LOCGenresLabel}" FontSize="22" Style="{StaticResource TextBlockBaseStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                         </Border>
                                         <Border Style="{StaticResource TileBorderStyle}" CornerRadius="0,0,4,4" Height="30" Background="{DynamicResource DetailsBackgroundBottomBrush}">
-                                            <TextBlock Text="{Binding Genres, Converter={StaticResource ListToStringConverter}}" FontSize="20" Style="{StaticResource TextBlockDetailsStyleBottom}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            <TextBlock Text="{Binding Genres, Converter={StaticResource ListToStringConverter}}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" 
+                                                       FontSize="20" Style="{StaticResource TextBlockDetailsStyleBottom}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                         </Border>
                                     </StackPanel>
+                                    
+                                    <!--HowLongToBeat-->
+                                    <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Vertical" Margin="4,4,4,20">
+                                        <Border Style="{StaticResource TileBorderStyle}" CornerRadius="5" Padding="10,6" Background="{DynamicResource DetailsBackgroundBottomBrush}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+
+                                                <!-- Main Story -->
+                                                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                                                    <TextBlock Text="{DynamicResource LOCStory}" 
+                                                               FontSize="18" 
+                                                               Style="{StaticResource TextBlockDetailsStyleBottom}"
+                                                               HorizontalAlignment="Center" />
+                                                    <TextBlock Text="{PluginSettings Plugin=HowLongToBeat, Path=MainStoryFormat, FallbackValue='--'}" 
+                                                               FontSize="22" 
+                                                               FontWeight="Bold" 
+                                                               Foreground="{DynamicResource TextBrush}" 
+                                                               HorizontalAlignment="Center"/>
+                                                </StackPanel>
+
+                                                <!-- Main + Extra -->
+                                                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                                                    <TextBlock Text="{DynamicResource LOCStorySide}" 
+                                                               FontSize="18" 
+                                                               Style="{StaticResource TextBlockDetailsStyleBottom}"
+                                                               HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{PluginSettings Plugin=HowLongToBeat, Path=MainExtraFormat, FallbackValue='--'}" 
+                                                               FontSize="22" 
+                                                               FontWeight="Bold" 
+                                                               Foreground="{DynamicResource TextBrush}" 
+                                                               HorizontalAlignment="Center"/>
+                                                </StackPanel>
+
+                                                <!-- Completionist -->
+                                                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                                                    <TextBlock Text="{DynamicResource LOCFullGame}" 
+                                                               FontSize="18" 
+                                                               Style="{StaticResource TextBlockDetailsStyleBottom}"
+                                                               HorizontalAlignment="Center"/>
+                                                    <TextBlock Text="{PluginSettings Plugin=HowLongToBeat, Path=CompletionistFormat, FallbackValue='--'}" 
+                                                               FontSize="22" 
+                                                               FontWeight="Bold" 
+                                                               Foreground="{DynamicResource TextBrush}" 
+                                                               HorizontalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+
 
 
                                     <!-- Install Path -->
@@ -1392,7 +1444,6 @@
                             </Grid.Effect>
                         </Grid>
 
-
                         <!-- Trailer -->
                         <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="2">
                             <Border.Effect>
@@ -1423,7 +1474,7 @@
                                 <Border Background="Black" CornerRadius="5" Name="mask2">
                                     <Border.Style>
                                         <Style TargetType="Border">
-                                            <Setter Property="Opacity" Value="0.3"/>
+                                            <Setter Property="Opacity" Value="0.6"/>
                                             <Style.Triggers>
                                                 <DataTrigger Binding="{Binding ElementName=PlayTrailer, Path=IsChecked}" Value="True">
                                                     <Setter Property="Opacity" Value="1"/>
@@ -1449,6 +1500,9 @@
                                             <ContentControl.Style>
                                                 <Style TargetType="ContentControl">
                                                     <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="False">
+                                                            <Setter Property="Content" Value="{x:Null}"/>
+                                                        </DataTrigger>
                                                         <DataTrigger Binding="{Binding ElementName=PlayTrailer, Path=IsChecked}" Value="False">
                                                             <Setter Property="Content" Value="{x:Null}"/>
                                                         </DataTrigger>
@@ -1460,6 +1514,9 @@
                                                         </DataTrigger>
                                                         <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
                                                             <Setter Property="Content" Value="{x:Null}"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding IsActive, RelativeSource={RelativeSource AncestorType=Window}}" Value="False">
+                                                            <Setter Property="Visibility" Value="Collapsed"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
@@ -1568,7 +1625,6 @@
                         </StackPanel>
 
                         <!-- Buttons -->
-
                         <Border CornerRadius="10" Height="150" Grid.Row="1" VerticalAlignment="Bottom" Background="Transparent" Focusable="False" >
                             <Border.Style>
                                 <Style TargetType="Border">
@@ -1639,7 +1695,7 @@
                                             </ButtonEx.Effect>
                                         </ButtonEx>
 
-                                        <ButtonEx x:Name="ButtonNowPlaying" Command="{PluginSettings Plugin=NowPlaying, Path=OpenDialog}"
+                                        <ButtonEx x:Name="ButtonNowPlaying" Command="{PluginSettings Plugin=NowPlaying, Path=OpenCustomDialog}"
                                                   Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center">
                                             <ButtonEx.Style>
                                                 <Style TargetType="ButtonEx" BasedOn="{StaticResource ButtonDetailsNowPlaying}">
@@ -1669,7 +1725,17 @@
                                             </ToggleButtonEx.Effect>
                                         </ToggleButtonEx>
 
-                                        <ToggleButtonEx x:Name="SuccessButton" Style="{DynamicResource SuccessViewButton}" Visibility="Visible" Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center">
+                                        <ToggleButtonEx x:Name="SuccessButton" Visibility="Visible" Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center">
+                                            <ToggleButtonEx.Style>
+                                                <Style TargetType="ToggleButtonEx" BasedOn="{StaticResource SuccessViewButton}">
+                                                    <Setter Property="IsChecked" Value="True" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
+                                                            <Setter Property="IsChecked" Value="True" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ToggleButtonEx.Style>
                                             <ToggleButtonEx.Effect>
                                                 <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.4"/>
                                             </ToggleButtonEx.Effect>
@@ -1695,6 +1761,12 @@
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="False">
                                             <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="True">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
                                         </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
@@ -1724,48 +1796,6 @@
                             </StackPanel.Style>
                         </StackPanel>
                         
-                            <!--NowPlaying-->
-
-                        <Grid x:Name="NPlayingBanner" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Panel.ZIndex="1">
-
-                            <Grid.Style>
-                                <Style TargetType="Grid">
-                                    <Setter Property="Visibility" Value="Visible" />
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}" Value="False">
-                                            <Setter Property="Visibility" Value="Collapsed" />
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{PluginSettings Plugin=NowPlaying, Path=IsGameRunning}" Value="False">
-                                            <Setter Property="Visibility" Value="Collapsed" />
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Grid.Style>
-
-                            <Grid>
-                                <!--Texte invisible pour forcer la largeur maximale-->
-                                <StackPanel Orientation="Horizontal" Opacity="0" IsHitTestVisible="False" Focusable="False">
-                                    <TextBlock Text="Icons " FontSize="26"/>
-                                    <TextBlock Text="{DynamicResource LOCNowPlayingNP}" FontSize="26"/>
-                                    <TextBlock Text=" 99h59m99s" FontSize="26"/>
-                                </StackPanel>
-
-                                <!-- Affichage réel -->
-                                <Border Background="{DynamicResource OverlayMenu}" Height="40" CornerRadius="0,0,5,5">
-                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                                        <Image Width="30" Height="30" Source="{PluginSettings Plugin=NowPlaying, Path=RunningGame.IconPath}" Margin="10,5,10,5"/>
-
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock x:Name="NowPlaying_Title" Style="{DynamicResource TextBlockBaseStyle}"  Text="{DynamicResource LOCNowPlayingNP}" FontSize="26" Margin="10,0,5,0"/>
-                                            <TextBlock x:Name="SessionLength"    Style="{DynamicResource TextBlockBaseStyle}"  Text="{PluginSettings Plugin=NowPlaying, Path=SessionLength}"  FontSize="25" Margin="5,1,10,0"/>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </Border>
-                            </Grid>
-                        </Grid>
-
-                       
-
                         <!-- Sound -->
                         <MediaElement x:Name="EnterGameDetailsChime" Source="{ThemeFile 'audio/EnterGameDetails.wav'}" Volume="{Settings Fullscreen.InterfaceVolume}" MediaElementBehaviors.Repeat="False" >
                             <MediaElement.Style>

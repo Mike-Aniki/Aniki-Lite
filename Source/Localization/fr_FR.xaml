@@ -8,9 +8,11 @@
 	<sys:String x:Key="LOCHideTrophy">Fermer trophées</sys:String>
 	<sys:String x:Key="LOCViewDetails">Détails</sys:String>
 	<sys:String x:Key="LOCHideDetails">Fermer détails</sys:String>
-	<sys:String x:Key="LOCReturnGameNP">Revenir au jeu</sys:String>
-	<sys:String x:Key="LOCExitGameNP">Quitter jeu</sys:String>
-	<sys:String x:Key="LOCNowPlayingNP">En jeu depuis</sys:String>
+	<sys:String x:Key="LOCReturnPlaynite">Retour au menu</sys:String>
+	<sys:String x:Key="LOCReturnGameNP">Reprendre le jeu</sys:String>
+	<sys:String x:Key="LOCExitGameNP">Quitter le jeu</sys:String>
+	<sys:String x:Key="LOCNowPlaying">Jeu en cours</sys:String>
+	<sys:String x:Key="LOCNowPlayingNP">En jeu depuis :</sys:String>
 	<sys:String x:Key="LOCStopmonitoring">Arrêter le suivi</sys:String>
 	<sys:String x:Key="LOCPress">Appuyer</sys:String>
 	<sys:String x:Key="LocTotalTrophiesUnlocked">Débloqués</sys:String>
@@ -29,6 +31,10 @@
 	<sys:String x:Key="LOCNextLevel">Prochain niveau</sys:String>
 	<sys:String x:Key="LOCTotal">Total</sys:String>
 	<sys:String x:Key="LOCLevel">Niveau</sys:String>
+	<sys:String x:Key="LOCPlatinumEarned">Trophée platine obtenu</sys:String>
+	<sys:String x:Key="LOCStory">Campagne seule</sys:String>
+	<sys:String x:Key="LOCStorySide">Campagne + quêtes</sys:String>
+	<sys:String x:Key="LOCFullGame">Jeu terminé à 100%</sys:String>
 	
 	<sys:String x:Key="LOCShowPlatform">Afficher la plateforme sur la jaquette</sys:String>
 	<sys:String x:Key="LocNetworkConnectivity">Connexion réseau</sys:String>

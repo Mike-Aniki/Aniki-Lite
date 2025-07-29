@@ -18,7 +18,7 @@
 	<sys:String x:Key="UserName">User Name</sys:String>
 	<sys:Boolean x:Key="FilterVariante">True</sys:Boolean>
 	<sys:Boolean x:Key="TrailerPlayAuto">False</sys:Boolean>
-	<sys:Boolean x:Key="DetailsAuto">True</sys:Boolean>
+	<sys:Boolean x:Key="DetailsAuto">False</sys:Boolean>
 	<sys:Int32 x:Key="AvatarImageIndex">1</sys:Int32>
 	<sys:Boolean x:Key="AnimationBackground">False</sys:Boolean>
 
@@ -178,6 +178,8 @@
     <BitmapImage x:Key="SourceLogo" UriSource="{ThemeFile 'Images/For Dark Version/Source.png'}" />
     <BitmapImage x:Key="SourceLogo2" UriSource="{ThemeFile 'Images/For Dark Version/Source2.png'}" />
     <BitmapImage x:Key="MoDataIcon" UriSource="{ThemeFile 'Images/For Dark Version/MoData.png'}" />
+	<BitmapImage x:Key="SortLogo" UriSource="{ThemeFile 'Images/For Dark Version/SortDesc.png'}" />
+	<BitmapImage x:Key="SortLogo2" UriSource="{ThemeFile 'Images/For Dark Version/SortAsc.png'}" />
     <BitmapImage x:Key="ButtonSuccessLogo" UriSource="{ThemeFile 'Images/For Dark Version/Trophy.png'}" />
 
 

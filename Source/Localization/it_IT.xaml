@@ -2,6 +2,15 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+<sys:String x:Key="LOCReturnPlaynite">Torna al menu</sys:String>
+<sys:String x:Key="LOCReturnGameNP">Riprendi il gioco</sys:String>
+<sys:String x:Key="LOCExitGameNP">Esci dal gioco</sys:String>
+<sys:String x:Key="LOCNowPlaying">In gioco</sys:String>
+<sys:String x:Key="LOCStory">Solo storia principale</sys:String>
+<sys:String x:Key="LOCStorySide">Storia + missioni secondarie</sys:String>
+<sys:String x:Key="LOCFullGame">Gioco completato al 100%</sys:String>
+
+	
 <sys:String x:Key="LOCTotal">Totale</sys:String>
 <sys:String x:Key="LOCLevel">Livello</sys:String>
 <sys:String x:Key="LOCTrophiesEarned">Trofei ottenuti</sys:String>
@@ -12,8 +21,6 @@
 <sys:String x:Key="LOCHideTrophy">Chiudi trofei</sys:String>
 <sys:String x:Key="LOCViewDetails">Dettagli</sys:String>
 <sys:String x:Key="LOCHideDetails">Chiudi dettagli</sys:String>
-<sys:String x:Key="LOCReturnGameNP">Torna al gioco</sys:String>
-<sys:String x:Key="LOCExitGameNP">Esci dal gioco</sys:String>
 <sys:String x:Key="LOCNowPlayingNP">In gioco da</sys:String>
 <sys:String x:Key="LOCStopmonitoring">Interrompi monitoraggio</sys:String>
 <sys:String x:Key="LOCPress">Premi</sys:String>

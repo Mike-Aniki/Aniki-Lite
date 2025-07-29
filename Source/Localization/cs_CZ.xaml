@@ -2,6 +2,15 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+<sys:String x:Key="LOCReturnPlaynite">Zpět do menu</sys:String>
+<sys:String x:Key="LOCReturnGameNP">Pokračovat ve hře</sys:String>
+<sys:String x:Key="LOCExitGameNP">Ukončit hru</sys:String>
+<sys:String x:Key="LOCNowPlaying">Právě hraješ</sys:String>
+<sys:String x:Key="LOCStory">Pouze hlavní příběh</sys:String>
+<sys:String x:Key="LOCStorySide">Příběh + vedlejší mise</sys:String>
+<sys:String x:Key="LOCFullGame">Hra dokončena na 100%</sys:String>
+
+	
 <sys:String x:Key="LOCTotal">Celkem</sys:String>
 <sys:String x:Key="LOCLevel">Úroveň</sys:String>
 <sys:String x:Key="LOCTrophiesEarned">Získané trofeje</sys:String>
@@ -12,8 +21,6 @@
 <sys:String x:Key="LOCHideTrophy">Zavřít trofeje</sys:String>
 <sys:String x:Key="LOCViewDetails">Detaily</sys:String>
 <sys:String x:Key="LOCHideDetails">Zavřít detaily</sys:String>
-<sys:String x:Key="LOCReturnGameNP">Zpět do hry</sys:String>
-<sys:String x:Key="LOCExitGameNP">Ukončit hru</sys:String>
 <sys:String x:Key="LOCNowPlayingNP">Ve hře od</sys:String>
 <sys:String x:Key="LOCStopmonitoring">Zastavit sledování</sys:String>
 <sys:String x:Key="LOCPress">Stiskni</sys:String>

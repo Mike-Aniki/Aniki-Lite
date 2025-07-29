@@ -28,7 +28,7 @@
     <Color x:Key="GlyphColor">White</Color>
     <Color x:Key="GlyphLightColor">#F3F3F3</Color>
     <Color x:Key="SelectionLightColor">Gray</Color>
-    <Color x:Key="OverlayColor">#BB000000</Color>
+    <Color x:Key="OverlayColor">#CC000000</Color>
     <Color x:Key="ControlBackgroundColor">Gray</Color>
     <Color x:Key="ControlBackgroundColorDark">#F3F3F3</Color>
     <Color x:Key="ColorBorder">#3B9EFF</Color>
@@ -87,7 +87,7 @@
     <SolidColorBrush x:Key="MainBackgourndBrush" Color="Black" />
     <SolidColorBrush x:Key="WarningBrush" Color="#ff6b6b" />
 
-    <sys:Double x:Key="FontSizeSmall">20</sys:Double>
+    <sys:Double x:Key="FontSizeSmall">25</sys:Double>
     <sys:Double x:Key="FontSize">28</sys:Double>
 
     <sys:Double x:Key="FilterPanelWidth">300</sys:Double>
@@ -249,7 +249,9 @@
     <ImageBrush x:Key="Avatar36" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (36).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar37" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (37).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar38" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (38).png'}" Stretch="UniformToFill"/>
-
+    <ImageBrush x:Key="Avatar39" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (39).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar40" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (40).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar41" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (41).png'}" Stretch="UniformToFill"/>
 
 
 

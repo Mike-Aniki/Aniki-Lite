@@ -87,7 +87,7 @@
                             </StackPanel>
                             <StackPanel x:Name="ON" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2,0,0,0" >
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
-                                    <TextBlock x:Name="Text2" Text="{DynamicResource LOCHideTrophy}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
+                                    <TextBlock x:Name="Text2" Text="{DynamicResource LOCViewTrophies}" Style="{DynamicResource TextBlockBaseStyle}"                                                   
                                                    HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2" TextAlignment="Center"
                                                    Foreground="{DynamicResource TextBrush}" TextTrimming="WordEllipsis" MaxWidth="210" Height="45.72" FontSize="28" />
                                 </StackPanel>

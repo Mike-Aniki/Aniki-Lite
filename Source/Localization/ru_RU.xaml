@@ -2,6 +2,15 @@
 					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 					xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+	<sys:String x:Key="LOCReturnPlaynite">Назад в меню</sys:String>
+	<sys:String x:Key="LOCReturnGameNP">Продолжить игру</sys:String>
+	<sys:String x:Key="LOCExitGameNP">Выйти из игры</sys:String>
+	<sys:String x:Key="LOCNowPlaying">Сейчас играешь</sys:String>
+	<sys:String x:Key="LOCStory">Только сюжет</sys:String>
+	<sys:String x:Key="LOCStorySide">Сюжет + побочные задания</sys:String>
+	<sys:String x:Key="LOCFullGame">Игра пройдена на 100%</sys:String>
+
+
 <sys:String x:Key="LOCTotal">Всего</sys:String>
 <sys:String x:Key="LOCLevel">Уровень</sys:String>
 <sys:String x:Key="LOCTrophiesEarned">Полученные трофеи</sys:String>
@@ -12,8 +21,6 @@
 <sys:String x:Key="LOCHideTrophy">Закрыть трофеи</sys:String>
 <sys:String x:Key="LOCViewDetails">Детали</sys:String>
 <sys:String x:Key="LOCHideDetails">Закрыть детали</sys:String>
-<sys:String x:Key="LOCReturnGameNP">Вернуться в игру</sys:String>
-<sys:String x:Key="LOCExitGameNP">Выйти из игры</sys:String>
 <sys:String x:Key="LOCNowPlayingNP">В игре с</sys:String>
 <sys:String x:Key="LOCStopmonitoring">Остановить отслеживание</sys:String>
 <sys:String x:Key="LOCPress">Нажмите</sys:String>

@@ -8,8 +8,6 @@
 	<sys:String x:Key="LOCHideTrophy">Close trophies</sys:String>
 	<sys:String x:Key="LOCViewDetails">Details</sys:String>
 	<sys:String x:Key="LOCHideDetails">Close details</sys:String>
-	<sys:String x:Key="LOCReturnGameNP">Return to current game</sys:String>
-	<sys:String x:Key="LOCExitGameNP">Exit current game</sys:String>
 	<sys:String x:Key="LOCNowPlayingNP">In-game for</sys:String>
 	<sys:String x:Key="LOCStopmonitoring">Stop monitoring</sys:String> 
 	<sys:String x:Key="LOCPress">Press</sys:String>
@@ -29,8 +27,15 @@
 	<sys:String x:Key="LOCNextLevel">Next Level</sys:String>
 	<sys:String x:Key="LOCTotal">Total</sys:String>
 	<sys:String x:Key="LOCLevel">Level</sys:String>
-
-
+	<sys:String x:Key="LOCPlatinumEarned">Platinum trophy earned</sys:String>
+	
+	<sys:String x:Key="LOCReturnPlaynite">Back to menu</sys:String>
+	<sys:String x:Key="LOCReturnGameNP">Resume game</sys:String>
+	<sys:String x:Key="LOCExitGameNP">Quit game</sys:String>
+	<sys:String x:Key="LOCNowPlaying">Now playing</sys:String>
+	<sys:String x:Key="LOCStory">Main story</sys:String>
+	<sys:String x:Key="LOCStorySide">Story + side quests</sys:String>
+	<sys:String x:Key="LOCFullGame">100% completed</sys:String>
 	
 	<sys:String x:Key="LOCShowPlatform">Show Platform on game cover</sys:String>
 	<sys:String x:Key="LocNetworkConnectivity">NetworkConnectivity</sys:String>

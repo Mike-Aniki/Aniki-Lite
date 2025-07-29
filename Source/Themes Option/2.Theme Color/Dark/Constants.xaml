@@ -29,6 +29,7 @@
     <Color x:Key="ColorBorder">#3B9EFF</Color>
     <Color x:Key="TextColor">#eaeaea</Color>
     <Color x:Key="Text2Color">#2c2c2c</Color>
+    <Color x:Key="ControlBackgroundColorDark">#2c2c2c</Color>
 	<Color x:Key="TextFocusColor">#2B6FDB</Color>
 	<Color x:Key="TextColorDark">#FF757575</Color>
     <Color x:Key="ButtonColorBackground">#161616</Color>
@@ -47,6 +48,7 @@
     <Color x:Key="BackgroundColorWindowOpen">#BB000000</Color>
 
     <SolidColorBrush x:Key="ButtonBrushBackground" Color="{DynamicResource ButtonColorBackground}" />
+    <SolidColorBrush x:Key="ControlBackgroundDarkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
     <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
     <SolidColorBrush x:Key="Text2Brush" Color="{DynamicResource Text2Color}" />
     <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
@@ -85,8 +87,8 @@
 		<GradientStop Color="#00000000" Offset="0.7"/>
 	</LinearGradientBrush>
 	
-	<sys:Double x:Key="FontSizeSmall">18</sys:Double>
-    <sys:Double x:Key="FontSize">25</sys:Double>
+	<sys:Double x:Key="FontSizeSmall">25</sys:Double>
+    <sys:Double x:Key="FontSize">28</sys:Double>
 
     <sys:Double x:Key="FilterPanelWidth">300</sys:Double>
 
@@ -183,6 +185,9 @@
     <ImageBrush x:Key="Avatar36" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (36).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar37" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (37).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar38" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (38).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar39" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (39).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar40" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (40).png'}" Stretch="UniformToFill"/>
+    <ImageBrush x:Key="Avatar41" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (41).png'}" Stretch="UniformToFill"/>
 
 
     

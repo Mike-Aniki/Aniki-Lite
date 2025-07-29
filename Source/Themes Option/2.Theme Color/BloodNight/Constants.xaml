@@ -18,7 +18,7 @@
 	<sys:String x:Key="UserName">User Name</sys:String>
 	<sys:Boolean x:Key="FilterVariante">True</sys:Boolean>
 	<sys:Boolean x:Key="TrailerPlayAuto">False</sys:Boolean>
-	<sys:Boolean x:Key="DetailsAuto">True</sys:Boolean>
+	<sys:Boolean x:Key="DetailsAuto">False</sys:Boolean>
 	<sys:Int32 x:Key="AvatarImageIndex">1</sys:Int32>
 	<sys:Boolean x:Key="AnimationBackground">False</sys:Boolean>
 
