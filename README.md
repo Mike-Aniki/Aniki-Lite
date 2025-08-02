@@ -21,7 +21,7 @@ A perfect fit for users seeking a fast, clean, and functional console-style inte
 
 
 <p align="Center">
-Trailer : https://youtu.be/FXCnfGItbqQ
+Trailer : https://www.youtube.com/watch?v=f8UvMWZ9Cb4
 </p>
 
 <p align="Center">
