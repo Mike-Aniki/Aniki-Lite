@@ -101,3 +101,13 @@ Packages:
     - Fixed the filter name remaining visible in the Details view when the game list was in vertical mode
     - Fixed an issue where quickly opening and closing the Trophies panel would block navigation
     - Added HowLongToBeat integration to the Details panel
+  - Version: 2.4
+    RequiredApiVersion: 2.6.0
+    ReleaseDate: 2025-08-02
+    PackageUrl: https://github.com/Mike-Aniki/Aniki-Lite/releases/download/v2.4/Aniki_Lite_2_4.pthm
+    Changelog:
+    - Complete overhaul of the trophy window with a new behavior. The trophy view now opens in an independent window, which fixes previous navigation lock issues.
+    - Support for version v0.1.2 of SuccessStoryFullscreenHelper. With this extension, all unlocked trophies can now be viewed directly from the main view, game by game, along with the full list of obtained platinum trophies. Selecting a game opens its dedicated trophy window, offering a smooth and console-like fullscreen trophy experience
+    - In the Details view, the Trophies and DLC buttons are now only shown if the SuccessStory and CheckDLC extensions are installed.
+
+
