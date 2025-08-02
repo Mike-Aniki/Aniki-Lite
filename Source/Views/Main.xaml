@@ -346,6 +346,772 @@
         </Setter>
     </Style>
 
+    <Style x:Key="AchievementsWindowStyle" TargetType="ContentControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Grid KeyboardNavigation.DirectionalNavigation="Cycle"
+                      KeyboardNavigation.TabNavigation="Cycle"
+                      KeyboardNavigation.ControlTabNavigation="Cycle"
+                      FocusManager.FocusedElement="{Binding ElementName=SortButton}"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Background="{DynamicResource OverlayMenu}">
+
+                        <!-- Separator -->
+                        <Border Height="180" Margin="0,0,0,0"  BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderWindowBrush}"  Background="{DynamicResource ButtonBrushBackground}" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+
+                        <!-- Avatar -->
+                        <Grid  HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               Margin="100,20,0,0"
+                                        Width="120"
+                                        Height="120">
+
+                            <Border>
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Setter Property="Background" Value="{DynamicResource Avatar1}" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=UserAvatar, Path=Source}" Value="{x:Null}">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="1">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar1}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="2">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar2}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="3">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar3}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="4">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar4}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="5">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar5}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="6">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar6}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="7">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar7}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="8">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar8}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="9">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar9}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="10">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar10}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="11">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar11}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="12">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar12}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="13">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar13}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="14">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar14}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="15">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar15}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="16">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar16}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="17">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar17}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="18">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar18}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="19">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar19}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="20">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar20}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="21">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar21}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="22">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar22}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="23">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar23}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="24">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar24}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="25">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar25}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="26">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar26}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="27">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar27}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="28">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar28}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="29">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar29}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="30">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar30}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="31">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar31}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="32">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar32}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="33">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar33}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="34">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar34}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="35">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar35}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="36">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar36}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="37">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar37}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="38">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar38}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="39">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar39}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="40">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar40}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Source={StaticResource AvatarImageIndex}}" Value="41">
+                                                <Setter Property="Background" Value="{DynamicResource Avatar41}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="0.5" />
+                                </Border.Effect>
+                            </Border>
+
+
+                            <TextBlock x:Name="ProfilePicturePath"
+                                               Tag="{Api Paths.ConfigurationPath}"
+                                               Visibility="Collapsed"
+                                               Grid.Row="0"
+                                               Grid.Column="1">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Setter Property="Text">
+                                            <Setter.Value>
+                                                <MultiBinding StringFormat="{}{0}\ExtraMetadata\Themes\Common\ProfilePicture.png">
+                                                    <Binding Path="Tag" RelativeSource="{RelativeSource Self}" />
+                                                </MultiBinding>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                            <Image x:Name="UserAvatar"
+                                           Grid.Row="0"
+                                           Grid.Column="1"
+                                           Source="{Binding ElementName=ProfilePicturePath, Path=Text}"
+                                           Stretch="UniformToFill"
+                                           RenderOptions.BitmapScalingMode="Fant"
+                                           Width="120" Height="120"/>
+
+                            <Border Grid.Row="0"
+                                            Grid.Column="1"
+                                            BorderBrush="#eaeaea"
+                                            BorderThickness="2"
+                                            Margin="-1"
+                                            Width="120" Height="120"
+                                            CornerRadius="0"/>
+
+                        </Grid>
+
+                        <!-- Score -->
+                        <Grid Margin="0,20,0,0" VerticalAlignment="Top" HorizontalAlignment="Center">
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,0">
+
+                                <Grid Margin="12">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Rang / Niveau -->
+                                    <StackPanel Orientation="Horizontal" Grid.Column="0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            Margin="0,0,40,0">
+
+                                        <Border Height="70" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0" ClipToBounds="True">
+                                            <StackPanel>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Bronze1.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Bronze1">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Bronze2.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Bronze2">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Bronze3.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Bronze3">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Silver1.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Silver1">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Silver2.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Silver2">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Silver3.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Silver3">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Gold1.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Gold1">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Gold2.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Gold2">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Gold3.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Gold3">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat1.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat1">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat2.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat2">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat3.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat3">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat.png'}" HorizontalAlignment="Center">
+                                                    <Image.Style>
+                                                        <Style TargetType="Image">
+                                                            <Setter Property="Visibility" Value="Collapsed" />
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat">
+                                                                    <Setter Property="Visibility" Value="Visible" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </Image.Style>
+                                                </Image>
+                                            </StackPanel>
+                                            <Border.Effect>
+                                                <DropShadowEffect Color="Black" ShadowDepth="0" Opacity="0.4" BlurRadius="2"/>
+                                            </Border.Effect>
+                                        </Border>
+
+                                        <TextBlock Text="{PluginSettings Plugin=SSHelper, Path=GSLevel}"
+                                           Margin="10,0,0,10"
+                                           FontSize="36"
+                                           FontWeight="Bold"
+                                           Style="{DynamicResource TextBlockBaseStyle}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <!-- Trophées + Total -->
+                                    <StackPanel Grid.Column="1"
+                                            Orientation="Horizontal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left">
+
+                                        <!-- Total -->
+                                        <StackPanel Orientation="Vertical" Margin="0,0,30,0" VerticalAlignment="Center">
+                                            <TextBlock Text="Total"
+                                                   FontSize="20"
+                                                   Style="{DynamicResource TextBlockBaseStyle}"
+                                                   HorizontalAlignment="Center"/>
+                                            <TextBlock Text="{PluginSettings Plugin=SSHelper, Path=GSTotal}"
+                                                   FontSize="26"
+                                                   FontWeight="Bold"
+                                                   Style="{DynamicResource TextBlockBaseStyle}"
+                                                   HorizontalAlignment="Center"/>
+                                        </StackPanel>
+
+                                        <!-- Platine -->
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,30,0" VerticalAlignment="Center">
+                                            <Image Source="{ThemeFile 'Images/platinum.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                            <TextBlock Text="{PluginSettings Plugin=SSHelper, Path=GSPlat}" FontWeight="Light"  FontSize="26" Style="{DynamicResource TextBlockBaseStyle}"/>
+                                        </StackPanel>
+
+                                        <!-- Or -->
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,30,0" VerticalAlignment="Center">
+                                            <Image Source="{ThemeFile 'Images/Or.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                            <TextBlock Text="{PluginSettings Plugin=SSHelper, Path=GS90}" FontWeight="Light"  FontSize="26" Style="{DynamicResource TextBlockBaseStyle}"/>
+                                        </StackPanel>
+
+                                        <!-- Argent -->
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,30,0" VerticalAlignment="Center">
+                                            <Image Source="{ThemeFile 'Images/Argent.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                            <TextBlock Text="{PluginSettings Plugin=SSHelper, Path=GS30}" FontWeight="Light"  FontSize="26" Style="{DynamicResource TextBlockBaseStyle}"/>
+                                        </StackPanel>
+
+                                        <!-- Bronze -->
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <Image Source="{ThemeFile 'Images/Bronze.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                            <TextBlock Text="{PluginSettings Plugin=SSHelper, Path=GS15}" FontWeight="Light" FontSize="26" Style="{DynamicResource TextBlockBaseStyle}"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Grid>
+                                
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                    <TextBlock Margin="0,0,10,0" 
+                                                           HorizontalAlignment="Center"
+                                                           VerticalAlignment="Center"
+                                                           Style="{DynamicResource TextBlockBaseStyle}"
+                                                           FontSize="18" 
+                                                           Text="{DynamicResource LOCNextLevel}" />
+                                    <Grid>
+                                        <Grid Height="15" Margin="5,0,12,0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <ProgressBar Value="{PluginSettings Plugin=SSHelper, Path=GSLevelProgress}"
+                                                                 Background="{DynamicResource TextBrush}" 
+                                                                 Minimum="0"
+                                                                 Maximum="100"
+                                                                 Height="10"
+                                                                 Width="500" 
+                                                                 BorderThickness="0"
+                                                                 Style="{DynamicResource ProgressBarCustom}"
+                                                                 Margin="0,4,0,0"
+                                                                 Foreground="#FFCD31" />
+                                        </Grid>
+                                    </Grid>
+                                    <TextBlock Margin="10,0,0,0" 
+                                                               HorizontalAlignment="Center"
+                                                               VerticalAlignment="Center"
+                                                               Style="{DynamicResource TextBlockBaseStyle}"
+                                                               FontSize="30" 
+                                                               Text="{PluginSettings Plugin=SSHelper, Path=GSLevelProgress, StringFormat={}{0}%}" />
+                                </StackPanel>
+                            
+
+                            </StackPanel>
+                        </Grid>
+
+                       
+                        <!--Trophée button -->
+                        <ToggleButtonEx x:Name="SortButton" 
+                                        Margin="0,183,0,0"                              
+                                        Width="1600"
+                                        Height="70"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Top"
+                                        Focusable="True"
+                                        Style="{StaticResource TrophViewButton}" />
+                        
+                        <Rectangle Fill="{DynamicResource BorderWindowBrush}" Height="1" Width="1450" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="80,256,80,0" />
+
+                        <!-- Liste des Trophées -->
+                        <ListView x:Name="AchievementsList"
+                              ItemsSource="{PluginSettings Plugin=SSHelper, Path=AllGamesWithAchievements}"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              Background="Transparent"
+                              BorderThickness="0"
+                              Height="750"
+                              Margin="0,180,0,0"
+                              BorderBrush="Transparent"
+                              FocusVisualStyle="{x:Null}"
+                              KeyboardNavigation.DirectionalNavigation="Continue"
+                              KeyboardNavigation.TabNavigation="Continue"
+                              KeyboardNavigation.ControlTabNavigation="Continue"
+                              pbeh:FocusBahaviors.FocusBinding="True"
+                              pbeh:FocusBahaviors.OnVisibilityFocus="True"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling">
+
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                    <Setter Property="Focusable" Value="False" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListViewItem">
+                                                <ButtonEx Command="{Binding OpenAchievementWindow}" Style="{DynamicResource ButtonTrophyviewitem}" Focusable="True">
+                                                    <Grid Margin="0,0,0,0" Height="150" Width="1600">
+                                                        <Border x:Name="MainBorder"
+                                                            CornerRadius="5"
+                                                            Background="Transparent"
+                                                            BorderThickness="3"
+                                                            BorderBrush="Transparent">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                    <ColumnDefinition Width="Auto"/>
+                                                                </Grid.ColumnDefinitions>
+                                                                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                                                                    <!-- Cover -->
+                                                                    <Image RenderOptions.BitmapScalingMode="Fant"
+                                                                       Width="130"
+                                                                       Height="130"
+                                                                       Margin="10"
+                                                                       Source="{Binding CoverImagePath}" />
+                                                                    <!-- Infos jeu -->
+                                                                    <StackPanel  Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,0,0">
+                                                                        <!-- Nom -->
+                                                                        <TextBlock Text="{Binding Name}"
+                                                                               HorizontalAlignment="Left"
+                                                                               Style="{DynamicResource TextBlockBaseStyle}"
+                                                                               FontSize="30"                                                                               
+                                                                               TextTrimming="CharacterEllipsis"
+                                                                               TextWrapping="Wrap"
+                                                                               MaxWidth="1000"/>
+                                                                        <!-- Badge -->
+                                                                        <Border Background="#444" Margin="0,3,0,0" Padding="5,1" CornerRadius="4" MinWidth="80" HorizontalAlignment="Left">
+                                                                            <TextBlock Text="{Binding Platform}" Foreground="White" FontSize="24" HorizontalAlignment="Center"/>
+                                                                        </Border>
+                                                                    </StackPanel>
+                                                                </StackPanel>
+
+                                                                <!-- Trophées + progression -->
+                                                                <Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <ColumnDefinition Width="50"/>
+                                                                        <!-- Pourcentage -->
+                                                                        <ColumnDefinition Width="100"/>
+                                                                        <!-- Barre -->
+                                                                        <ColumnDefinition Width="20"/>
+                                                                        <!-- Espacement -->
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <!-- Or -->
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <!-- Compteur Or -->
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <!-- Argent -->
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <!-- Compteur Argent -->
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <!-- Bronze -->
+                                                                        <ColumnDefinition Width="Auto"/>
+                                                                        <!-- Compteur Bronze -->
+                                                                    </Grid.ColumnDefinitions>
+
+                                                                    <!-- Platine -->
+                                                                    <Image Grid.Column="2" Source="{ThemeFile 'Images/platinum.png'}" Width="48" Height="48" VerticalAlignment="Center">
+                                                                        <Image.Style>
+                                                                            <Style TargetType="Image">
+                                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding ElementName=Progression, Path=Text}" Value="100%">
+                                                                                        <Setter Property="Visibility" Value="Visible"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Image.Style>
+                                                                    </Image>
+
+                                                                    <StackPanel Grid.Column="4" Orientation="Vertical" Margin="0,-20,0,0">
+                                                                        <!-- % -->
+                                                                        <TextBlock x:Name="Progression" Text="{Binding Progress, StringFormat={}{0}%}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="38" VerticalAlignment="Center"/>
+
+                                                                        <!-- Barre -->
+                                                                        <ProgressBar 
+                                                                             Value="{Binding Progress}"
+                                                                             Height="10"
+                                                                             Minimum="0"
+                                                                             Maximum="100"
+                                                                             Foreground="#FFCD31"
+                                                                             Background="#333"
+                                                                             BorderBrush="Transparent"
+                                                                             VerticalAlignment="Center"/>
+                                                                    </StackPanel>
+                                                                    <!-- Or -->
+                                                                    <Image Grid.Column="6" Source="{ThemeFile 'Images/Or.png'}" Width="38" Height="38" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                                                    <TextBlock Grid.Column="7" Text="{Binding GS90Count}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="28" Margin="5,0,0,0" MinWidth="30" VerticalAlignment="Center"/>
+
+                                                                    <!-- Argent -->
+                                                                    <Image Grid.Column="8" Source="{ThemeFile 'Images/Argent.png'}" Width="38" Height="38" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                                                    <TextBlock Grid.Column="9" Text="{Binding GS30Count}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="28" Margin="5,0,0,0" MinWidth="30" VerticalAlignment="Center"/>
+
+                                                                    <!-- Bronze -->
+                                                                    <Image Grid.Column="10" Source="{ThemeFile 'Images/Bronze.png'}" Width="38" Height="38" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                                                                    <TextBlock Grid.Column="11" Text="{Binding GS15Count}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="28" Margin="5,0,0,0" MinWidth="30" VerticalAlignment="Center"/>
+                                                                </Grid>
+
+                                                            </Grid>
+
+                                                        </Border>
+                                                        <!-- Separator -->
+                                                        <Border x:Name="Separator" Height="1" Margin="80,0,80,-5"  Background="{DynamicResource BorderWindowBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+                                                    </Grid>
+                                                </ButtonEx>
+                                                <!-- Triggers -->
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsFocused" Value="True">                                                       
+                                                        <Setter TargetName="Separator" Property="Visibility" Value="Collapsed"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+
+                            <ListView.Style>
+                                <Style TargetType="ListView">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=SortButton, Path=IsChecked}" Value="False">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListView.Style>
+                            
+
+                        </ListView>
+                        <!-- Liste des Platines -->
+                        <ListView x:Name="PlatineList"
+                              ItemsSource="{PluginSettings Plugin=SSHelper, Path=PlatinumGames}"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              Background="Transparent"
+                              BorderThickness="0"
+                              Height="750"
+                              Margin="0,180,0,0"
+                              BorderBrush="Transparent"
+                              FocusVisualStyle="{x:Null}"
+                              KeyboardNavigation.DirectionalNavigation="Continue"
+                              KeyboardNavigation.TabNavigation="Continue"
+                              KeyboardNavigation.ControlTabNavigation="Continue"
+                              pbeh:FocusBahaviors.FocusBinding="True"
+                              pbeh:FocusBahaviors.OnVisibilityFocus="True"
+                              VirtualizingPanel.IsVirtualizing="True"
+                              VirtualizingPanel.VirtualizationMode="Recycling">
+
+                            <ListView.ItemContainerStyle>
+                                <Style TargetType="ListViewItem">
+                                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                                    <Setter Property="Focusable" Value="False" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ListViewItem">
+                                                <ButtonEx Command="{Binding OpenAchievementWindow}" Style="{DynamicResource ButtonTrophyviewitem}" Focusable="True">
+                                                    <Grid Margin="0,0,0,0" Height="150" Width="1600">
+                                                        <Border x:Name="MainBorder"
+                                                            CornerRadius="5"
+                                                            Background="Transparent"
+                                                            BorderThickness="3"
+                                                            BorderBrush="Transparent">
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="*"/>
+                                                                    <ColumnDefinition Width="Auto"/>
+                                                                </Grid.ColumnDefinitions>
+
+
+
+                                                                <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+
+                                                                    <!-- Jaquette -->
+                                                                    <Image RenderOptions.BitmapScalingMode="Fant"
+                                                                       Width="130"
+                                                                       Height="130"
+                                                                       Margin="10"
+                                                                       Source="{Binding CoverImagePath}" />
+
+                                                                    <!-- Infos jeu -->
+                                                                    <StackPanel  Orientation="Vertical" VerticalAlignment="Center" Margin="10,0,0,0">
+                                                                        <!-- Nom -->
+                                                                        <TextBlock Text="{Binding Name}"
+                                                                               HorizontalAlignment="Left"
+                                                                               Style="{DynamicResource TextBlockBaseStyle}"
+                                                                               FontSize="30"                                                                               
+                                                                               TextTrimming="CharacterEllipsis"
+                                                                               TextWrapping="Wrap"
+                                                                               MaxWidth="1000"/>
+
+                                                                        <!-- Badge -->
+                                                                        <Border Background="#444" Margin="0,3,0,0" Padding="5,1" CornerRadius="4" MinWidth="80" HorizontalAlignment="Left">
+                                                                            <TextBlock Text="{Binding Platform}" Foreground="White" FontSize="24" HorizontalAlignment="Center"/>
+                                                                        </Border>
+                                                                    </StackPanel>
+                                                                </StackPanel>
+
+                                                                <Grid Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,60,0">
+
+                                                                    <StackPanel Orientation="Horizontal">
+
+                                                                        <StackPanel Orientation="Vertical">
+                                                                            <TextBlock HorizontalAlignment="Right" Text="{Binding LatestUnlocked, StringFormat='{}{0:d MMMM yyyy}'}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="26" />
+                                                                            <TextBlock HorizontalAlignment="Right" Text="{Binding LatestUnlocked, StringFormat='{}{0:HH:mm}'}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="26" />
+                                                                        </StackPanel>
+                                                                        <Image Grid.Column="2" Margin="10,0,0,0"  Source="{ThemeFile 'Images/platinum.png'}" Width="48" Height="48" VerticalAlignment="Center"/>
+
+                                                                    </StackPanel>
+                                                                </Grid>
+
+                                                            </Grid>
+
+                                                        </Border>
+                                                        <!-- Separator -->
+                                                        <Border x:Name="Separator" Height="1" Margin="80,0,80,-5"  Background="{DynamicResource BorderWindowBrush}" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+                                                    </Grid>
+                                                </ButtonEx>
+
+                                                <!-- Triggers -->
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsFocused" Value="True">
+                                                        <Setter TargetName="Separator" Property="Visibility" Value="Collapsed"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ListView.ItemContainerStyle>
+
+                            <ListView.Style>
+                                <Style TargetType="ListView">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=SortButton, Path=IsChecked}" Value="True">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ListView.Style>
+
+
+                        </ListView>
+                        <!-- ButtonBottom -->
+                        <ButtonEx x:Name="BackButton" Margin="0,0,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Style="{StaticResource IconBButton}" Content="{DynamicResource LOCBackLabel}" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
     <Style TargetType="{x:Type Main}">
         <Setter Property="Template">
             <Setter.Value>
@@ -395,7 +1161,7 @@
                             <Grid.Style>
                                 <Style TargetType="Grid">
                                     <Setter Property="Opacity" Value="0" />
-                                    <Style.Triggers>
+                                    <Style.Triggers>                                    
                                         <DataTrigger Binding="{Binding ElementName=PART_MainHost, Path=Visibility}" Value="Visible">
                                             <DataTrigger.EnterActions>
                                                 <BeginStoryboard>
@@ -1182,554 +1948,7 @@
                                 </StackPanel>
                             </Grid>
                             
-                            <!--SuccessHelper-->
-
-                            <Border x:Name="SuccessBorder" Background="{DynamicResource OverlayMenu}" BorderBrush="{DynamicResource BorderWindowBrush}" CornerRadius="0,0,10,10" BorderThickness="3,0,3,3" Panel.ZIndex="2" >
-                                <Border.Style>
-                                    <Style TargetType="Border">
-                                        <Setter Property="Grid.Row" Value="0"/>
-                                        <Setter Property="Grid.RowSpan" Value="2"/>
-                                        <Setter Property="HorizontalAlignment" Value="Stretch"/>
-                                        <Setter Property="VerticalAlignment" Value="Top"/>
-                                        <Setter Property="MinHeight" Value="550"/>
-                                        <Setter Property="Width" Value="1000"/>
-                                        <Setter Property="Visibility" Value="Collapsed"/>
-                                        <Setter Property="Opacity" Value="0"/>
-                                        <Setter Property="RenderTransform">
-                                            <Setter.Value>
-                                                <TransformGroup>
-                                                    <ScaleTransform ScaleX="1" ScaleY="1" />
-                                                    <TranslateTransform Y="0" />
-                                                </TransformGroup>
-                                            </Setter.Value>
-                                        </Setter>
-
-                                        <Style.Triggers>
-                                            <MultiDataTrigger>
-                                                <MultiDataTrigger.Conditions>
-                                                    <Condition Binding="{Binding ElementName=SuccessMainViewButton, Path=IsChecked}" Value="True"/>
-                                                    <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ModePerf]}" Value="False" />
-                                                </MultiDataTrigger.Conditions>
-                                                <Setter Property="Visibility" Value="Visible" />
-                                                <MultiDataTrigger.EnterActions>
-                                                    <BeginStoryboard x:Name="ShowPanelStoryboard">
-                                                        <Storyboard>
-                                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TransformGroup.Children)[1].(TranslateTransform.Y)" From="-300" Duration="0:0:0.3">
-                                                                <DoubleAnimation.EasingFunction>
-                                                                    <CubicEase EasingMode="EaseOut"/>
-                                                                </DoubleAnimation.EasingFunction>
-                                                            </DoubleAnimation>
-                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.2">
-                                                                <DoubleAnimation.EasingFunction>
-                                                                    <CubicEase EasingMode="EaseOut"/>
-                                                                </DoubleAnimation.EasingFunction>
-                                                            </DoubleAnimation>
-                                                        </Storyboard>
-                                                    </BeginStoryboard>
-                                                </MultiDataTrigger.EnterActions>
-                                                <MultiDataTrigger.ExitActions>
-                                                    <RemoveStoryboard BeginStoryboardName="ShowPanelStoryboard" />
-                                                </MultiDataTrigger.ExitActions>
-                                            </MultiDataTrigger>
-
-                                            <MultiDataTrigger>
-                                                <MultiDataTrigger.Conditions>
-                                                    <Condition Binding="{Binding ElementName=SuccessMainViewButton, Path=IsChecked}" Value="True"/>
-                                                    <Condition Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[ModePerf]}" Value="True" />
-                                                </MultiDataTrigger.Conditions>
-                                                <Setter Property="Visibility" Value="Visible" />
-                                                <Setter Property="Opacity" Value="1" />
-                                            </MultiDataTrigger>
-
-                                        </Style.Triggers>
-                                    </Style>
-                                </Border.Style>
-
-                                <StackPanel KeyboardNavigation.TabNavigation="Cycle"
-                                            KeyboardNavigation.DirectionalNavigation="Cycle"
-                                            KeyboardNavigation.ControlTabNavigation="Cycle">
-                                    <CheckBoxEx x:Name="BackSuccessButton"
-                                                Margin="0,0,0,-40"
-                                                Style="{DynamicResource SuccessButtonBack}"
-                                                IsChecked="{Binding IsChecked, ElementName=SuccessMainViewButton, Mode=TwoWay}"
-                                                pbeh:FocusBahaviors.OnVisibilityFocus="True"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Top" />
-
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-10,10,-40">
-                                        
-                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,10,-15">
-                                        <TextBlock Margin="5,0,0,0" 
-                                                   HorizontalAlignment="Center"
-                                                   VerticalAlignment="Bottom"
-                                                   Style="{DynamicResource TextBlockBaseStyle}"
-                                                   FontSize="24" 
-                                                   Text="{DynamicResource LOCLevel}" />
-
-                                        <TextBlock Margin="5,-10,0,0" 
-                                                   HorizontalAlignment="Center"
-                                                   VerticalAlignment="Bottom"
-                                                   Style="{DynamicResource TextBlockBaseStyle}"
-                                                   FontSize="30" 
-                                                   Text="{PluginSettings Plugin=SSHelper, Path=GSLevel}" />
-                                    </StackPanel>
-                                        <Border Height="70" Width="70" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,-20" ClipToBounds="True">
-                                            <StackPanel>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Bronze1.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Bronze1">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Bronze2.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Bronze2">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Bronze3.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Bronze3">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Silver1.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Silver1">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Silver2.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Silver2">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Silver3.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Silver3">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Gold1.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Gold1">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Gold2.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Gold2">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Gold3.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Gold3">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat1.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat1">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat2.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat2">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat3.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat3">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                                <Image Height="70" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" Source="{ThemeFile 'Images/UserLevel/Plat.png'}" HorizontalAlignment="Center">
-                                                    <Image.Style>
-                                                        <Style TargetType="Image">
-                                                            <Setter Property="Visibility" Value="Collapsed" />
-                                                            <Style.Triggers>
-                                                                <DataTrigger Binding="{PluginSettings Plugin=SSHelper, Path=GSRank}" Value="Plat">
-                                                                    <Setter Property="Visibility" Value="Visible" />
-                                                                </DataTrigger>
-                                                            </Style.Triggers>
-                                                        </Style>
-                                                    </Image.Style>
-                                                </Image>
-                                            </StackPanel>
-                                            <Border.Effect>
-                                                <DropShadowEffect Color="Black" ShadowDepth="0" Opacity="0.4" BlurRadius="2"/>
-                                            </Border.Effect>
-                                        </Border>
-                                    </StackPanel>
-
-                                    <StackPanel Orientation="Vertical" >
-                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                            <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0">
-                                                <TextBlock Margin="0,0,0,0"
-                                                           HorizontalAlignment="Center"   
-                                                           Style="{DynamicResource TextBlockBaseStyle}"
-                                                           FontSize="26" 	
-                                                           Text="{DynamicResource LOCTrophiesEarned}" />
-                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,20,0,0">
-                                                    <StackPanel Orientation="Vertical">
-                                                        <TextBlock Margin="0,0,0,-5"
-                                                                   HorizontalAlignment="Center"           
-                                                                   Style="{DynamicResource TextBlockBaseStyle}" 
-                                                                   FontSize="24" 	
-                                                                   Text="{DynamicResource LOCTotal}" />
-                                                        <TextBlock Margin="0,-10,0,0"
-                                                                   HorizontalAlignment="Center"
-                                                                   Style="{DynamicResource TextBlockBaseStyle}" 
-                                                                   FontSize="34" 	
-                                                                   Text="{PluginSettings Plugin=SSHelper, Path=GSTotal}" />
-                                                    </StackPanel>
-
-                                                    <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Border Height="50" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0" ClipToBounds="True">
-                                                                <Image Height="55" 
-                                                                       Source="{ThemeFile 'Images/platinum.png'}"
-                                                                       RenderOptions.BitmapScalingMode="Fant" 
-                                                                       VerticalAlignment="Center"
-                                                                       HorizontalAlignment="Center"/>
-                                                            </Border>
-                                                            <TextBlock Margin="5,0,0,2" 
-                                                                       HorizontalAlignment="Left"
-                                                                       VerticalAlignment="Bottom"
-                                                                       Style="{DynamicResource TextBlockBaseStyle}"
-                                                                       FontSize="30" 
-                                                                       Text="{PluginSettings Plugin=SSHelper, Path=GSPlat}" />
-                                                        </StackPanel>
-
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Border Height="50" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0" ClipToBounds="True">
-                                                                <Image Height="55" 
-                                                                       Source="{ThemeFile 'Images/Or.png'}"
-                                                                       RenderOptions.BitmapScalingMode="Fant" 
-                                                                       VerticalAlignment="Center"
-                                                                       HorizontalAlignment="Center"/>
-                                                            </Border>
-                                                            <TextBlock Margin="5,0,0,2" 
-                                                                       HorizontalAlignment="Left"
-                                                                       VerticalAlignment="Bottom"
-                                                                       Style="{DynamicResource TextBlockBaseStyle}"
-                                                                       FontSize="30" 
-                                                                       Text="{PluginSettings Plugin=SSHelper, Path=GS90}" />
-                                                        </StackPanel>
-
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Border Height="50" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0" ClipToBounds="True">
-                                                                <Image Height="55" 
-                                                                       Source="{ThemeFile 'Images/Argent.png'}"
-                                                                       RenderOptions.BitmapScalingMode="Fant" 
-                                                                       VerticalAlignment="Bottom"
-                                                                       HorizontalAlignment="Center" />
-                                                            </Border>
-                                                            <TextBlock Margin="5,0,0,2" 
-                                                                       HorizontalAlignment="Left"
-                                                                       VerticalAlignment="Bottom"  
-                                                                       Style="{DynamicResource TextBlockBaseStyle}"
-                                                                       FontSize="30" 
-                                                                       Text="{PluginSettings Plugin=SSHelper, Path=GS30}" />
-                                                        </StackPanel>
-
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Border Height="50" Width="50" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0,0,0,0" ClipToBounds="True">
-                                                                <Image Source="{ThemeFile 'Images/Bronze.png'}"
-                                                                       RenderOptions.BitmapScalingMode="Fant"
-                                                                       VerticalAlignment="Bottom"
-                                                                       HorizontalAlignment="Center" />
-                                                            </Border>
-                                                            <TextBlock Margin="5,0,0,2"
-                                                                       HorizontalAlignment="Left"
-                                                                       VerticalAlignment="Bottom"
-                                                                       Style="{DynamicResource TextBlockBaseStyle}"
-                                                                       FontSize="30" 
-                                                                       Text="{PluginSettings Plugin=SSHelper, Path=GS15}" />
-                                                        </StackPanel>
-                                                    </StackPanel>
-                                                </StackPanel>
-
-                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10,0,0">
-                                                    <Grid>
-                                                        <Grid Height="15" Margin="5,0,12,15" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                                            <ProgressBar Value="{PluginSettings Plugin=SSHelper, Path=GSLevelProgress}"
-                                                                 Background="{DynamicResource TextBrush}" 
-                                                                 Minimum="0"
-                                                                 Maximum="100"
-                                                                 Height="10"
-                                                                 Width="500" 
-                                                                 BorderThickness="0"
-                                                                 Style="{DynamicResource ProgressBarCustom}"
-                                                                 Margin="0,4,0,0"
-                                                                 Foreground="#FFCD31" />
-                                                        </Grid>
-                                                    </Grid>
-                                                    <TextBlock Margin="5,0,0,0" 
-                                                               HorizontalAlignment="Center"
-                                                               VerticalAlignment="Bottom"
-                                                               Style="{DynamicResource TextBlockBaseStyle}"
-                                                               FontSize="30" 
-                                                               Text="{PluginSettings Plugin=SSHelper, Path=GSLevelProgress, StringFormat={}{0}%}" />
-                                                </StackPanel>
-
-                                                <TextBlock Margin="0,-15,0,0" 
-                                                           HorizontalAlignment="Center"
-                                                           VerticalAlignment="Bottom"
-                                                           Style="{DynamicResource TextBlockBaseStyle}"
-                                                           FontSize="18" 
-                                                           Text="{DynamicResource LOCNextLevel}" />
-                                            </StackPanel>
-                                        </StackPanel>
-
-                                        <Border Background="{DynamicResource TrophyBackgroundBrush}" BorderBrush="{DynamicResource BorderWindowBrush}" BorderThickness="0,1,0,1" Margin="0,15,0,-20" HorizontalAlignment="Stretch" Height="40">
-                                            <TextBlock HorizontalAlignment="Center"                                                   
-                                                       Style="{DynamicResource TextBlockBaseStyle}" 
-                                                       FontSize="26" 	
-                                                       Text="{DynamicResource LOCPlatinumEarned}" />
-                                        </Border>
-
-                                        <ToggleButtonEx x:Name="SortButton"
-                                                        Grid.Column="1"
-                                                        Margin="0,20,0,-40"
-                                                        Style="{StaticResource SuccessSortButton}"
-                                                        HorizontalAlignment="Left"
-                                                        VerticalAlignment="Top" />
-                                        
-                                        <StackPanel Orientation="Vertical">
-                                            <ListView Background="Transparent"
-                                                      BorderBrush="Transparent" 
-                                                      Height="400"
-                                                      BorderThickness="0"
-                                                      FocusVisualStyle="{x:Null}"
-                                                      Focusable="False"
-                                                      ItemsSource="{PluginSettings Plugin=SSHelper, Path=PlatinumGames}"
-                                                      KeyboardNavigation.DirectionalNavigation="Local"
-                                                      ScrollViewer.CanContentScroll="True"
-                                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                      ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                                      VirtualizingPanel.IsVirtualizing="True"
-                                                      VirtualizingPanel.VirtualizationMode="Recycling"
-                                                      Width="Auto"
-                                                      Margin="10,0,0,10" >
-                                                <ListView.Style>
-                                                    <Style TargetType="ListView">
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding ElementName=SortButton, Path=IsChecked}" Value="True">
-                                                                <Setter Property="Visibility" Value="Visible"/>
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding ElementName=SortButton, Path=IsChecked}" Value="False">
-                                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </ListView.Style>
-
-                                                <ListView.ItemContainerStyle>
-                                                    <Style TargetType="ListViewItem">
-                                                        <Setter Property="Visibility" Value="Visible" />
-                                                        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                                                        <Setter Property="Focusable" Value="True" />
-                                                        <Setter Property="Template">
-                                                            <Setter.Value>
-                                                                <ControlTemplate TargetType="ListViewItem">
-                                                                    <Border BorderBrush="Transparent" CornerRadius="5">
-                                                                        <Grid Width="650" Height="110" Margin="5,10,5,10">
-                                                                            <Border x:Name="mask" CornerRadius="0" Background="{DynamicResource TrophyBackgroundNoFocusBrush}"/>
-                                                                            <Grid >
-                                                                                <Grid.OpacityMask>
-                                                                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
-                                                                                </Grid.OpacityMask>
-                                                                                <StackPanel Orientation="Horizontal">
-                                                                                    <Image Source="{Binding CoverImagePath}" Height="120" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" />
-                                                                                    <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                                                                                        <TextBlock x:Name="Name" Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="500" Style="{DynamicResource TextBlockBaseStyle}" FontSize="30" Margin="0,0,0,0"/>
-                                                                                        <TextBlock Text="{Binding LatestUnlocked, StringFormat='{}{0:d MMM yyyy}'}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="20" />
-                                                                                    </StackPanel>
-                                                                                </StackPanel>
-                                                                            </Grid>
-                                                                            <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="5" Margin="-1" BorderBrush="{DynamicResource ColorBorderBrush}" Visibility="Hidden" Tag="False">
-                                                                                <Border.CacheMode>
-                                                                                    <BitmapCache EnableClearType="False" RenderAtScale="1" SnapsToDevicePixels="False"/>
-                                                                                </Border.CacheMode>
-                                                                            </Border>
-                                                                        </Grid>
-                                                                    </Border>
-                                                                    <ControlTemplate.Triggers>
-                                                                        <Trigger Property="IsFocused" Value="True">
-                                                                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
-                                                                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
-                                                                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Name" />
-                                                                            <Setter Property="Background" Value="{DynamicResource TrophyBackgroundFocusBrush}" TargetName="mask" />
-                                                                            <Setter Property="CornerRadius" Value="5" TargetName="mask" />
-                                                                        </Trigger>
-                                                                    </ControlTemplate.Triggers>
-                                                                </ControlTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </Style>
-                                                </ListView.ItemContainerStyle>
-                                            </ListView>
-
-                                            <ListView Background="Transparent"
-                                                      BorderBrush="Transparent"
-                                                      Height="400"
-                                                      BorderThickness="0"
-                                                      FocusVisualStyle="{x:Null}"
-                                                      Focusable="False"
-                                                      ItemsSource="{PluginSettings Plugin=SSHelper, Path=PlatinumGamesAscending}"
-                                                      KeyboardNavigation.DirectionalNavigation="Local"
-                                                      ScrollViewer.CanContentScroll="True"
-                                                      ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                                                      ScrollViewer.VerticalScrollBarVisibility="Auto"
-                                                      VirtualizingPanel.IsVirtualizing="True"
-                                                      VirtualizingPanel.VirtualizationMode="Recycling"
-                                                      Width="Auto"
-                                                      Margin="10,0,0,10" >
-                                                <ListView.Style>
-                                                    <Style TargetType="ListView">
-                                                        <Style.Triggers>
-                                                            <DataTrigger Binding="{Binding ElementName=SortButton, Path=IsChecked}" Value="True">
-                                                                <Setter Property="Visibility" Value="Collapsed"/>
-                                                            </DataTrigger>
-                                                            <DataTrigger Binding="{Binding ElementName=SortButton, Path=IsChecked}" Value="False">
-                                                                <Setter Property="Visibility" Value="Visible"/>
-                                                            </DataTrigger>
-                                                        </Style.Triggers>
-                                                    </Style>
-                                                </ListView.Style>
-
-                                                <ListView.ItemContainerStyle>
-                                                    <Style TargetType="ListViewItem">
-                                                        <Setter Property="Visibility" Value="Visible" />
-                                                        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
-                                                        <Setter Property="Focusable" Value="True" />
-                                                        <Setter Property="Template">
-                                                            <Setter.Value>
-                                                                <ControlTemplate TargetType="ListViewItem">
-                                                                    <Border BorderBrush="Transparent" CornerRadius="5">
-                                                                        <Grid Width="650" Height="110" Margin="5,10,5,10">
-                                                                            <Border x:Name="mask" CornerRadius="0" Background="{DynamicResource TrophyBackgroundNoFocusBrush}"/>
-                                                                            <Grid >
-                                                                                <Grid.OpacityMask>
-                                                                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
-                                                                                </Grid.OpacityMask>
-                                                                                <StackPanel Orientation="Horizontal">
-                                                                                    <Image Source="{Binding CoverImagePath}" Height="120" RenderOptions.BitmapScalingMode="Fant" VerticalAlignment="Center" />
-                                                                                    <StackPanel Orientation="Vertical" Margin="10,0,0,0">
-                                                                                        <TextBlock x:Name="Name" Text="{Binding Name}" TextWrapping="Wrap" MaxWidth="550" Style="{DynamicResource TextBlockBaseStyle}" FontSize="30" Margin="0,0,0,0"/>
-                                                                                        <TextBlock Text="{Binding LatestUnlocked, StringFormat='{}{0:d MMM yyyy}'}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="20" />
-                                                                                    </StackPanel>
-                                                                                </StackPanel>
-                                                                            </Grid>
-                                                                            <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="5" Margin="-1" BorderBrush="{DynamicResource ColorBorderBrush}" Visibility="Hidden" Tag="False">
-                                                                                <Border.CacheMode>
-                                                                                    <BitmapCache EnableClearType="False" RenderAtScale="1" SnapsToDevicePixels="False"/>
-                                                                                </Border.CacheMode>
-                                                                            </Border>
-                                                                        </Grid>
-                                                                    </Border>
-                                                                    <ControlTemplate.Triggers>
-                                                                        <Trigger Property="IsFocused" Value="True">
-                                                                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
-                                                                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
-                                                                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Name" />
-                                                                            <Setter Property="Background" Value="{DynamicResource TrophyBackgroundFocusBrush}" TargetName="mask" />
-                                                                            <Setter Property="CornerRadius" Value="5" TargetName="mask" />
-                                                                        </Trigger>
-                                                                    </ControlTemplate.Triggers>
-                                                                </ControlTemplate>
-                                                            </Setter.Value>
-                                                        </Setter>
-                                                    </Style>
-                                                </ListView.ItemContainerStyle>
-                                            </ListView>
-                                        </StackPanel>
-                                    </StackPanel>
-                                </StackPanel>
-                                <Border.Effect>
-                                    <DropShadowEffect Color="Black" ShadowDepth="2" Opacity="0.5" BlurRadius="10"/>
-                                </Border.Effect>
-                            </Border>
+                    
 
                             <!--Grid Button-->
 
@@ -1933,12 +2152,13 @@
                                     </ButtonEx.Content>
                                 </ButtonEx>
 
-                                <CheckBoxEx
+                                <CheckBoxEx 
                                         x:Name="SuccessMainViewButton"
                                         Grid.Column="4"
                                         Width="98"
                                         Height="98"
-                                        Margin="0,0,0,0" >
+                                        Margin="0,0,0,0"
+                                        Command="{PluginSettings Plugin=SSHelper, Path=OpenAchievementWindow}">
                                     <CheckBoxEx.Style>
                                         <Style TargetType="CheckBoxEx" BasedOn="{StaticResource SuccessMainButton}">
                                             <Setter Property="Visibility" Value="Collapsed"/>

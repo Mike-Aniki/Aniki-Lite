@@ -7,59 +7,172 @@
                     mc:Ignorable="d">
 
 
-    <Style x:Key="TrophyWindowStyle" TargetType="ContentControl">
-        <Setter Property="Margin" Value="0,80,60,80" />
-        <Setter Property="Grid.RowSpan" Value="3" />
-        <Setter Property="Grid.Column" Value="2" />
-        <Setter Property="Grid.Row" Value="0" />
-        <Setter Property="HorizontalAlignment" Value="Right" />
-        <Setter Property="Width" Value="750" />
-        <Setter Property="Visibility" Value="Collapsed" />
+    <Style x:Key="GameAchievementsWindowStyle" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentControl">
-                    <Grid>
-                        <Grid.InputBindings>
-                            <pin:GameControllerInputBinding x:Name="CloseTroph" Button="B" Command="{Binding Content.Toggle, ElementName=ThemeOptions_Command}"	CommandParameter="{Binding ElementName=BackButton}" />
-                            <KeyBinding Key="Esc" x:Name="CloseKeyCloseTroph" Command="{Binding Content.Toggle, ElementName=ThemeOptions_Command}"	CommandParameter="{Binding ElementName=BackButton}" />
-                        </Grid.InputBindings>
+                    <Grid KeyboardNavigation.DirectionalNavigation="Cycle"
+                          KeyboardNavigation.TabNavigation="Cycle"
+                      KeyboardNavigation.ControlTabNavigation="Cycle"
+                          FocusManager.FocusedElement="{Binding ElementName=SortButton}"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                          Opacity="0"
+                      Background="{DynamicResource OverlayMenu}">
 
-                       
+                        <Grid.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Grid.Triggers>
 
-                        <Border Background="{DynamicResource TrophyBackgroundBrush}" Opacity="0.95" CornerRadius="5"  Visibility="Visible">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Black"
-											  Direction="315"
-											  ShadowDepth="5"
-											  Opacity="0.5"
-											  BlurRadius="10"/>
-                            </Border.Effect>
+                        <FadeImage Source="{Binding SelectedGame.BackgroundImage}" Margin="0,-150,0,0"
+                                   HorizontalContentAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Top"
+                                   Height="1000"
+                                   Stretch="UniformToFill"
+                                   Opacity="0.7">
+                            <FadeImage.OpacityMask>
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                    <GradientStop Color="Black" Offset="0.0" />
+                                    <GradientStop Color="Transparent" Offset="0.5" />
+                                </LinearGradientBrush>
+                            </FadeImage.OpacityMask>
+                        </FadeImage>
+                        
+                        <!-- Bandeau supérieur du panneau de trophées -->
+                        <Border Background="Transparent" Margin="0,20,0,0"
+                                BorderThickness="0,0,0,0"
+                                BorderBrush="{DynamicResource BorderWindowBrush}"
+                                Height="250"
+                                VerticalAlignment="Top">
 
-                            <Grid x:Name="AchievementList" VerticalAlignment="Center" HorizontalAlignment="Center" Width="750" Height="850" KeyboardNavigation.DirectionalNavigation="Cycle" pbeh:FocusBahaviors.FocusBinding="True" >
-                                
-                                <Grid HorizontalAlignment="Stretch" Width="700" VerticalAlignment="Top" Margin="0,-25,0,0">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
+                            <Grid Margin="100,0,100,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
 
-                                    <CheckBoxEx x:Name="BackButton"  Grid.Column="0" Margin="0,0,0,0"
-                                                Style="{DynamicResource SuccessButtonBack}"
-                                                IsChecked="{Binding IsChecked, ElementName=SuccessButton, Mode=TwoWay}"
-                                                pbeh:FocusBahaviors.OnVisibilityFocus="True"
-                                                HorizontalAlignment="Left"
-                                                VerticalAlignment="Center" />
+                              
 
-                                   
+                                <!-- Colonne gauche : Cover -->
+                                <Border Grid.Column="0" HorizontalAlignment="Right"
+                                        Width="200"
+                                        Height="200"
+                                        Margin="0,20,0,0"
+                                        BorderThickness="2"
+                                        BorderBrush="{DynamicResource GameBorderBrush}"
+                                        Background="{DynamicResource OverlayMenu}">
+                                    <Border.Effect>
+                                        <DropShadowEffect ShadowDepth="0"
+                                                          BlurRadius="10"
+                                                          Opacity="0.4"
+                                                          Color="Black" />
+                                    </Border.Effect>
+                                    <Image Source="{Binding SelectedGame.CoverImageObjectCached}"
+                                           Stretch="UniformToFill"
+                                           RenderOptions.BitmapScalingMode="Fant"
+                                           ClipToBounds="True"
+                                           SnapsToDevicePixels="True"
+                                           Width="200"
+                                           Height="200" />
+                                </Border>
 
-                                    <ToggleButtonEx x:Name="SortButton"
+                                <!-- Colonne centre : Titre + barre progression -->
+                                <StackPanel Grid.Column="1"
+                                            VerticalAlignment="Center"
+                                            Margin="0,0,0,0"
+                                            HorizontalAlignment="Center">
+                                    <TextBlock Text="{Binding SelectedGame.Name}"
+                                               HorizontalAlignment="Center"
+                                               FontSize="50"
+                                               TextWrapping="Wrap"
+                                               TextTrimming="WordEllipsis"
+                                               MaxWidth="1500"
+                                               Style="{DynamicResource TextBlockBaseStyle}" />
+
+                                    <ProgressBar Value="{PluginSettings Plugin=SuccessStory, Path=Percent}"
+                                                 Background="{DynamicResource TextBrush}" 
+                                                 Minimum="0"
+                                                 Maximum="100"
+                                                 Height="10"
+                                                 Width="500"
+                                                 Style="{DynamicResource ProgressBarCustom}"
+                                                 Margin="0,20,0,0"
+                                                 Foreground="#FFCD31" />
+
+                                    <TextBlock Margin="0,10,0,0"
+                                               HorizontalAlignment="Center"
+                                               Style="{DynamicResource TextBlockBaseStyle}"
+                                               FontSize="30"
+                                               Text="{PluginSettings Plugin=SuccessStory, Path=Percent, StringFormat={}{0}%}" />
+                                </StackPanel>
+
+                            
+
+                            </Grid>
+                        </Border>
+
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,280,150,0">
+                            <!-- Rangées de trophées -->
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                                <!-- Platine -->
+                                <Image Source="{ThemeFile 'Images/platinum.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                <TextBlock FontWeight="Light" FontSize="26">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                            <Setter Property="Text" Value="0" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=Percent}" Value="100">
+                                                    <Setter Property="Text" Value="1"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                                <!-- Or -->
+                                <Image Source="{ThemeFile 'Images/Or.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Rare.UnLocked, StringFormat={}{0}}" FontWeight="Light" FontSize="26" Style="{DynamicResource TextBlockBaseStyle}" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                                <!-- Argent -->
+                                <Image Source="{ThemeFile 'Images/Argent.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=NoCommon.UnLocked, StringFormat={}{0}}" FontWeight="Light" FontSize="26" Style="{DynamicResource TextBlockBaseStyle}" />
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <!-- Bronze -->
+                                <Image Source="{ThemeFile 'Images/Bronze.png'}" Width="40" Height="40" Margin="0,0,6,0"/>
+                                <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Common.UnLocked, StringFormat={}{0}}" FontWeight="Light" FontSize="26" Style="{DynamicResource TextBlockBaseStyle}" />
+                            </StackPanel>
+                        </StackPanel>
+   
+
+                        <Grid x:Name="AchievementList" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1600" Height="750" Margin="0,0,0,50" KeyboardNavigation.DirectionalNavigation="Cycle" pbeh:FocusBahaviors.FocusBinding="True" >
+                                        
+                            <Grid  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-20,0,0">
+                                <ToggleButtonEx x:Name="SortButton"
                                                     Grid.Column="1" Margin="0,5,0,0"
                                                     Style="{StaticResource SuccessSortButton}"
                                                     HorizontalAlignment="Right"
                                                     VerticalAlignment="Center" />
-                                </Grid>
+                            </Grid>
 
-                                <Grid  HorizontalAlignment="Stretch" Width="750" VerticalAlignment="Top" Margin="0,-20,0,0">
+                            <Grid HorizontalAlignment="Stretch" Width="1250" VerticalAlignment="Top" Margin="0,-20,0,0">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
@@ -76,34 +189,9 @@
 
 
                                 <Rectangle Fill="{DynamicResource TextBrush}" Height="2" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="0,50,0,0" />
-                                <Border Background="{DynamicResource ButtonBrushBackground}" CornerRadius="0,0,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="50" Margin="0,0,0,-50"/>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,-50" >
-                                    <TextBlock Text="{DynamicResource LocTotalTrophiesUnlocked}"
-													   Style="{DynamicResource TextBlockBaseStyle}"
-													   FontSize="22"
-													   Margin="0,50,5,10" />
+                                
 
-                                    <TextBlock Text=" : "
-													   Style="{DynamicResource TextBlockBaseStyle}"
-													   FontSize="22"
-													   Margin="0,50,5,10" />
-
-
-                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}"
-													   Style="{DynamicResource TextBlockBaseStyle}"
-													   FontSize="22"
-													   Margin="0,50,0,10" />
-                                    <TextBlock Text="/"
-													   Style="{DynamicResource TextBlockBaseStyle}"
-													   FontSize="22"
-													   Margin="2,50,2,10" />
-                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}"
-													   Style="{DynamicResource TextBlockBaseStyle}"
-													   FontSize="22"
-													   Margin="0,50,0,10" />
-                                </StackPanel>
-
-                                <ListView x:Name="AchievementListDesc" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="Auto" ScrollViewer.CanContentScroll="True" Margin="10,60,0,10" 
+                            <ListView x:Name="AchievementListDesc" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="Auto" ScrollViewer.CanContentScroll="True" Margin="10,60,0,10" 
 																		  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"  BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
 																		  FocusVisualStyle="{x:Null}" Focusable="False" KeyboardNavigation.DirectionalNavigation="Local" ItemsSource="{PluginSettings Plugin=SuccessStory, Path=ListAchUnlockDateDesc}">
                                     <ListView.Style>
@@ -128,7 +216,7 @@
                                                 <Setter.Value>
                                                     <ControlTemplate TargetType="ListViewItem">
                                                         <Border BorderBrush="Transparent" CornerRadius="5">
-                                                            <Grid  Width="650" Height="110" Margin="5,10,5,10" >
+                                                        <Grid Height="120" Width="1400" Margin="5,10,5,10" >
                                                                 <Border x:Name="mask" CornerRadius="5" Background="{DynamicResource TrophyBackgroundNoFocusBrush}"/>
                                                                 <Grid>
                                                                     <Grid.OpacityMask>
@@ -143,34 +231,36 @@
                                                                     <Image x:Name="SaphirFond" Visibility="Collapsed" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Stretch="UniformToFill"
 																		   Source="{ThemeFile 'Images/Saphir.png'}" Height="110" RenderOptions.BitmapScalingMode="Fant" />
                                                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                                                        <StackPanel Margin="10,0,0,0" Orientation="Horizontal" >
-                                                                            <Image Margin="0,0,0,0" Source="{Binding Icon}" Height="80" Width="80" VerticalAlignment="Center"/>
+                                                                        <StackPanel Margin="0,0,0,0" Orientation="Horizontal" >
+                                                                            <Image Margin="0,0,0,0" Source="{Binding Icon}" Height="120" Width="120" VerticalAlignment="Center"/>
                                                                         </StackPanel>
                                                                     </StackPanel>
 
-                                                                    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="650" Height="120">
+                                                                    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="1350" Height="120" Margin="30,0,0,0">
                                                                         <StackPanel Orientation="Vertical">
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <Image x:Name="Bronze" Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Bronze.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible"/>
-                                                                                <Image x:Name="Argent"  Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Argent.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed" />
-                                                                                <Image x:Name="Or"  Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Or.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
-                                                                                <Image x:Name="Saphir" Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Saphir.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
 
-                                                                                <TextBlock x:Name="Name" Margin="0,20,0,10" Text="{Binding Name}" VerticalAlignment="Top"  HorizontalAlignment="Left" MaxWidth="650" TextWrapping="Wrap" FontSize="25" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                            </StackPanel>
-                                                                            <TextBlock Margin="100,-10,10,0" Height="100" MaxWidth="500" Text="{Binding Description}" Opacity="0.8"  TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Left" FontSize="19" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                        <TextBlock x:Name="Name" Margin="100,20,0,10" Text="{Binding Name}" VerticalAlignment="Top"  HorizontalAlignment="Left" MaxWidth="1150" TextWrapping="Wrap" FontSize="30" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                            
+                                                                            <TextBlock Margin="100,-10,10,0" Height="100" MaxWidth="1000" Text="{Binding Description}" Opacity="0.8"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}" />
                                                                         </StackPanel>
-                                                                        <StackPanel Margin="510,10,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
-                                                                            <TextBlock x:Name="Clock1" Visibility="Visible" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:HH:mm}'}" FontSize="16" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                            <TextBlock x:Name="Clock2" Visibility="Collapsed" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:t}'}" FontSize="16" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,3,2" Text="{Binding DateUnlocked, StringFormat='{}{0:d MMM yyyy}'}" FontSize="14" Style="{DynamicResource TextBlockBaseStyle}"/>
+                                                                    <StackPanel Margin="0,10,55,0" Orientation="Vertical" HorizontalAlignment="Right" Opacity="0.7" VerticalAlignment="Center">
+                                                                            <TextBlock x:Name="Clock1" Visibility="Visible" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:HH:mm}'}" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                            <TextBlock x:Name="Clock2" Visibility="Collapsed" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:t}'}" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,3,2" Text="{Binding DateUnlocked, StringFormat='{}{0:d MMM yyyy}'}" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}"/>
 
                                                                         </StackPanel>
-                                                                        <TextBlock x:Name="PercentLogic" Text="{Binding GamerScore}" Visibility="Collapsed"/>
+                                                                        
+                                                                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Width="55" >
+                                                                        <Image x:Name="Bronze" Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Bronze.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible"/>
+                                                                        <Image x:Name="Argent"  Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Argent.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed" />
+                                                                        <Image x:Name="Or"  Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Or.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
+                                                                        <Image x:Name="Saphir" Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Saphir.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
+                                                                    </StackPanel>
+                                                                    <TextBlock x:Name="PercentLogic" Text="{Binding GamerScore}" Visibility="Collapsed"/>
                                                                     </Grid>
                                                                 </Grid>
 
@@ -282,7 +372,7 @@
                                     </ListView.ItemContainerStyle>
                                 </ListView>
 
-                                <ListView x:Name="AchievementListAsc" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="Auto" ScrollViewer.CanContentScroll="True" Margin="10,60,0,10"
+                            <ListView x:Name="AchievementListAsc" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="Auto" ScrollViewer.CanContentScroll="True" Margin="10,60,0,10"
 																		  VirtualizingPanel.IsVirtualizing="True" VirtualizingPanel.VirtualizationMode="Recycling"  BorderBrush="Transparent" BorderThickness="0" Background="Transparent"
 																		  FocusVisualStyle="{x:Null}" Focusable="False" KeyboardNavigation.DirectionalNavigation="Local" ItemsSource="{PluginSettings Plugin=SuccessStory, Path=ListAchUnlockDateAsc}">
                                     <ListView.Style>
@@ -307,61 +397,63 @@
                                                 <Setter.Value>
                                                     <ControlTemplate TargetType="ListViewItem">
                                                         <Border BorderBrush="Transparent" CornerRadius="5">
-                                                            <Grid  Width="650" Height="110" Margin="5,10,5,10" >
-                                                                <Border x:Name="mask" CornerRadius="5" Background="{DynamicResource TrophyBackgroundNoFocusBrush}"/>
-                                                                <Grid>
-                                                                    <Grid.OpacityMask>
-                                                                        <VisualBrush Visual="{Binding ElementName=mask}"/>
-                                                                    </Grid.OpacityMask>
-                                                                    <Image x:Name="BronzeFond" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Stretch="UniformToFill"
+                                                        <Grid Height="120" Width="1400" Margin="5,10,5,10" >
+                                                            <Border x:Name="mask" CornerRadius="5" Background="{DynamicResource TrophyBackgroundNoFocusBrush}"/>
+                                                            <Grid>
+                                                                <Grid.OpacityMask>
+                                                                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                                                                </Grid.OpacityMask>
+                                                                <Image x:Name="BronzeFond" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Stretch="UniformToFill"
 																		   Source="{ThemeFile 'Images/Bronze.png'}" Height="50" RenderOptions.BitmapScalingMode="Fant" />
-                                                                    <Image x:Name="ArgentFond" Visibility="Collapsed" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Stretch="UniformToFill"
+                                                                <Image x:Name="ArgentFond" Visibility="Collapsed" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Stretch="UniformToFill"
 																		   Source="{ThemeFile 'Images/Argent.png'}" Height="110" RenderOptions.BitmapScalingMode="Fant" />
-                                                                    <Image x:Name="OrFond" Visibility="Collapsed"  Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                                                                <Image x:Name="OrFond" Visibility="Collapsed"  Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"
 																		   Source="{ThemeFile 'Images/Or.png'}" Height="110" RenderOptions.BitmapScalingMode="Fant" Stretch="UniformToFill" />
-                                                                    <Image x:Name="SaphirFond" Visibility="Collapsed" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Stretch="UniformToFill"
+                                                                <Image x:Name="SaphirFond" Visibility="Collapsed" Margin="0,0,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Stretch="UniformToFill"
 																		   Source="{ThemeFile 'Images/Saphir.png'}" Height="110" RenderOptions.BitmapScalingMode="Fant" />
-                                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                                                        <StackPanel Margin="10,0,0,0" Orientation="Horizontal" >
-                                                                            <Image Margin="0,0,0,0" Source="{Binding Icon}" Height="80" Width="80" VerticalAlignment="Center"/>
-                                                                        </StackPanel>
+                                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                                                    <StackPanel Margin="0,0,0,0" Orientation="Horizontal" >
+                                                                        <Image Margin="0,0,0,0" Source="{Binding Icon}" Height="120" Width="120" VerticalAlignment="Center"/>
+                                                                    </StackPanel>
+                                                                </StackPanel>
+
+                                                                <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="1350" Height="120" Margin="30,0,0,0">
+                                                                    <StackPanel Orientation="Vertical">
+
+                                                                        <TextBlock x:Name="Name" Margin="100,20,0,10" Text="{Binding Name}" VerticalAlignment="Top"  HorizontalAlignment="Left" MaxWidth="1150" TextWrapping="Wrap" FontSize="30" Style="{DynamicResource TextBlockBaseStyle}" />
+
+                                                                        <TextBlock Margin="100,-10,10,0" Height="100" MaxWidth="1000" Text="{Binding Description}" Opacity="0.8"  TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                    </StackPanel>
+                                                                    <StackPanel Margin="0,10,55,0" Orientation="Vertical" HorizontalAlignment="Right" Opacity="0.7" VerticalAlignment="Center">
+                                                                        <TextBlock x:Name="Clock1" Visibility="Visible" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:HH:mm}'}" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                        <TextBlock x:Name="Clock2" Visibility="Collapsed" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:t}'}" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}" />
+                                                                        <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,3,2" Text="{Binding DateUnlocked, StringFormat='{}{0:d MMM yyyy}'}" FontSize="20" Style="{DynamicResource TextBlockBaseStyle}"/>
+
                                                                     </StackPanel>
 
-                                                                    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="650" Height="120">
-                                                                        <StackPanel Orientation="Vertical">
-                                                                            <StackPanel Orientation="Horizontal">
-                                                                                <Image x:Name="Bronze" Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Bronze.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible"/>
-                                                                                <Image x:Name="Argent"  Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Argent.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed" />
-                                                                                <Image x:Name="Or"  Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Or.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
-                                                                                <Image x:Name="Saphir" Margin="100,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
-																		   Source="{ThemeFile 'Images/Saphir.png'}" Height="25" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
-
-                                                                                <TextBlock x:Name="Name" Margin="0,20,0,10" Text="{Binding Name}" VerticalAlignment="Top"  HorizontalAlignment="Left" MaxWidth="650" TextWrapping="Wrap" FontSize="25" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                            </StackPanel>
-                                                                            <TextBlock Margin="100,-10,10,0" Height="100" MaxWidth="500" Text="{Binding Description}" Opacity="0.8"  TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Left" FontSize="19" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                        </StackPanel>
-                                                                        <StackPanel Margin="510,10,0,0" Orientation="Vertical" VerticalAlignment="Bottom">
-                                                                            <TextBlock x:Name="Clock1" Visibility="Visible" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:HH:mm}'}" FontSize="16" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                            <TextBlock x:Name="Clock2" Visibility="Collapsed" Margin="0,0,3,0" VerticalAlignment="Top" HorizontalAlignment="Right" Text="{Binding DateUnlocked, StringFormat='{}{0:t}'}" FontSize="16" Style="{DynamicResource TextBlockBaseStyle}" />
-                                                                            <TextBlock  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,3,2" Text="{Binding DateUnlocked, StringFormat='{}{0:d MMM yyyy}'}" FontSize="14" Style="{DynamicResource TextBlockBaseStyle}"/>
-
-                                                                        </StackPanel>
-                                                                        <TextBlock x:Name="PercentLogic" Text="{Binding GamerScore}" Visibility="Collapsed"/>
-                                                                    </Grid>
+                                                                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Width="55" >
+                                                                        <Image x:Name="Bronze" Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Bronze.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Visible"/>
+                                                                        <Image x:Name="Argent"  Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Argent.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed" />
+                                                                        <Image x:Name="Or"  Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Or.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
+                                                                        <Image x:Name="Saphir" Margin="10,10,5,0" VerticalAlignment="Center" HorizontalAlignment="Left"
+																		   Source="{ThemeFile 'Images/Saphir.png'}" Height="45" RenderOptions.BitmapScalingMode="Fant" Visibility="Collapsed"/>
+                                                                    </StackPanel>
+                                                                    <TextBlock x:Name="PercentLogic" Text="{Binding GamerScore}" Visibility="Collapsed"/>
                                                                 </Grid>
+                                                            </Grid>
 
-                                                                <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="5" Margin="-1" BorderBrush="{DynamicResource ColorBorderBrush}" Visibility="Hidden" Tag="False">
-                                                                    <Border.CacheMode>
-                                                                        <BitmapCache EnableClearType="False"
+                                                            <Border x:Name="MainBorder" Opacity="1" BorderThickness="3" CornerRadius="5" Margin="-1" BorderBrush="{DynamicResource ColorBorderBrush}" Visibility="Hidden" Tag="False">
+                                                                <Border.CacheMode>
+                                                                    <BitmapCache EnableClearType="False"
 											                                RenderAtScale="1"
 											                                SnapsToDevicePixels="False"/>
-                                                                    </Border.CacheMode>
-                                                                </Border>
-                                                            </Grid>
-                                                        </Border>
+                                                                </Border.CacheMode>
+                                                            </Border>
+                                                        </Grid>
+                                                    </Border>
 
                                                         <ControlTemplate.Triggers>
                                                             <Trigger Property="IsFocused" Value="True">
@@ -465,7 +557,15 @@
                                     <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.4" />
                                 </Grid.Effect>
                             </Grid>
-                        </Border>
+                        <Border Background="{DynamicResource ButtonBrushBackground}" CornerRadius="0,0,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="50" Margin="0,0,0,0"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" >
+                            <TextBlock Text="{DynamicResource LocTotalTrophiesUnlocked}"  Style="{DynamicResource TextBlockBaseStyle}" FontSize="28" Margin="0,50,5,10" />
+                            <TextBlock Text=" : " Style="{DynamicResource TextBlockBaseStyle}"  FontSize="28"  Margin="0,50,5,10" />
+                            <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Unlocked, FallbackValue='-'}" Style="{DynamicResource TextBlockBaseStyle}"  FontSize="28"  Margin="0,50,0,10" />
+                            <TextBlock Text="/" Style="{DynamicResource TextBlockBaseStyle}" FontSize="28" Margin="2,50,2,10" />
+                            <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=Total, FallbackValue='-'}" Style="{DynamicResource TextBlockBaseStyle}" FontSize="28" Margin="0,50,0,10" />
+                        </StackPanel>
+                        <ButtonEx x:Name="BackButton" Margin="0,0,10,10" VerticalAlignment="Bottom" HorizontalAlignment="Right" Style="{StaticResource IconBButton}" Content="{DynamicResource LOCBackLabel}" />
                     </Grid>
                     <ControlTemplate.Triggers>
                         <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="1728">
@@ -622,6 +722,8 @@
                                 </Style>
                             </Border.Style>
                         </Border>
+
+                        
 
                         <!-- Trigger -->
                         <Grid Grid.Row="0" Height="10" Width="10" Focusable="False" >
@@ -1643,12 +1745,13 @@
                                     <Style TargetType="TextBlock" x:Key="ScrollArrowStyle">
                                         <Setter Property="Visibility" Value="Collapsed"/>
                                         <Style.Triggers>
-                                            <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=Visibility}" Value="Visible">
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding ElementName=SuccessButton, Path=Visibility}" Value="Visible"/>
+                                                    <Condition Binding="{Binding ElementName=DlcButton, Path=Visibility}" Value="Visible"/>
+                                                </MultiDataTrigger.Conditions>
                                                 <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                            <DataTrigger Binding="{Binding ElementName=DlcButton, Path=Visibility}" Value="Visible">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
+                                            </MultiDataTrigger>
                                             <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="1728">
                                                 <Setter Property="Visibility" Value="Collapsed"/>
                                             </DataTrigger>
@@ -1725,24 +1828,35 @@
                                             </ToggleButtonEx.Effect>
                                         </ToggleButtonEx>
 
-                                        <ToggleButtonEx x:Name="SuccessButton" Visibility="Visible" Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center">
-                                            <ToggleButtonEx.Style>
-                                                <Style TargetType="ToggleButtonEx" BasedOn="{StaticResource SuccessViewButton}">
-                                                    <Setter Property="IsChecked" Value="True" />
+                                        <ButtonEx x:Name="SuccessButton" Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center" Command="{PluginSettings Plugin=SSHelper, Path=OpenGameAchievementWindow}" Content="{DynamicResource LOCSuccessStoryAchievements}">
+                                            <ButtonEx.Style>
+                                                <Style TargetType="ButtonEx" BasedOn="{StaticResource ButtonContext}">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
                                                     <Style.Triggers>
-                                                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
-                                                            <Setter Property="IsChecked" Value="True" />
+                                                        <DataTrigger Binding="{PluginStatus Plugin=playnite-successstory-plugin, Status=Installed}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
+                                                        </DataTrigger>                                                      
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </ButtonEx.Style>
+                                        <ButtonEx.Effect>
+                                                <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.4"/>
+                                            </ButtonEx.Effect>
+                                        </ButtonEx>
+
+
+
+                                        <ToggleButtonEx x:Name="DlcButton" Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center">
+                                            <ToggleButtonEx.Style>
+                                                <Style TargetType="ToggleButtonEx" BasedOn="{StaticResource DLCViewButton}">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{PluginStatus Plugin=playnite-checkdlc-plugin, Status=Installed}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible"/>
                                                         </DataTrigger>
                                                     </Style.Triggers>
                                                 </Style>
                                             </ToggleButtonEx.Style>
-                                            <ToggleButtonEx.Effect>
-                                                <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.4"/>
-                                            </ToggleButtonEx.Effect>
-                                        </ToggleButtonEx>
-
-
-                                        <ToggleButtonEx x:Name="DlcButton" Style="{DynamicResource DLCViewButton}" Visibility="Visible" Margin="7,2,7,2" BorderThickness="2" Width="210" HorizontalContentAlignment="Center">
                                             <ToggleButtonEx.Effect>
                                                 <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.4"/>
                                             </ToggleButtonEx.Effect>
@@ -1754,24 +1868,7 @@
                             </Grid>
                         </Border>
 
-                        <ContentControl x:Name="TrophyWindow">
-                            <ContentControl.Style>
-                                <Style TargetType="ContentControl" BasedOn="{StaticResource TrophyWindowStyle}">
-                                    <Setter Property="Visibility" Value="Collapsed"/>
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="False">
-                                            <Setter Property="Visibility" Value="Visible"/>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="True">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Collapsed">
-                                            <Setter Property="Visibility" Value="Collapsed"/>
-                                        </DataTrigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </ContentControl.Style>
-                        </ContentControl>
+                      
 
                         <!-- Focus Logic -->
                         <StackPanel x:Name="FocusLogic">

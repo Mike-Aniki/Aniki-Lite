@@ -45,7 +45,9 @@
 	<Color x:Key="ProgressBarForeground">#FFFF6E40</Color>
 	<Color x:Key="BorderWindow">#FFFF6E40</Color>
 	<Color x:Key="BackgroundColorWindowOpen">#BB000000</Color>
+	<Color x:Key="ControlBackgroundColorDark">#FF996633</Color>
 
+	<SolidColorBrush x:Key="ControlBackgroundDarkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
 	<SolidColorBrush x:Key="ButtonBrushBackground" Color="{DynamicResource ButtonColorBackground}" />
 	<SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
 	<SolidColorBrush x:Key="Text2Brush" Color="{DynamicResource Text2Color}" />
@@ -180,7 +182,9 @@
     <ImageBrush x:Key="Avatar36" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (36).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar37" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (37).png'}" Stretch="UniformToFill"/>
     <ImageBrush x:Key="Avatar38" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (38).png'}" Stretch="UniformToFill"/>
-
+	<ImageBrush x:Key="Avatar39" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (39).png'}" Stretch="UniformToFill"/>
+	<ImageBrush x:Key="Avatar40" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (40).png'}" Stretch="UniformToFill"/>
+	<ImageBrush x:Key="Avatar41" ImageSource="{ThemeFile 'Themes Option/3.Avatar/Avatar (41).png'}" Stretch="UniformToFill"/>
 
     
 </ResourceDictionary>

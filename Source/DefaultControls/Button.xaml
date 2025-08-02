@@ -251,6 +251,70 @@
         </Setter>
     </Style>
 
+    <Style x:Key="ButtonTrophyviewitem" TargetType="Button">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Height" Value="Auto" />
+       
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Border CornerRadius="5" Opacity="0.8" Background="Transparent"
+                                x:Name="MainBackground"/>
+                        <Border x:Name="MainBorder" Margin="-1"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                Tag="False" BorderBrush="{DynamicResource ColorBorderBrush}"
+                                BorderThickness="3" CornerRadius="5" Visibility="Collapsed" />
+                        <TextBlock x:Name="Text" Style="{DynamicResource TextBlockBaseStyle}"
+                                   Foreground="{TemplateBinding Foreground}" FontSize="28"
+                                   HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   Margin="0,0,0,5">
+							<ContentPresenter />
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.5" />
+                        </Trigger>
+
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Text" />
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="MainBorder" />
+                            <Setter Property="Background" Value="{DynamicResource ButtonFocusBrushBackground}" TargetName="MainBackground" />
+                            <Setter Property="Opacity" Value="1" TargetName="MainBackground" />
+                            <Setter Property="Tag" Value="True" TargetName="MainBorder" />
+                            <Setter Property="Foreground" Value="{DynamicResource TextFocusColorBrush}" TargetName="Text" />
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="Transparent" />
+                        </Trigger>
+                        <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ElementName=SuccessButton, Path=IsChecked}" Value="True">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 
     <Style TargetType="ButtonEx" BasedOn="{StaticResource {x:Type Button}}">
     </Style>
