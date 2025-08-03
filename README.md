@@ -1,6 +1,6 @@
 <h1 align="center">Aniki-Lite : Fullscreen Theme for Playnite</h1>
 
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Mike-Aniki/Aniki-Lite/total?style=for-the-badge&label=Total%20Downloads%20for%20All%20Releases&color=blue)]() [![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Mike-Aniki/Aniki-Lite/latest/total?style=for-the-badge&label=Total%20Downloads%20for%20the%20Latest%20Release&color=blue)]()
+[![GitHub Downloads (all assets, latest release)](https://img.shields.io/github/downloads/Mike-Aniki/Aniki-Lite/latest/total?style=for-the-badge&label=Total%20Downloads%20for%20the%20Latest%20Release&color=blue)]()
 
 Aniki Lite is a fullscreen minimalist theme for Playnite, inspired by the clean design of the Nintendo Switch.
 
