@@ -8,6 +8,7 @@
 
 
     <Style x:Key="GameAchievementsWindowStyle" TargetType="ContentControl">
+        <Setter Property="Margin" Value="0,0,0,0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentControl">
@@ -162,8 +163,19 @@
                         </StackPanel>
    
 
-                        <Grid x:Name="AchievementList" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1600" Height="750" Margin="0,0,0,50" KeyboardNavigation.DirectionalNavigation="Cycle" pbeh:FocusBahaviors.FocusBinding="True" >
-                                        
+                        <Grid x:Name="AchievementList" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="1600" KeyboardNavigation.DirectionalNavigation="Cycle" pbeh:FocusBahaviors.FocusBinding="True" >
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Setter Property="Margin" Value="0,0,0,50"/>
+                                    <Setter Property="Height" Value="750"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp1610">
+                                            <Setter Property="Height" Value="870"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            
                             <Grid  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,-20,0,0">
                                 <ToggleButtonEx x:Name="SortButton"
                                                     Grid.Column="1" Margin="0,5,0,0"
@@ -286,8 +298,8 @@
                                                                     <Condition Binding="{Binding ElementName=PercentLogic, Path=Text}" Value="180"/>
                                                                 </MultiDataTrigger.Conditions>
                                                                 <MultiDataTrigger.Setters>
-                                                                    <Setter TargetName="Saphir" Property="Visibility" Value="Visible"/>
-                                                                    <Setter TargetName="Or" Property="Visibility" Value="Collapsed"/>
+                                                                <Setter TargetName="Saphir" Property="Visibility" Value="Collapsed"/>
+                                                                <Setter TargetName="Or" Property="Visibility" Value="Visible"/>
                                                                     <Setter TargetName="Argent" Property="Visibility" Value="Collapsed"/>
                                                                     <Setter TargetName="Bronze" Property="Visibility" Value="Collapsed"/>
                                                                 </MultiDataTrigger.Setters>
@@ -467,8 +479,8 @@
                                                                     <Condition Binding="{Binding ElementName=PercentLogic, Path=Text}" Value="180"/>
                                                                 </MultiDataTrigger.Conditions>
                                                                 <MultiDataTrigger.Setters>
-                                                                    <Setter TargetName="Saphir" Property="Visibility" Value="Visible"/>
-                                                                    <Setter TargetName="Or" Property="Visibility" Value="Collapsed"/>
+                                                                    <Setter TargetName="Saphir" Property="Visibility" Value="Collapsed"/>
+                                                                    <Setter TargetName="Or" Property="Visibility" Value="Visible"/>
                                                                     <Setter TargetName="Argent" Property="Visibility" Value="Collapsed"/>
                                                                     <Setter TargetName="Bronze" Property="Visibility" Value="Collapsed"/>
                                                                 </MultiDataTrigger.Setters>
@@ -553,9 +565,12 @@
                                     </ListView.ItemContainerStyle>
                                 </ListView>
 
-                                <Grid.Effect>
+
+                        
+                            <Grid.Effect>
                                     <DropShadowEffect BlurRadius="10" ShadowDepth="2" Direction="270" Opacity="0.4" />
                                 </Grid.Effect>
+                            
                             </Grid>
                         <Border Background="{DynamicResource ButtonBrushBackground}" CornerRadius="0,0,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="50" Margin="0,0,0,0"/>
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,0" >
@@ -575,6 +590,15 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp1610">
+                <Setter Property="Margin" Value="0,-60,0,-60"/>
+            </DataTrigger>
+            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp219">
+                <Setter Property="Margin" Value="-320,0,-320,0"/>
+            </DataTrigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="{x:Type GameDetails}">
@@ -651,59 +675,34 @@
 
                         <!--Wallpaper-->
 
-                        <!-- <Grid x:Name="BackgroundChanger" FocusVisualStyle="{x:Null}" Panel.ZIndex="-2">
+                        <Grid x:Name="BackgroundImageGrid" FocusVisualStyle="{x:Null}" >
                             <Grid.Style>
                                 <Style TargetType="Grid">
-                                    <Setter Property="Background" Value="{DynamicResource MainBackgourndBrush}"/>
                                     <Setter Property="Opacity" Value="1"/>
                                     <Setter Property="VerticalAlignment" Value="Top"/>
                                     <Setter Property="HorizontalAlignment" Value="Center"/>
-                                    <Setter Property="Grid.Column" Value="0"/>
-                                    <Setter Property="Grid.Row" Value="0"/>
-                                    <Setter Property="Grid.ColumnSpan" Value="3"/>
+                                    <Setter Property="Grid.ColumnSpan" Value="4"/>
                                     <Setter Property="Grid.RowSpan" Value="3"/>
+                                    <Setter Property="Panel.ZIndex" Value="-2" />
+                                    <Setter Property="Visibility" Value="Collapsed"/>
                                     <Style.Triggers>
+                                        <DataTrigger  Binding="{Settings Fullscreen.EnableMainBackgroundImage}" Value="False">
+                                            <Setter Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </Grid.Style>
-                            <FadeImage x:Name="ImageBackgroundChanger" Opacity="1" Grid.RowSpan="3" Grid.ColumnSpan="3"
+                            <FadeImage x:Name="PART_ImageBackground" Opacity="1" Grid.RowSpan="3" Grid.ColumnSpan="4"
                                        HorizontalAlignment="Center" VerticalAlignment="Top">
-                                <FadeImage.Source>
-                                    <PriorityBinding>
-                                        <Binding ElementName="BackgroundChanger_PluginBackgroundImage" Path="Content.Source" />
-                                        <Binding ElementName="PART_ImageBackground" Path="Source" />
-                                    </PriorityBinding>
-                                </FadeImage.Source>
                                 <FadeImage.Style>
                                     <Style TargetType="FadeImage" >
-                                        <Setter Property="Visibility" Value="Visible"/>
                                         <Setter Property="Stretch" Value="UniformToFill"/>
                                         <Setter Property="HorizontalAlignment" Value="Center"/>
                                         <Setter Property="VerticalAlignment" Value="Top"/>
-                                        <Setter Property="RenderTransform">
-                                            <Setter.Value>
-                                                <ScaleTransform ScaleX="1" ScaleY="1" />
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Source={StaticResource AnimationBackground}}" Value="True">
-                                                <DataTrigger.EnterActions>
-                                                    <BeginStoryboard>
-                                                        <Storyboard RepeatBehavior="Forever" AutoReverse="True">
-                                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleX" From="1.0" To="1.11" Duration="0:0:35"  AccelerationRatio="0.2" DecelerationRatio="0.3"/>
-                                                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.ScaleY" From="1.0" To="1.11" Duration="0:0:35"  AccelerationRatio="0.2" DecelerationRatio="0.3"/>
-                                                        </Storyboard>
-                                                    </BeginStoryboard>
-                                                </DataTrigger.EnterActions>
-                                            </DataTrigger>
-                                        </Style.Triggers>
                                     </Style>
                                 </FadeImage.Style>
                             </FadeImage>
                         </Grid>
-
-                        <ContentControl x:Name="BackgroundChanger_PluginBackgroundImage"
-		                HorizontalAlignment="Center" VerticalAlignment="Top" Visibility="Collapsed" /> -->
 
                         <!--Border Effet dégradé-->
                         <Border>
@@ -828,7 +827,6 @@
                                 Grid.Column="1"
                                 VerticalAlignment="Top"
                                 HorizontalAlignment="Center"
-                                Margin="0,10,0,0"
                                 Height="40"
                                 Opacity="0.8"
                                 Panel.ZIndex="1"
@@ -839,6 +837,7 @@
                             <Border.Style>
                                 <Style TargetType="Border">
                                     <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Setter Property="Margin" Value="0,10,0,0"/>
                                     <Style.Triggers>
                                         <MultiDataTrigger>
                                             <MultiDataTrigger.Conditions>
@@ -848,6 +847,9 @@
                                             </MultiDataTrigger.Conditions>
                                             <Setter Property="Visibility" Value="Visible"/>
                                         </MultiDataTrigger>
+                                        <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp1610">
+                                            <Setter Property="Margin" Value="-280,10,0,0"/>
+                                        </DataTrigger>
                                     </Style.Triggers>
                                 </Style>
                             </Border.Style>
@@ -856,28 +858,6 @@
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
                                         Margin="10,0,10,0">
-
-                                <!-- Saphir -->
-                                <StackPanel Orientation="Horizontal" Margin="4,0">
-                                    <StackPanel.Style>
-                                        <Style TargetType="StackPanel">
-                                            <Setter Property="Visibility" Value="Visible" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{PluginSettings Plugin=SuccessStory, Path=UltraRare.Total}" Value="0">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </StackPanel.Style>
-                                    <Border Height="30" Width="30" ClipToBounds="True" Margin="4,0">
-                                        <Image Source="{ThemeFile 'Images/Saphir.png'}" RenderOptions.BitmapScalingMode="Fant"/>
-                                    </Border>
-                                    <TextBlock Text="{PluginSettings Plugin=SuccessStory, Path=UltraRare.UnLocked, StringFormat={}{0}}"
-                                           FontFamily="Segoe UI SemiBold"
-                                           FontSize="18"
-                                           VerticalAlignment="Center"
-                                           Foreground="{DynamicResource TextBrush}"/>
-                                </StackPanel>
 
                                 <!-- Or -->
                                 <Border Height="30" Width="30" ClipToBounds="True" Margin="4,0">
@@ -1563,9 +1543,6 @@
                                     <Setter Property="Width" Value="895" />
 
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="2560">
-                                            <Setter Property="Margin" Value="440,305,0,0" />
-                                        </DataTrigger>
                                         <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="1728">
                                             <Setter Property="Margin" Value="20,305,0,0" />
                                         </DataTrigger>
@@ -1663,10 +1640,7 @@
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding Game.IsRunning}" Value="True">
                                             <Setter Property="IsChecked" Value="False"/>
-                                        </DataTrigger>
-                                        <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="2560">
-                                            <Setter Property="Margin" Value="440,305,0,0" />
-                                        </DataTrigger>
+                                        </DataTrigger>                                        
                                         <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="1728">
                                             <Setter Property="Margin" Value="20,305,0,0" />
                                             <Setter Property="Grid.Column" Value="0" />
@@ -1695,10 +1669,7 @@
                                         </Setter.Value>
                                     </Setter>
 
-                                    <Style.Triggers>
-                                        <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="2560">
-                                            <Setter Property="Margin" Value="-40,65,763.75,157.857" />
-                                        </DataTrigger>
+                                    <Style.Triggers>                                       
                                         <DataTrigger Binding="{Binding ElementName=PART_ViewHost, Path=ActualWidth}" Value="1728">
                                             <Setter Property="Margin" Value="-110,0,0,0" />
                                             <Setter Property="Grid.Column" Value="0" />

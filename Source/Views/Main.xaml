@@ -347,6 +347,7 @@
     </Style>
 
     <Style x:Key="AchievementsWindowStyle" TargetType="ContentControl">
+        <Setter Property="Margin" Value="0,0,0,0"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentControl">
@@ -357,7 +358,7 @@
                       HorizontalAlignment="Stretch"
                       VerticalAlignment="Stretch"
                       Background="{DynamicResource OverlayMenu}">
-
+                                              
                         <!-- Separator -->
                         <Border Height="180" Margin="0,0,0,0"  BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderWindowBrush}"  Background="{DynamicResource ButtonBrushBackground}" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
 
@@ -819,7 +820,7 @@
                         <!--Trophée button -->
                         <ToggleButtonEx x:Name="SortButton" 
                                         Margin="0,183,0,0"                              
-                                        Width="1600"
+                                        Width="800"
                                         Height="70"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Top"
@@ -1108,6 +1109,16 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        <Style.Triggers>
+            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp1610">
+                <Setter Property="Margin" Value="0,-60,0,-60"/>
+            </DataTrigger>
+            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp219">
+                <Setter Property="Margin" Value="-320,0,-320,0"/>
+            </DataTrigger>
+        </Style.Triggers>
+
     </Style>
 
 
@@ -2590,6 +2601,9 @@
                                             <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=Options[LogoOnMain]}" Value="False">
                                                 <Setter Property="Visibility" Value="Collapsed" />
                                             </DataTrigger>
+                                            <DataTrigger Binding="{PluginSettings Plugin=ThemeOptions, Path=AspectRatio}" Value="dsp219">
+                                                <Setter Property="Margin" Value="0,10,0,0"/>
+                                            </DataTrigger>
 
                                             <MultiDataTrigger>
                                                 <MultiDataTrigger.Conditions>
@@ -2921,8 +2935,45 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="100" />
                                 </Grid.ColumnDefinitions>
-
-
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="Opacity" Value="0" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=PART_MainHost, Path=Visibility}" Value="Visible">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:5" Duration="0:0:0.6" From="0" To="1" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.EnterActions>
+                                                <DataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0" From="1" To="0" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.ExitActions>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=PART_ElemGameDetails, Path=Visibility}" Value="Visible">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="0:0:0.1" From="1" To="0" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.EnterActions>
+                                                <DataTrigger.ExitActions>
+                                                    <BeginStoryboard>
+                                                        <Storyboard>
+                                                            <DoubleAnimation Storyboard.TargetProperty="Opacity" BeginTime="0:0:0.3" Duration="0:0:0.6" From="0" To="1" />
+                                                        </Storyboard>
+                                                    </BeginStoryboard>
+                                                </DataTrigger.ExitActions>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
 
                                 <StackPanel
                                     x:Name="PART_ElemSearchActive"
@@ -2953,8 +3004,7 @@
                                     Text=""
                                     TextAlignment="Center"
                                     Visibility="Collapsed" />
-
-
+                              
                             </Grid>
                         </Grid>
 
@@ -2975,11 +3025,9 @@
                                 <Style TargetType="Grid">
                                     <Setter Property="Opacity" Value="0" />
                                     <Setter Property="Visibility" Value="Hidden" />
-
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding ElementName=FilterButton, Path=IsChecked}" Value="True">
                                             <Setter Property="Visibility" Value="Visible" />
-
                                             <DataTrigger.EnterActions>
                                                 <BeginStoryboard>
                                                     <Storyboard>
@@ -3004,7 +3052,6 @@
                                                 </BeginStoryboard>
                                             </DataTrigger.ExitActions>
                                         </DataTrigger>
-
                                         <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
                                             <Setter Property="Opacity" Value="0" />
                                         </DataTrigger>
