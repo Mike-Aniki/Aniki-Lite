@@ -55,15 +55,6 @@ An **ideal choice** for those seeking a **fullscreen interface** that is **fast*
 	<img align="top" src="https://github.com/Mike-Aniki/Aniki-Lite/blob/main/Images/screenshot04.png?raw=true" alt="Sublime's custom image" width="40%"/>
 </p>
 
-
-<p align="Center">
-Trailer : https://www.youtube.com/watch?v=f8UvMWZ9Cb4
-</p>
-
-<p align="Center">
-<a href='https://ko-fi.com/W7W1Y9DRB' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi5.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-</p>
-
 ---
 
 <div align="center">
