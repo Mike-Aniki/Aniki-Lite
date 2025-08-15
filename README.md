@@ -57,4 +57,8 @@ An **ideal choice** for those seeking a **fullscreen interface** that is **fast*
 
 ---
 
+<div align="center">
+
 _*Special thanks to **saVantCZ**, **jonosellier**, **Artem Shpynov**, **Crow**, and the entire **Playnite community**.*_
+
+</div>
