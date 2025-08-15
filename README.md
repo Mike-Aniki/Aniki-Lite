@@ -26,7 +26,7 @@ An **ideal choice** for those seeking a **fullscreen interface** that is **fast*
 
 <div align="center">
 	
-# **For a complete guide on how to use this theme, please check out the [Theme wiki](https://github.com/Mike-Aniki/Aniki-ReMake/wiki/Guide)**
+# **For a complete guide on how to use this theme, please check out the [Theme wiki](https://github.com/Mike-Aniki/Aniki-Lite/wiki/Wiki)**
 
 </div>
 
